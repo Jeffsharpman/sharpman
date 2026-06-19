@@ -38,7 +38,7 @@
 }
 
 /* ── LIGHT MODE ── */
-.light {
+:root.light {
   --color-background:           #F7F5F0;
   --color-foreground:           #0E0D0B;
   --color-card:                 #FFFFFF;
@@ -106,7 +106,7 @@
 }
 
 /* light nav */
-.light {
+:root.light {
   --bg-nav:        rgba(247,245,240,0.9);
   --border-nav:    rgba(0,0,0,0.08);
   --shadow-nav:    0 8px 40px rgba(0,0,0,0.08);
@@ -125,7 +125,7 @@
     -webkit-text-fill-color: transparent;
   }
 
-  .light .hero-heading {
+  :root.light .hero-heading {
     background: linear-gradient(180deg, #555550 0%, #0E0D0B 100%);
     -webkit-background-clip: text;
     background-clip: text;

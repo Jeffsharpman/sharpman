@@ -1,5 +1,6 @@
 import LogoImg from "../../assets/logo.png";
-import { useTheme } from "../lib/ThemeContext"; // adjust path if needed
+import { useTheme } from "../lib/ThemeContext"; 
+// import { motion } from "motion/react";
 
 const links = [
   { label: "Home",      href: "#" },
