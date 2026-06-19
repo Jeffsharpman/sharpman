@@ -1,3 +1,5 @@
+import LogoImg from "../../assets/logo.png";
+
 const socials = [
   {
     label: "Instagram",
@@ -77,15 +79,22 @@ export default function TerminalFooter() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-8">
                   <div
-                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary"
-                    style={{ boxShadow: "0 0 22px rgba(202,239,69,0.5)" }}
+                    className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1a00, #0a0a00)",
+                      border: "1px solid rgba(202,239,69,0.25)",
+                      boxShadow:
+                        "0 0 12px rgba(202,239,69,0.2), inset 0 0 8px rgba(202,239,69,0.05)",
+                    }}
                   >
-                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-                      <path
-                        d="M9 1L12 8H17L12 11.5L13.5 18L9 14.5L4.5 18L6 11.5L1 8H6L9 1Z"
-                        fill="#0A0A0A"
-                      />
-                    </svg>
+                    <img
+                      src={LogoImg}
+                      alt="Sharpman Logo"
+                      className="w-5 h-5 object-contain"
+                      style={{
+                        filter: "drop-shadow(0 0 4px rgba(202,239,69,0.6))",
+                      }}
+                    />
                   </div>
                   <span className="font-display text-2xl tracking-[4px] text-foreground">
                     SHARPMAN
