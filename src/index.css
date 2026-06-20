@@ -1,60 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* ── KEEP @theme ONLY for non-color tokens ── */
 @theme {
-  /* ── FONTS ── */
   --font-heading:  "Bebas Neue", sans-serif;
   --font-body:     "JetBrains Mono", monospace;
   --font-display:  "Bebas Neue", sans-serif;
   --font-mono:     "JetBrains Mono", monospace;
-
-  /* ── DARK MODE COLORS (default) ── */
-  --color-background:           #0A0A0A;
-  --color-foreground:           #F0EDE6;
-  --color-card:                 #0F0F0F;
-  --color-card-foreground:      #F0EDE6;
-  --color-primary:              #CAEF45;
-  --color-primary-foreground:   #0A0A0A;
-  --color-secondary:            #1A1A1A;
-  --color-secondary-foreground: #F0EDE6;
-  --color-muted:                #1A1A1A;
-  --color-muted-foreground:     #55554E;
-  --color-accent:               #CAEF45;
-  --color-accent-foreground:    #0A0A0A;
-  --color-border:               #242424;
-  --color-input:                #1A1A1A;
-  --color-ring:                 #CAEF45;
-  --color-destructive:          #EF4444;
-
-  /* ── BRAND ── */
-  --color-lime:         #CAEF45;
-  --color-obsidian:     #0A0A0A;
-  --color-dark-base:    #0A0A0A;
-  --color-dark-surface: #111111;
-  --color-dark-raised:  #181818;
-
-  /* ── RADIUS ── */
   --radius: 0rem;
+
+  /* Point Tailwind's color utilities at your CSS vars */
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-border:               var(--border);
+  --color-input:                var(--input);
+  --color-ring:                 var(--ring);
+  --color-destructive:          var(--destructive);
+  --color-lime:                 var(--lime);
 }
 
-/* ── LIGHT MODE ── */
+/* ══════════════════════════════════════════
+   DARK MODE — default
+   These are plain CSS vars, NOT @theme.
+   Tailwind @theme above points at these.
+══════════════════════════════════════════ */
+:root {
+  --background:           #0A0A0A;
+  --foreground:           #F0EDE6;
+  --card:                 #0F0F0F;
+  --card-foreground:      #F0EDE6;
+  --primary:              #CAEF45;
+  --primary-foreground:   #0A0A0A;
+  --secondary:            #1A1A1A;
+  --secondary-foreground: #F0EDE6;
+  --muted:                #1A1A1A;
+  --muted-foreground:     #55554E;
+  --accent:               #CAEF45;
+  --accent-foreground:    #0A0A0A;
+  --border:               #242424;
+  --input:                #1A1A1A;
+  --ring:                 #CAEF45;
+  --destructive:          #EF4444;
+  --lime:                 #CAEF45;
+
+  /* Nav */
+  --lime-glow:     rgba(202,239,69,0.35);
+  --lime-soft:     rgba(202,239,69,0.12);
+  --bg-nav:        rgba(10,10,10,0.85);
+  --border-nav:    rgba(202,239,69,0.12);
+  --shadow-nav:    0 8px 40px rgba(0,0,0,0.6);
+  --bg-toggle:     rgba(255,255,255,0.05);
+  --border-toggle: rgba(255,255,255,0.08);
+}
+
+/* ══════════════════════════════════════════
+   LIGHT MODE — html.light
+   Higher specificity than :root so it wins
+   in ALL environments including production.
+══════════════════════════════════════════ */
 :root.light {
-  --color-background:           #F7F5F0;
-  --color-foreground:           #0E0D0B;
-  --color-card:                 #FFFFFF;
-  --color-card-foreground:      #0E0D0B;
-  --color-primary:              #7AB800;
-  --color-primary-foreground:   #FFFFFF;
-  --color-secondary:            #EFEFEB;
-  --color-secondary-foreground: #0E0D0B;
-  --color-muted:                #EFEFEB;
-  --color-muted-foreground:     #888880;
-  --color-accent:               #7AB800;
-  --color-accent-foreground:    #FFFFFF;
-  --color-border:               rgba(0,0,0,0.08);
-  --color-input:                #EFEFEB;
-  --color-ring:                 #7AB800;
-  --color-destructive:          #DC2626;
+  --background:           #F7F5F0;
+  --foreground:           #0E0D0B;
+  --card:                 #FFFFFF;
+  --card-foreground:      #0E0D0B;
+  --primary:              #7AB800;
+  --primary-foreground:   #FFFFFF;
+  --secondary:            #EFEFEB;
+  --secondary-foreground: #0E0D0B;
+  --muted:                #EFEFEB;
+  --muted-foreground:     #888880;
+  --accent:               #7AB800;
+  --accent-foreground:    #FFFFFF;
+  --border:               rgba(0,0,0,0.08);
+  --input:                #EFEFEB;
+  --ring:                 #7AB800;
+  --destructive:          #DC2626;
+  --lime:                 #7AB800;
+
+  /* Nav */
+  --lime-glow:     rgba(122,184,0,0.25);
+  --lime-soft:     rgba(122,184,0,0.1);
+  --bg-nav:        rgba(247,245,240,0.9);
+  --border-nav:    rgba(0,0,0,0.08);
+  --shadow-nav:    0 8px 40px rgba(0,0,0,0.08);
+  --bg-toggle:     rgba(0,0,0,0.04);
+  --border-toggle: rgba(0,0,0,0.08);
 }
 
 /* ── BASE ── */
@@ -63,57 +103,26 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border-color: var(--color-border);
+    border-color: var(--border);
   }
 
   html, body, #root {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--background);
+    color: var(--foreground);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
     font-family: var(--font-body);
-    color: var(--color-foreground);
   }
 
-  /* Crosshair cursor */
   * { cursor: crosshair; }
   a, button, [role="button"] { cursor: crosshair; }
 
-  /* Scrollbar */
-  ::-webkit-scrollbar { width: 3px; }
-  ::-webkit-scrollbar-track { background: var(--color-background); }
-  ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
-}
-
-
-/* ── NAV VARS ── */
-:root {
-  --lime-glow: rgba(202,239,69,0.35);
-  --lime-soft: rgba(202,239,69,0.12);
-}
-
-/* dark nav */
-:root,
-.dark {
-  --bg-nav:        rgba(10,10,10,0.85);
-  --border-nav:    rgba(202,239,69,0.12);
-  --shadow-nav:    0 8px 40px rgba(0,0,0,0.6);
-  --bg-toggle:     rgba(255,255,255,0.05);
-  --border-toggle: rgba(255,255,255,0.08);
-}
-
-/* light nav */
-:root.light {
-  --bg-nav:        rgba(247,245,240,0.9);
-  --border-nav:    rgba(0,0,0,0.08);
-  --shadow-nav:    0 8px 40px rgba(0,0,0,0.08);
-  --bg-toggle:     rgba(0,0,0,0.04);
-  --border-toggle: rgba(0,0,0,0.08);
-  --lime-glow:     rgba(122,184,0,0.25);
-  --lime-soft:     rgba(122,184,0,0.1);
+  ::-webkit-scrollbar       { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--background); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 }
 
 /* ── UTILITIES ── */
@@ -145,9 +154,9 @@
 /* ── COMPONENTS ── */
 @layer components {
   .sharpman-btn {
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--primary);
     background-color: transparent;
-    color: var(--color-primary);
+    color: var(--primary);
     font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -157,9 +166,9 @@
   }
 
   .sharpman-btn:hover {
-    background-color: var(--color-primary);
-    color: var(--color-primary-foreground);
-    box-shadow: 0 0 20px var(--color-primary);
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: 0 0 20px var(--primary);
   }
 }
 
