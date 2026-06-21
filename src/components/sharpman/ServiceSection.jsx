@@ -103,7 +103,7 @@ export default function ServicesSection() {
 
         <div className="hidden lg:block">
           <div
-            className="relative w-44 h-24 rounded-2xl overflow-hidden flex-shrink-0 border border-border"
+            className="relative w-44 h-24 rounded-2xl overflow-hidden shrink-0 border border-border"
             style={{ boxShadow: "0 0 28px rgba(202,239,69,0.08)" }}
           >
             <img
@@ -135,7 +135,7 @@ export default function ServicesSection() {
       >
         <div className="flex items-center gap-4">
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary"
+            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-primary"
             style={{ boxShadow: "0 0 18px rgba(202,239,69,0.4)" }}
           >
             <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
@@ -158,7 +158,7 @@ export default function ServicesSection() {
 
         <a
           href="mailto:buildwithsharpman@gmail.com"
-          className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-3.5 rounded-xl text-primary-foreground bg-primary flex-shrink-0 hover:brightness-105 transition-all duration-200"
+          className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-3.5 rounded-xl text-primary-foreground bg-primary shrink-0 hover:brightness-105 transition-all duration-200"
           style={{ boxShadow: "0 0 22px rgba(202,239,69,0.3)" }}
         >
           START YOUR PROJECT →

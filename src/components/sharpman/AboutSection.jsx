@@ -104,14 +104,14 @@ export default function AboutSection() {
             <div className="row-span-2 rounded-3xl overflow-hidden">
               <img
                 src={IMGS[0]}
-                alt="workspace"
+                alt="Modern workspace setup — Sharpman digital studio"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="rounded-3xl overflow-hidden">
               <img
                 src={IMGS[1]}
-                alt="design"
+                alt="Web design and development process"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -119,14 +119,14 @@ export default function AboutSection() {
               <div className="rounded-2xl overflow-hidden">
                 <img
                   src={IMGS[2]}
-                  alt="code"
+                  alt="Coding and development — clean code workflow"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden">
                 <img
                   src={IMGS[3]}
-                  alt="architecture"
+                  alt="Digital architecture and technology solutions"
                   className="w-full h-full object-cover"
                 />
               </div>

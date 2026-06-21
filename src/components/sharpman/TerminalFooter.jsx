@@ -79,7 +79,7 @@ export default function TerminalFooter() {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-8">
                 <div
-                  className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden"
+                  className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 overflow-hidden"
                   style={{
                     background: "linear-gradient(135deg, #1a1a00, #0a0a00)",
                     border: "1px solid rgba(202,239,69,0.25)",
@@ -121,9 +121,9 @@ export default function TerminalFooter() {
             </div>
 
             {/* Right — CTA card */}
-            <div className="flex-shrink-0 w-full lg:w-auto">
+            <div className="shrink-0 w-full lg:w-auto">
               <div
-                className="rounded-3xl p-8 lg:p-10 bg-background border border-border min-w-[290px]"
+                className="rounded-3xl p-8 lg:p-10 bg-background border border-border min-w-72.5"
                 style={{ boxShadow: "0 40px 80px rgba(0,0,0,0.6)" }}
               >
                 <div className="font-mono text-[10px] uppercase tracking-[3px] mb-3 text-primary">

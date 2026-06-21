@@ -12,13 +12,14 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-clip">
       <Navbar />
-      {/* <ScrollProgress /> */}
-      <HeroSection />
-      <MarqueeSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <ContactSection />
+      <main>
+        <HeroSection />
+        <MarqueeSection />
+        <AboutSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
       <TerminalFooter />
     </div>
   );

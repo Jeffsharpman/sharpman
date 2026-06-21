@@ -18,7 +18,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2.5">
           <div
-            className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden"
+            className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 overflow-hidden"
             style={{
               background: "linear-gradient(135deg, #1a1a00, #0a0a00)",
               border: "1px solid rgba(202,239,69,0.25)",
@@ -39,7 +39,7 @@ export default function Navbar() {
         </div>
 
         {/* Nav links */}
-        <nav className="hidden md:flex items-center gap-0.5">
+        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-0.5">
           {links.map((link) => (
             <a
               key={link.label}

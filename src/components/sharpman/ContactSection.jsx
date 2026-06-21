@@ -12,8 +12,8 @@ export default function ContactSection() {
       className="relative overflow-hidden px-6 md:px-10 lg:px-20 py-24 md:py-32 bg-background"
     >
       {/* Glow blobs */}
-      <div className="absolute bottom-0 left-1/3 w-[500px] h-[400px] rounded-full blur-[130px] pointer-events-none bg-primary/4" />
-      <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[100px] pointer-events-none bg-primary/3" />
+      <div className="absolute bottom-0 left-1/3 w-125 h-100 rounded-full blur-[130px] pointer-events-none bg-primary/4" />
+      <div className="absolute top-0 right-0 w-75 h-75 rounded-full blur-[100px] pointer-events-none bg-primary/3" />
 
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-start max-w-6xl mx-auto relative z-10">
         {/* LEFT */}
