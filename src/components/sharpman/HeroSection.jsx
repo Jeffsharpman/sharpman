@@ -1,25 +1,22 @@
-const HERO_IMG = "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/079b2c1e8_file_00000000be7871f5ab66d8ce4c3ad2b3.png";
+// HeroSection.jsx
+const HERO_IMG =
+  "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/079b2c1e8_file_00000000be7871f5ab66d8ce4c3ad2b3.png";
 
-const avatars = [
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face",
-];
-
-const stats = [
-  { v: "150+", l: "Projects" },
-  { v: "98%",  l: "Satisfaction" },
-  { v: "5+",   l: "Yrs Exp." },
+const pills = [
+  { v: "FULL STACK", l: "Developer" },
+  { v: "LAGOS", l: "Nigeria" },
+  { v: "OPEN", l: "To Work" },
 ];
 
 export default function HeroSection() {
   return (
     <section className="min-h-screen flex flex-col relative overflow-hidden pt-20 bg-background">
-
       {/* Dot grid */}
-      <div className="absolute inset-0 pointer-events-none"
+      <div
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(202,239,69,0.12) 1px, transparent 1px)",
+          backgroundImage:
+            "radial-gradient(circle, rgba(202,239,69,0.12) 1px, transparent 1px)",
           backgroundSize: "44px 44px",
         }}
       />
@@ -29,22 +26,29 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-1/4 w-[340px] h-[340px] rounded-full blur-[100px] pointer-events-none bg-primary/4" />
 
       <div className="flex-1 flex flex-col lg:flex-row items-center px-6 md:px-10 lg:px-16 pt-4 pb-6 gap-8 relative">
-
         {/* LEFT */}
         <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">
-
           {/* Badge */}
           <div className="inline-flex items-center gap-2 mb-7 px-3.5 py-2 rounded-full bg-primary/7 border border-primary/20 w-fit">
             <span className="w-1.5 h-1.5 bg-primary rounded-full" />
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
-              Digital Solutions That Deliver
+              Digital Solutions · Ikorodu, Lagos NG
             </span>
           </div>
 
           {/* Heading */}
-          <h1 className="font-display uppercase leading-[0.86] mb-6" style={{ fontSize: "clamp(3.2rem, 9vw, 7.5rem)" }}>
+          <h1
+            className="font-display uppercase leading-[0.86] mb-6"
+            style={{ fontSize: "clamp(3.2rem, 9vw, 7.5rem)" }}
+          >
             <span className="block text-foreground">EXPLORE</span>
-            <span className="block text-primary" style={{ textShadow: "0 0 50px rgba(202,239,69,0.5), 0 0 100px rgba(202,239,69,0.2)" }}>
+            <span
+              className="block text-primary"
+              style={{
+                textShadow:
+                  "0 0 50px rgba(202,239,69,0.5), 0 0 100px rgba(202,239,69,0.2)",
+              }}
+            >
               DIGITAL
             </span>
             <span className="block text-foreground">POSSIBILITIES</span>
@@ -55,45 +59,54 @@ export default function HeroSection() {
             Websites, web apps, and digital experiences built for{" "}
             <span className="text-primary font-medium">growth</span>,{" "}
             <span className="text-primary font-medium">performance</span>, and{" "}
-            <span className="text-primary font-medium">impact</span>.
+            <span className="text-primary font-medium">impact</span> — by
+            Oyenuga Joshua.
           </p>
 
           {/* CTA row */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
-            
-           <a   href="mailto:buildwithsharpman@gmail.com"
+            <a
+              href="mailto:buildwithsharpman@gmail.com"
               className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-4 rounded-2xl text-primary-foreground bg-primary hover:brightness-105 transition-all duration-200"
-              style={{ boxShadow: "0 0 36px rgba(202,239,69,0.45), 0 4px 20px rgba(202,239,69,0.2)" }}
+              style={{
+                boxShadow:
+                  "0 0 36px rgba(202,239,69,0.45), 0 4px 20px rgba(202,239,69,0.2)",
+              }}
             >
               START YOUR PROJECT
               <span className="w-6 h-6 bg-primary-foreground rounded-full flex items-center justify-center">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M1 9L9 1M9 1H3M9 1V7" stroke="#CAEF45" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path
+                    d="M1 9L9 1M9 1H3M9 1V7"
+                    stroke="#CAEF45"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </span>
             </a>
 
-            {/* Avatars */}
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {avatars.map((src, i) => (
-                  <img key={i} src={src} alt="client"
-                    className="w-8 h-8 rounded-full object-cover border-2 border-background" />
-                ))}
-              </div>
-              <div>
-                <div className="font-display text-sm leading-tight text-foreground">200+ Clients</div>
-                <div className="font-mono text-[10px] text-muted-foreground">Trust Sharpman</div>
-              </div>
-            </div>
+            <a
+              href="#projects"
+              className="font-mono text-xs uppercase tracking-[2px] text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              View my work →
+            </a>
           </div>
 
-          {/* Stat pills */}
+          {/* Honest pills */}
           <div className="flex gap-3 flex-wrap">
-            {stats.map((s) => (
-              <div key={s.l} className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary border border-border">
-                <span className="font-display text-primary text-xl leading-none">{s.v}</span>
-                <span className="font-mono text-[10px] uppercase tracking-[1px] text-muted-foreground">{s.l}</span>
+            {pills.map((s) => (
+              <div
+                key={s.l}
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary border border-border"
+              >
+                <span className="font-display text-primary text-base leading-none">
+                  {s.v}
+                </span>
+                <span className="font-mono text-[10px] uppercase tracking-[1px] text-muted-foreground">
+                  {s.l}
+                </span>
               </div>
             ))}
           </div>
@@ -102,44 +115,82 @@ export default function HeroSection() {
         {/* RIGHT */}
         <div className="flex-1 flex flex-col items-center lg:items-end gap-4 relative z-10 w-full lg:w-auto">
           <div className="relative flex items-center justify-center">
-
             {/* Outer ring */}
-            <div className="absolute w-[380px] h-[380px] sm:w-[430px] sm:h-[430px] rounded-full border border-primary/50"
-              style={{ boxShadow: "0 0 50px rgba(202,239,69,0.25), inset 0 0 50px rgba(202,239,69,0.04)" }}
+            <div
+              className="absolute w-[380px] h-[380px] sm:w-[430px] sm:h-[430px] rounded-full border border-primary/50"
+              style={{
+                boxShadow:
+                  "0 0 50px rgba(202,239,69,0.25), inset 0 0 50px rgba(202,239,69,0.04)",
+              }}
             />
 
             {/* Glow disc */}
             <div className="absolute w-[380px] h-[380px] sm:w-[430px] sm:h-[430px] rounded-full blur-2xl bg-primary/6" />
 
             {/* Floating badge — top left */}
-            <div className="absolute -top-2 -left-6 z-20 rounded-2xl px-3 py-2 bg-card border border-primary/30"
-              style={{ boxShadow: "0 0 20px rgba(202,239,69,0.15)" }}>
-              <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">Clean Code</div>
-              <div className="font-display text-sm leading-tight text-foreground">SECURE</div>
+            <div
+              className="absolute -top-2 -left-6 z-20 rounded-2xl px-3 py-2 bg-card border border-primary/30"
+              style={{ boxShadow: "0 0 20px rgba(202,239,69,0.15)" }}
+            >
+              <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">
+                Clean Code
+              </div>
+              <div className="font-display text-sm leading-tight text-foreground">
+                PRECISE
+              </div>
             </div>
 
             {/* Floating badge — bottom right */}
-            <div className="absolute -bottom-2 -right-6 z-20 rounded-2xl px-3 py-2 bg-card border border-primary/30"
-              style={{ boxShadow: "0 0 20px rgba(202,239,69,0.15)" }}>
-              <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">Fast Delivery</div>
-              <div className="font-display text-sm leading-tight text-foreground">ON TIME</div>
+            <div
+              className="absolute -bottom-2 -right-6 z-20 rounded-2xl px-3 py-2 bg-card border border-primary/30"
+              style={{ boxShadow: "0 0 20px rgba(202,239,69,0.15)" }}
+            >
+              <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">
+                Available Now
+              </div>
+              <div className="font-display text-sm leading-tight text-foreground">
+                REMOTE
+              </div>
             </div>
 
             {/* Circle image */}
             <div className="w-[330px] h-[330px] sm:w-[390px] sm:h-[390px] rounded-full overflow-hidden relative">
-              <img src={HERO_IMG} alt="Sharpman" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 rounded-full"
-                style={{ background: "radial-gradient(circle at center, transparent 50%, #0A0A0A 100%)" }} />
+              <img
+                src={HERO_IMG}
+                alt="Oyenuga Joshua — Sharpman"
+                className="w-full h-full object-cover"
+              />
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background:
+                    "radial-gradient(circle at center, transparent 50%, #0A0A0A 100%)",
+                }}
+              />
             </div>
           </div>
 
           {/* Code snippet */}
-          <div className="rounded-2xl px-5 py-4 font-mono text-[11px] self-start lg:self-auto max-w-[220px] bg-secondary border border-border"
-            style={{ boxShadow: "0 0 24px rgba(202,239,69,0.06)" }}>
+          <div
+            className="rounded-2xl px-5 py-4 font-mono text-[11px] self-start lg:self-auto max-w-[220px] bg-secondary border border-border"
+            style={{ boxShadow: "0 0 24px rgba(202,239,69,0.06)" }}
+          >
             <div className="mb-1 text-muted-foreground">{"// sharpman()"}</div>
-            <div><span className="text-primary">let</span> <span className="text-foreground">ideas</span> <span className="text-muted-foreground">= create();</span></div>
-            <div><span className="text-primary">let</span> <span className="text-foreground">code</span> <span className="text-muted-foreground">= build();</span></div>
-            <div><span className="text-primary">return</span> <span className="text-foreground">success</span><span className="text-muted-foreground">;</span></div>
+            <div>
+              <span className="text-primary">let</span>{" "}
+              <span className="text-foreground">ideas</span>{" "}
+              <span className="text-muted-foreground">= create();</span>
+            </div>
+            <div>
+              <span className="text-primary">let</span>{" "}
+              <span className="text-foreground">code</span>{" "}
+              <span className="text-muted-foreground">= build();</span>
+            </div>
+            <div>
+              <span className="text-primary">return</span>{" "}
+              <span className="text-foreground">success</span>
+              <span className="text-muted-foreground">;</span>
+            </div>
           </div>
         </div>
       </div>
@@ -148,10 +199,18 @@ export default function HeroSection() {
       <div className="flex justify-center pb-6 gap-2 items-center">
         <div className="w-4 h-4 text-muted-foreground">
           <svg viewBox="0 0 16 16" fill="none">
-            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path
+              d="M8 3v10M4 9l4 4 4-4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </div>
-        <span className="font-mono text-[10px] uppercase tracking-[3px] text-muted-foreground">Scroll to explore</span>
+        <span className="font-mono text-[10px] uppercase tracking-[3px] text-muted-foreground">
+          Scroll to explore
+        </span>
       </div>
     </section>
   );

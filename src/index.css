@@ -1,32 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 /* ── KEEP @theme ONLY for non-color tokens ── */
 @theme {
-  --font-heading:  "Bebas Neue", sans-serif;
-  --font-body:     "JetBrains Mono", monospace;
-  --font-display:  "Bebas Neue", sans-serif;
-  --font-mono:     "JetBrains Mono", monospace;
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-body: "JetBrains Mono", monospace;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --radius: 0rem;
 
   /* Point Tailwind's color utilities at your CSS vars */
-  --color-background:           var(--background);
-  --color-foreground:           var(--foreground);
-  --color-card:                 var(--card);
-  --color-card-foreground:      var(--card-foreground);
-  --color-primary:              var(--primary);
-  --color-primary-foreground:   var(--primary-foreground);
-  --color-secondary:            var(--secondary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted:                var(--muted);
-  --color-muted-foreground:     var(--muted-foreground);
-  --color-accent:               var(--accent);
-  --color-accent-foreground:    var(--accent-foreground);
-  --color-border:               var(--border);
-  --color-input:                var(--input);
-  --color-ring:                 var(--ring);
-  --color-destructive:          var(--destructive);
-  --color-lime:                 var(--lime);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-lime: var(--lime);
 }
 
 /* ══════════════════════════════════════════
@@ -35,32 +35,32 @@
    Tailwind @theme above points at these.
 ══════════════════════════════════════════ */
 :root {
-  --background:           #0A0A0A;
-  --foreground:           #F0EDE6;
-  --card:                 #0F0F0F;
-  --card-foreground:      #F0EDE6;
-  --primary:              #CAEF45;
-  --primary-foreground:   #0A0A0A;
-  --secondary:            #1A1A1A;
-  --secondary-foreground: #F0EDE6;
-  --muted:                #1A1A1A;
-  --muted-foreground:     #55554E;
-  --accent:               #CAEF45;
-  --accent-foreground:    #0A0A0A;
-  --border:               #242424;
-  --input:                #1A1A1A;
-  --ring:                 #CAEF45;
-  --destructive:          #EF4444;
-  --lime:                 #CAEF45;
+  --background: #0a0a0a;
+  --foreground: #f0ede6;
+  --card: #0f0f0f;
+  --card-foreground: #f0ede6;
+  --primary: #caef45;
+  --primary-foreground: #0a0a0a;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #f0ede6;
+  --muted: #1a1a1a;
+  --muted-foreground: #55554e;
+  --accent: #caef45;
+  --accent-foreground: #0a0a0a;
+  --border: #242424;
+  --input: #1a1a1a;
+  --ring: #caef45;
+  --destructive: #ef4444;
+  --lime: #caef45;
 
   /* Nav */
-  --lime-glow:     rgba(202,239,69,0.35);
-  --lime-soft:     rgba(202,239,69,0.12);
-  --bg-nav:        rgba(10,10,10,0.85);
-  --border-nav:    rgba(202,239,69,0.12);
-  --shadow-nav:    0 8px 40px rgba(0,0,0,0.6);
-  --bg-toggle:     rgba(255,255,255,0.05);
-  --border-toggle: rgba(255,255,255,0.08);
+  --lime-glow: rgba(202, 239, 69, 0.35);
+  --lime-soft: rgba(202, 239, 69, 0.12);
+  --bg-nav: rgba(10, 10, 10, 0.85);
+  --border-nav: rgba(202, 239, 69, 0.12);
+  --shadow-nav: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --bg-toggle: rgba(255, 255, 255, 0.05);
+  --border-toggle: rgba(255, 255, 255, 0.08);
 }
 
 /* ══════════════════════════════════════════
@@ -69,73 +69,94 @@
    in ALL environments including production.
 ══════════════════════════════════════════ */
 :root.light {
-  --background:           #F7F5F0;
-  --foreground:           #0E0D0B;
-  --card:                 #FFFFFF;
-  --card-foreground:      #0E0D0B;
-  --primary:              #7AB800;
-  --primary-foreground:   #FFFFFF;
-  --secondary:            #EFEFEB;
-  --secondary-foreground: #0E0D0B;
-  --muted:                #EFEFEB;
-  --muted-foreground:     #888880;
-  --accent:               #7AB800;
-  --accent-foreground:    #FFFFFF;
-  --border:               rgba(0,0,0,0.08);
-  --input:                #EFEFEB;
-  --ring:                 #7AB800;
-  --destructive:          #DC2626;
-  --lime:                 #7AB800;
+  --background: #f7f5f0;
+  --foreground: #0e0d0b;
+  --card: #ffffff;
+  --card-foreground: #0e0d0b;
+  --primary: #7ab800;
+  --primary-foreground: #ffffff;
+  --secondary: #efefeb;
+  --secondary-foreground: #0e0d0b;
+  --muted: #efefeb;
+  --muted-foreground: #888880;
+  --accent: #7ab800;
+  --accent-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.08);
+  --input: #efefeb;
+  --ring: #7ab800;
+  --destructive: #dc2626;
+  --lime: #7ab800;
 
   /* Nav */
-  --lime-glow:     rgba(122,184,0,0.25);
-  --lime-soft:     rgba(122,184,0,0.1);
-  --bg-nav:        rgba(247,245,240,0.9);
-  --border-nav:    rgba(0,0,0,0.08);
-  --shadow-nav:    0 8px 40px rgba(0,0,0,0.08);
-  --bg-toggle:     rgba(0,0,0,0.04);
-  --border-toggle: rgba(0,0,0,0.08);
+  --lime-glow: rgba(122, 184, 0, 0.25);
+  --lime-soft: rgba(122, 184, 0, 0.1);
+  --bg-nav: rgba(247, 245, 240, 0.9);
+  --border-nav: rgba(0, 0, 0, 0.08);
+  --shadow-nav: 0 8px 40px rgba(0, 0, 0, 0.08);
+  --bg-toggle: rgba(0, 0, 0, 0.04);
+  --border-toggle: rgba(0, 0, 0, 0.08);
 }
 
 /* ── BASE ── */
 @layer base {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     border-color: var(--border);
   }
 
-  html, body, #root {
+  html,
+  body,
+  #root {
     background-color: var(--background);
     color: var(--foreground);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   body {
     font-family: var(--font-body);
   }
 
-  * { cursor: crosshair; }
-  a, button, [role="button"] { cursor: crosshair; }
+  * {
+    cursor: crosshair;
+  }
+  a,
+  button,
+  [role="button"] {
+    cursor: crosshair;
+  }
 
-  ::-webkit-scrollbar       { width: 3px; }
-  ::-webkit-scrollbar-track { background: var(--background); }
-  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
 }
 
 /* ── UTILITIES ── */
 @layer utilities {
   .hero-heading {
-    background: linear-gradient(180deg, #3A3A38 0%, #F0EDE6 100%);
+    background: linear-gradient(180deg, #3a3a38 0%, #f0ede6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   :root.light .hero-heading {
-    background: linear-gradient(180deg, #555550 0%, #0E0D0B 100%);
+    background: linear-gradient(180deg, #555550 0%, #0e0d0b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -174,8 +195,12 @@
 
 /* ── ANIMATIONS ── */
 @keyframes marquee {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {

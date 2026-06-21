@@ -1,7 +1,8 @@
-const stats = [
-  { value: "150+", label: "PROJECTS" },
-  { value: "98%", label: "SATISFACTION" },
-  { value: "5+", label: "YEARS EXP." },
+// ContactSection.jsx  — fake stats removed, fake domain removed
+const highlights = [
+  { value: "LAGOS", label: "NIGERIA" },
+  { value: "REMOTE", label: "AVAILABLE" },
+  { value: "OPEN", label: "TO WORK" },
 ];
 
 export default function ContactSection() {
@@ -41,12 +42,12 @@ export default function ContactSection() {
             <span className="block">TOGETHER.</span>
           </h2>
 
-          {/* Stats */}
+          {/* Honest highlights */}
           <div className="flex gap-8 mb-10">
-            {stats.map((s) => (
+            {highlights.map((s) => (
               <div key={s.label}>
                 <div
-                  className="font-display text-primary text-4xl leading-none mb-1"
+                  className="font-display text-primary text-3xl leading-none mb-1"
                   style={{ textShadow: "0 0 24px rgba(202,239,69,0.4)" }}
                 >
                   {s.value}
@@ -80,8 +81,9 @@ export default function ContactSection() {
               </span>
               buildwithsharpman@gmail.com
             </a>
+
             <a
-              href="https://www.sharpman.dev"
+              href="https://wa.me/2349070281022"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -96,12 +98,10 @@ export default function ContactSection() {
                   strokeWidth="1.8"
                   strokeLinecap="round"
                 >
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="2" y1="12" x2="22" y2="12" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                 </svg>
               </span>
-              www.sharpman.dev
+              +234 907 028 1022 · WhatsApp
             </a>
           </div>
         </div>
@@ -142,10 +142,10 @@ export default function ContactSection() {
 
               <div>
                 <label className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground">
-                  YOUR VISION
+                  TELL ME ABOUT YOUR PROJECT
                 </label>
                 <textarea
-                  placeholder="Tell us about your project..."
+                  placeholder="What are you looking to build?"
                   rows={4}
                   className="w-full rounded-xl px-4 py-3 font-mono text-sm outline-none resize-none bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:border-primary/50 transition-all duration-200"
                 />
@@ -156,7 +156,7 @@ export default function ContactSection() {
                 className="w-full flex items-center justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] text-primary-foreground py-4 rounded-xl mt-1 bg-primary hover:brightness-105 active:scale-[0.98] transition-all duration-200"
                 style={{ boxShadow: "0 0 30px rgba(202,239,69,0.35)" }}
               >
-                SEND BRIEF
+                SEND MESSAGE
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M2 8h12M8 3l5 5-5 5"

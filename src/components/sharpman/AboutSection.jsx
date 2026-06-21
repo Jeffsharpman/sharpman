@@ -1,3 +1,4 @@
+// AboutSection.jsx
 const IMGS = [
   "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=700&fit=crop",
   "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=350&fit=crop",
@@ -16,11 +17,11 @@ const features = [
   },
   {
     label: "RESPONSIVE DESIGN",
-    desc: "Perfect on every device. Mobile-first excellence.",
+    desc: "Perfect on every device. Mobile-first by default.",
   },
   {
     label: "GROWTH FOCUSED",
-    desc: "Built for conversions. Data-driven results.",
+    desc: "Built for real-world impact. Technology that serves your goals.",
   },
 ];
 
@@ -63,10 +64,20 @@ export default function AboutSection() {
             </span>
           </h2>
 
+          <p className="font-mono font-light text-sm leading-relaxed mb-4 text-muted-foreground">
+            I'm{" "}
+            <span className="text-foreground font-medium">Oyenuga Joshua</span>{" "}
+            — a web developer and digital solutions builder based in{" "}
+            <span className="text-primary">Ikorodu, Lagos, Nigeria</span>.
+          </p>
+
           <p className="font-mono font-light text-sm leading-relaxed mb-10 text-muted-foreground">
-            We design and develop digital experiences that blend creativity,
-            technology, and strategy. Our work isn't just about pixels — it's
-            about <span className="text-primary">purpose</span>.
+            I design and build digital experiences that blend creativity,
+            technology, and strategy. My work isn't just about pixels — it's
+            about <span className="text-primary">purpose</span>. I help
+            businesses and individuals establish a stronger presence online
+            through modern websites, web applications, and technology-driven
+            solutions.
           </p>
 
           <div className="grid grid-cols-2 gap-x-6 gap-y-6">
