@@ -1,6 +1,7 @@
 // HeroSection.jsx
-const HERO_IMG =
-  "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/079b2c1e8_file_00000000be7871f5ab66d8ce4c3ad2b3.png";
+import HERO_IMG from "../../assets/hero.png";
+// const HERO_IMG =
+//   "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/079b2c1e8_file_00000000be7871f5ab66d8ce4c3ad2b3.png";
 
 const pills = [
   { v: "FULL STACK", l: "Developer" },
@@ -86,11 +87,15 @@ export default function HeroSection() {
               </span>
             </a>
 
+            {/* Secondary CTA - Futuristic Link */}
             <a
               href="#projects"
-              className="font-mono text-xs uppercase tracking-[2px] text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="group font-mono text-xs uppercase tracking-[2.5px] px-6 py-4 rounded-2xl border border-border hover:border-primary/60 text-muted-foreground hover:text-primary flex items-center gap-2 transition-all duration-300"
             >
-              View my work →
+              VIEW MY WORK
+              <span className="group-hover:translate-x-1 transition-transform">
+                →
+              </span>
             </a>
           </div>
 

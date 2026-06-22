@@ -1,6 +1,6 @@
-import LogoImg from "../../assets/logo.png";
+import LogoImg from "../../assets/sharpman-logo.png";
 import { useTheme } from "../lib/ThemeContext";
-// import { motion } from "motion/react";
+import { motion } from "react";
 
 const links = [
   { label: "Home", href: "#" },
@@ -16,30 +16,59 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
       <div className="flex items-center justify-between w-full max-w-4xl px-5 py-3 rounded-2xl bg-card/90 border border-border backdrop-blur-xl shadow-2xl">
         {/* Logo */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-3">
           <div
-            className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 overflow-hidden"
+            className="relative flex items-center justify-center w-10 h-10 shrink-0 rounded-xl overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, #1a1a00, #0a0a00)",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
               border: "1px solid rgba(202,239,69,0.25)",
-              boxShadow:
-                "0 0 12px rgba(202,239,69,0.2), inset 0 0 8px rgba(202,239,69,0.05)",
+              boxShadow: `
+        0 0 16px rgba(202,239,69,0.12),
+        0 0 32px rgba(202,239,69,0.06),
+        inset 0 0 10px rgba(202,239,69,0.05)
+      `,
             }}
           >
+            {/* Subtle highlight */}
+            <div
+              className="absolute inset-0 rounded-xl"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
+              }}
+            />
+
             <img
               src={LogoImg}
               alt="Sharpman Logo"
-              className="w-5 h-5 object-contain"
-              style={{ filter: "drop-shadow(0 0 4px rgba(202,239,69,0.6))" }}
+              className="relative z-10 w-8 h-8 object-contain"
+              style={{
+                filter: `
+          drop-shadow(0 0 6px rgba(202,239,69,0.9))
+          drop-shadow(0 0 12px rgba(202,239,69,0.35))
+          brightness(1.08)
+        `,
+              }}
             />
           </div>
-          <span className="font-display tracking-[3px] text-[15px] leading-none text-primary">
+
+          <span
+            className="font-display font-semibold leading-none text-primary"
+            style={{
+              letterSpacing: "0.22em",
+              fontSize: "15px",
+            }}
+          >
             SHARPMAN
           </span>
         </div>
 
         {/* Nav links */}
-        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-0.5">
+        <nav
+          aria-label="Main navigation"
+          className="hidden md:flex items-center gap-0.5"
+        >
           {links.map((link) => (
             <a
               key={link.label}

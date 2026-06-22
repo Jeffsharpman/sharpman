@@ -1,4 +1,8 @@
 // ProjectsSection.jsx — Gridlock Studio removed, QuickGrab added, real URLs, "MY WORK"
+import IMG1 from "../../assets/project1.png";
+import IMG2 from "../../assets/project2.png";
+import IMG3 from "../../assets/project3.png";
+
 const projects = [
   {
     num: "01",
@@ -6,8 +10,8 @@ const projects = [
     category: "PERSONAL PROJECT",
     tag: "BUILD. ORGANISE. ELEVATE.",
     desc: "A task management application built with React for speed and clarity — minimal UI, intuitive workflow, built to keep you productive.",
-    image:
-      "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/23940907a_file_00000000d29071f79efe447a2b4fa74f.png",
+    image: IMG1,
+    // "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/23940907a_file_00000000d29071f79efe447a2b4fa74f.png",
     color: "#CAEF45",
     href: "https://novatodos.netlify.app/",
   },
@@ -17,8 +21,8 @@ const projects = [
     category: "PHP PROJECT",
     tag: "FOOD. ORDER. DELIVER.",
     desc: "A food ordering and e-commerce platform built with PHP. Enables businesses to accept online orders and manage their digital storefront with ease.",
-    image:
-      "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/1f4a7909b_file_00000000ded0720cb85a54a8f0a000fb.png",
+    image: IMG2,
+    // "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/1f4a7909b_file_00000000ded0720cb85a54a8f0a000fb.png",
     color: "#F0A644",
     href: "https://quickgrab.oyenugajoshua.com/",
   },
@@ -28,8 +32,8 @@ const projects = [
     category: "PORTFOLIO",
     tag: "DESIGN. CODE. ELEVATE.",
     desc: "This portfolio — a personal brand built in React to showcase my skills, projects, and services as a digital solutions developer.",
-    image:
-      "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/607f41951_file_000000008f3871f5876d900554df5424.png",
+    image: IMG3,
+    // "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/607f41951_file_000000008f3871f5876d900554df5424.png",
     color: "#5B9CF6",
     href: "https://sharpman.netlify.app/",
   },

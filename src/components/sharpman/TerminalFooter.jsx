@@ -1,5 +1,5 @@
 // TerminalFooter.jsx — correct social handles
-import LogoImg from "../../assets/logo.png";
+import LogoImg from "../../assets/sharpman-logo.png";
 
 const socials = [
   {
@@ -77,28 +77,63 @@ export default function TerminalFooter() {
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12">
             {/* Left */}
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-4 mb-8">
                 <div
-                  className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 overflow-hidden"
+                  className="relative flex items-center justify-center w-12 h-12 shrink-0 rounded-2xl overflow-hidden"
                   style={{
-                    background: "linear-gradient(135deg, #1a1a00, #0a0a00)",
+                    background:
+                      "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.18), #050505 75%)",
                     border: "1px solid rgba(202,239,69,0.25)",
-                    boxShadow:
-                      "0 0 12px rgba(202,239,69,0.2), inset 0 0 8px rgba(202,239,69,0.05)",
+                    boxShadow: `
+        0 0 20px rgba(202,239,69,0.15),
+        0 0 40px rgba(202,239,69,0.08),
+        inset 0 0 12px rgba(202,239,69,0.06)
+      `,
                   }}
                 >
+                  {/* subtle glow ring */}
+                  <div
+                    className="absolute inset-0 rounded-2xl"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
+                    }}
+                  />
+
                   <img
                     src={LogoImg}
                     alt="Sharpman Logo"
-                    className="w-5 h-5 object-contain"
+                    className="relative z-10 w-9 h-9 object-contain"
                     style={{
-                      filter: "drop-shadow(0 0 4px rgba(202,239,69,0.6))",
+                      filter: `
+          drop-shadow(0 0 6px rgba(202,239,69,0.9))
+          drop-shadow(0 0 14px rgba(202,239,69,0.4))
+          brightness(1.08)
+        `,
                     }}
                   />
                 </div>
-                <span className="font-display text-2xl tracking-[4px] text-foreground">
-                  SHARPMAN
-                </span>
+
+                <div className="flex flex-col">
+                  <span
+                    className="font-display font-semibold leading-none"
+                    style={{
+                      fontSize: "1.75rem",
+                      letterSpacing: "0.22em",
+                    }}
+                  >
+                    SHARPMAN
+                  </span>
+
+                  <span
+                    className="text-xs uppercase tracking-[0.35em]"
+                    style={{
+                      color: "rgba(202,239,69,0.75)",
+                    }}
+                  >
+                    Design. Code. Elevate.
+                  </span>
+                </div>
               </div>
 
               <h2

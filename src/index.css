@@ -4,12 +4,11 @@
 /* ── KEEP @theme ONLY for non-color tokens ── */
 @theme {
   --font-heading: "Bebas Neue", sans-serif;
-  --font-body: "JetBrains Mono", monospace;
   --font-display: "Bebas Neue", sans-serif;
+  --font-body: "JetBrains Mono", monospace;
   --font-mono: "JetBrains Mono", monospace;
-  --radius: 0rem;
+  --radius: 0.5rem; /* Slightly more modern rounded feel */
 
-  /* Point Tailwind's color utilities at your CSS vars */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -30,71 +29,64 @@
 }
 
 /* ══════════════════════════════════════════
-   DARK MODE — default
-   These are plain CSS vars, NOT @theme.
-   Tailwind @theme above points at these.
+   DARK MODE — Default (Premium Futuristic)
 ══════════════════════════════════════════ */
 :root {
   --background: #0a0a0a;
   --foreground: #f0ede6;
   --card: #0f0f0f;
   --card-foreground: #f0ede6;
-  --primary: #caef45;
+  --primary: #caef45;           /* Neon Lime Green */
   --primary-foreground: #0a0a0a;
-  --secondary: #1a1a1a;
+  --secondary: #121212;
   --secondary-foreground: #f0ede6;
   --muted: #1a1a1a;
-  --muted-foreground: #55554e;
+  --muted-foreground: #66665c;
   --accent: #caef45;
   --accent-foreground: #0a0a0a;
   --border: #242424;
   --input: #1a1a1a;
   --ring: #caef45;
-  --destructive: #ef4444;
-  --lime: #caef45;
 
-  /* Nav */
-  --lime-glow: rgba(202, 239, 69, 0.35);
-  --lime-soft: rgba(202, 239, 69, 0.12);
-  --bg-nav: rgba(10, 10, 10, 0.85);
-  --border-nav: rgba(202, 239, 69, 0.12);
-  --shadow-nav: 0 8px 40px rgba(0, 0, 0, 0.6);
-  --bg-toggle: rgba(255, 255, 255, 0.05);
-  --border-toggle: rgba(255, 255, 255, 0.08);
+  /* Sharpman Neon Glow System */
+  --lime-glow: rgba(202, 239, 69, 0.45);
+  --lime-soft: rgba(202, 239, 69, 0.15);
+  --lime-subtle: rgba(202, 239, 69, 0.08);
+  
+  --bg-nav: rgba(10, 10, 10, 0.92);
+  --border-nav: rgba(202, 239, 69, 0.18);
+  --shadow-nav: 0 10px 50px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(202, 239, 69, 0.1) inset;
+  
+  --destructive: #ef4444;
 }
 
 /* ══════════════════════════════════════════
-   LIGHT MODE — html.light
-   Higher specificity than :root so it wins
-   in ALL environments including production.
+   LIGHT MODE — Clean & Premium
 ══════════════════════════════════════════ */
 :root.light {
-  --background: #f7f5f0;
-  --foreground: #0e0d0b;
+  --background: #f8f7f2;
+  --foreground: #11110c;
   --card: #ffffff;
-  --card-foreground: #0e0d0b;
-  --primary: #7ab800;
-  --primary-foreground: #ffffff;
-  --secondary: #efefeb;
-  --secondary-foreground: #0e0d0b;
-  --muted: #efefeb;
-  --muted-foreground: #888880;
-  --accent: #7ab800;
-  --accent-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.08);
-  --input: #efefeb;
-  --ring: #7ab800;
-  --destructive: #dc2626;
-  --lime: #7ab800;
+  --card-foreground: #11110c;
+  --primary: #a3d900;           /* Brighter lime for light mode */
+  --primary-foreground: #0a0a0a;
+  --secondary: #f0ede6;
+  --secondary-foreground: #11110c;
+  --muted: #f0ede6;
+  --muted-foreground: #77776f;
+  --accent: #a3d900;
+  --accent-foreground: #0a0a0a;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: #f0ede6;
+  --ring: #a3d900;
 
-  /* Nav */
-  --lime-glow: rgba(122, 184, 0, 0.25);
-  --lime-soft: rgba(122, 184, 0, 0.1);
-  --bg-nav: rgba(247, 245, 240, 0.9);
-  --border-nav: rgba(0, 0, 0, 0.08);
-  --shadow-nav: 0 8px 40px rgba(0, 0, 0, 0.08);
-  --bg-toggle: rgba(0, 0, 0, 0.04);
-  --border-toggle: rgba(0, 0, 0, 0.08);
+  --lime-glow: rgba(163, 217, 0, 0.35);
+  --lime-soft: rgba(163, 217, 0, 0.12);
+  --lime-subtle: rgba(163, 217, 0, 0.06);
+  
+  --bg-nav: rgba(248, 247, 242, 0.95);
+  --border-nav: rgba(0, 0, 0, 0.1);
+  --shadow-nav: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* ── BASE ── */
@@ -105,7 +97,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border-color: var(--border);
   }
 
   html,
@@ -113,96 +104,133 @@
   #root {
     background-color: var(--background);
     color: var(--foreground);
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   body {
     font-family: var(--font-body);
+    line-height: 1.6;
   }
 
+  /* Futuristic Cursor */
   * {
     cursor: crosshair;
   }
-  a,
-  button,
-  [role="button"] {
-    cursor: crosshair;
+  a, button, [role="button"] {
+    cursor: pointer;
   }
 
+  /* Scrollbar - Neon Style */
   ::-webkit-scrollbar {
-    width: 3px;
+    width: 4px;
   }
   ::-webkit-scrollbar-track {
     background: var(--background);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 2px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
+    border-radius: 2px;
+    box-shadow: 0 0 6px var(--lime-glow);
   }
 }
 
-/* ── UTILITIES ── */
+/* ── TYPOGRAPHY & UTILITIES ── */
 @layer utilities {
   .hero-heading {
-    background: linear-gradient(180deg, #3a3a38 0%, #f0ede6 100%);
+    background: linear-gradient(180deg, #caef45 0%, #f0ede6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: var(--font-display);
   }
 
   :root.light .hero-heading {
-    background: linear-gradient(180deg, #555550 0%, #0e0d0b 100%);
+    background: linear-gradient(180deg, #a3d900 0%, #11110c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
+  /* Premium Neon Glow Text */
+  .neon-text {
+    text-shadow: 
+      0 0 8px var(--lime-glow),
+      0 0 20px var(--lime-glow);
+  }
+
+  /* Subtle tech grain */
   .grain::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   }
 }
 
 /* ── COMPONENTS ── */
 @layer components {
   .sharpman-btn {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 14px 32px;
     border: 1px solid var(--primary);
     background-color: transparent;
     color: var(--primary);
-    font-family: var(--font-mono);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 16px 32px;
-    transition: all 0.2s ease;
-    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
   }
 
   .sharpman-btn:hover {
     background-color: var(--primary);
     color: var(--primary-foreground);
-    box-shadow: 0 0 20px var(--primary);
+    box-shadow: 
+      0 0 25px var(--lime-glow),
+      0 0 40px var(--lime-soft);
+    transform: translateY(-1px);
+  }
+
+  /* Premium Card Style */
+  .sharpman-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
+                inset 0 0 12px var(--lime-subtle);
+  }
+}
+
+/* ── NAV SPECIFIC ENHANCEMENTS ── */
+@layer components {
+  .sharpman-nav {
+    background: var(--bg-nav);
+    border: 1px solid var(--border-nav);
+    box-shadow: var(--shadow-nav);
+    backdrop-filter: blur(20px);
   }
 }
 
 /* ── ANIMATIONS ── */
+@keyframes neon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.animate-neon {
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
-  animation: marquee 36s linear infinite;
+  animation: marquee 40s linear infinite;
 }

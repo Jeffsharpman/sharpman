@@ -1,6 +1,9 @@
 // ServicesSection.jsx — "WHAT I DO", updated service 04, removed #SHARPMANSQUAD
-const BRAND_IMG =
-  "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/010d45c8d_file_000000000d4871f7808672a67ef2bfc4.png";
+import BRAND_IMG from "../../assets/banner.png";
+import LogoImg from "../../assets/sharpman-logo.png";
+
+// const BRAND_IMG =
+//   "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/010d45c8d_file_000000000d4871f7808672a67ef2bfc4.png";
 
 const services = [
   {
@@ -134,7 +137,7 @@ export default function ServicesSection() {
         style={{ boxShadow: "0 0 50px rgba(202,239,69,0.04)" }}
       >
         <div className="flex items-center gap-4">
-          <div
+          {/* <div
             className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-primary"
             style={{ boxShadow: "0 0 18px rgba(202,239,69,0.4)" }}
           >
@@ -144,7 +147,42 @@ export default function ServicesSection() {
                 fill="#0A0A0A"
               />
             </svg>
-          </div>
+          </div> */}
+          <div
+                      className="relative flex items-center justify-center w-10 h-10 shrink-0 rounded-xl overflow-hidden"
+                      style={{
+                        background:
+                          "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
+                        border: "1px solid rgba(202,239,69,0.25)",
+                        boxShadow: `
+                  0 0 16px rgba(202,239,69,0.12),
+                  0 0 32px rgba(202,239,69,0.06),
+                  inset 0 0 10px rgba(202,239,69,0.05)
+                `,
+                      }}
+                    >
+                      {/* Subtle highlight */}
+                      <div
+                        className="absolute inset-0 rounded-xl"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
+                        }}
+                      />
+          
+                      <img
+                        src={LogoImg}
+                        alt="Sharpman Logo"
+                        className="relative z-10 w-8 h-8 object-contain"
+                        style={{
+                          filter: `
+                    drop-shadow(0 0 6px rgba(202,239,69,0.9))
+                    drop-shadow(0 0 12px rgba(202,239,69,0.35))
+                    brightness(1.08)
+                  `,
+                        }}
+                      />
+                    </div>
           <div>
             <div className="font-display text-xl leading-none text-foreground">
               LET'S BRING YOUR VISION TO LIFE
