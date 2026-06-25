@@ -234,3 +234,17 @@
 .animate-marquee {
   animation: marquee 40s linear infinite;
 }
+
+img {
+  aspect-ratio: auto;
+  content-visibility: auto; /* Optimizes rendering of off-screen elements */
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+img.loaded {
+  opacity: 1;
+}

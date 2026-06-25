@@ -1,39 +1,38 @@
 // ServicesSection.jsx — "WHAT I DO", updated service 04, removed #SHARPMANSQUAD
-import BRAND_IMG from "../../assets/banner.png";
-import LogoImg from "../../assets/sharpman-logo.png";
-
-// const BRAND_IMG =
-//   "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/010d45c8d_file_000000000d4871f7808672a67ef2bfc4.png";
+const BRAND_IMG =
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/banner.png";
+const LogoImg =
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-logo.png";
 
 const services = [
   {
     num: "01",
     name: "WEBSITES",
-    desc: "Modern, responsive business websites and landing pages built to impress and convert.",
+    desc: "Modern, responsive business websites and landing pages built to establish your online presence and convert visitors.",
     color: "#5B9CF6",
   },
   {
     num: "02",
     name: "WEB APPS",
-    desc: "Custom web applications, admin panels, dashboards and business management systems — scalable and production-ready.",
+    desc: "Custom web applications, admin dashboards, business management systems, and productivity tools — scalable and production-ready.",
     color: "#CAEF45",
   },
   {
     num: "03",
     name: "UI/UX DESIGN",
-    desc: "Clean, user-focused interfaces designed for clarity, flow, and real-world usability.",
+    desc: "Clean, user-focused interfaces that prioritise clarity, usability, and real-world flow — designed with purpose.",
     color: "#B07EF0",
   },
   {
     num: "04",
     name: "E-COMMERCE",
-    desc: "Online stores and product ordering platforms built for seamless customer experiences and business growth.",
+    desc: "Online stores and ordering platforms that digitise businesses, connect them with customers, and drive sales.",
     color: "#F0A644",
   },
   {
     num: "05",
-    name: "PORTFOLIOS",
-    desc: "Purpose-built portfolio sites for creatives, professionals, and personal brands.",
+    name: "DIGITAL SOLUTIONS", // ← was PORTFOLIOS
+    desc: "Custom business solutions built around your specific challenge — whether it's a system, a tool, or a new digital product.",
     color: "#CAEF45",
   },
 ];
@@ -137,60 +136,46 @@ export default function ServicesSection() {
         style={{ boxShadow: "0 0 50px rgba(202,239,69,0.04)" }}
       >
         <div className="flex items-center gap-4">
-          {/* <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-primary"
-            style={{ boxShadow: "0 0 18px rgba(202,239,69,0.4)" }}
-          >
-            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-              <path
-                d="M9 1L12 8H17L12 11.5L13.5 18L9 14.5L4.5 18L6 11.5L1 8H6L9 1Z"
-                fill="#0A0A0A"
-              />
-            </svg>
-          </div> */}
           <div
-                      className="relative flex items-center justify-center w-10 h-10 shrink-0 rounded-xl overflow-hidden"
-                      style={{
-                        background:
-                          "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
-                        border: "1px solid rgba(202,239,69,0.25)",
-                        boxShadow: `
+            className="relative flex items-center justify-center w-10 h-10 shrink-0 rounded-xl overflow-hidden"
+            style={{
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
+              border: "1px solid rgba(202,239,69,0.25)",
+              boxShadow: `
                   0 0 16px rgba(202,239,69,0.12),
                   0 0 32px rgba(202,239,69,0.06),
                   inset 0 0 10px rgba(202,239,69,0.05)
                 `,
-                      }}
-                    >
-                      {/* Subtle highlight */}
-                      <div
-                        className="absolute inset-0 rounded-xl"
-                        style={{
-                          background:
-                            "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
-                        }}
-                      />
-          
-                      <img
-                        src={LogoImg}
-                        alt="Sharpman Logo"
-                        className="relative z-10 w-8 h-8 object-contain"
-                        style={{
-                          filter: `
+            }}
+          >
+            {/* Subtle highlight */}
+            <div
+              className="absolute inset-0 rounded-xl"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
+              }}
+            />
+
+            <img
+              src={LogoImg}
+              alt="Sharpman Logo"
+              className="relative z-10 w-8 h-8 object-contain"
+              style={{
+                filter: `
                     drop-shadow(0 0 6px rgba(202,239,69,0.9))
                     drop-shadow(0 0 12px rgba(202,239,69,0.35))
                     brightness(1.08)
                   `,
-                        }}
-                      />
-                    </div>
-          <div>
-            <div className="font-display text-xl leading-none text-foreground">
-              LET'S BRING YOUR VISION TO LIFE
-            </div>
-            <div className="font-mono text-[11px] mt-0.5 text-muted-foreground">
-              Available for freelance & remote work ·
-              buildwithsharpman@gmail.com
-            </div>
+              }}
+            />
+          </div>
+          <div className="font-display text-xl leading-none text-foreground">
+            GOT A PROBLEM TO SOLVE?
+          </div>
+          <div className="font-mono text-[11px] mt-0.5 text-muted-foreground">
+            Available for freelance & remote work · buildwithsharpman@gmail.com
           </div>
         </div>
 

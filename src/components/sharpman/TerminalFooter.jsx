@@ -1,5 +1,6 @@
 // TerminalFooter.jsx — correct social handles
-import LogoImg from "../../assets/sharpman-logo.png";
+const LogoImg =
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-logo.png";
 
 const socials = [
   {
@@ -85,10 +86,10 @@ export default function TerminalFooter() {
                       "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.18), #050505 75%)",
                     border: "1px solid rgba(202,239,69,0.25)",
                     boxShadow: `
-        0 0 20px rgba(202,239,69,0.15),
-        0 0 40px rgba(202,239,69,0.08),
-        inset 0 0 12px rgba(202,239,69,0.06)
-      `,
+                    0 0 20px rgba(202,239,69,0.15),
+                    0 0 40px rgba(202,239,69,0.08),
+                    inset 0 0 12px rgba(202,239,69,0.06)
+                  `,
                   }}
                 >
                   {/* subtle glow ring */}
@@ -106,10 +107,10 @@ export default function TerminalFooter() {
                     className="relative z-10 w-9 h-9 object-contain"
                     style={{
                       filter: `
-          drop-shadow(0 0 6px rgba(202,239,69,0.9))
-          drop-shadow(0 0 14px rgba(202,239,69,0.4))
-          brightness(1.08)
-        `,
+            drop-shadow(0 0 6px rgba(202,239,69,0.9))
+            drop-shadow(0 0 14px rgba(202,239,69,0.4))
+            brightness(1.08)
+          `,
                     }}
                   />
                 </div>

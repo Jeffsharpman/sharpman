@@ -1,6 +1,8 @@
-import LogoImg from "../../assets/sharpman-logo.png";
+// Navbar.jsx — removed broken motion import (was never used)
 import { useTheme } from "../lib/ThemeContext";
-import { motion } from "react";
+
+const LogoImg =
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-logo.png";
 
 const links = [
   { label: "Home", href: "#" },
@@ -24,13 +26,12 @@ export default function Navbar() {
                 "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
               border: "1px solid rgba(202,239,69,0.25)",
               boxShadow: `
-        0 0 16px rgba(202,239,69,0.12),
-        0 0 32px rgba(202,239,69,0.06),
-        inset 0 0 10px rgba(202,239,69,0.05)
-      `,
+                0 0 16px rgba(202,239,69,0.12),
+                0 0 32px rgba(202,239,69,0.06),
+                inset 0 0 10px rgba(202,239,69,0.05)
+              `,
             }}
-          >
-            {/* Subtle highlight */}
+            >
             <div
               className="absolute inset-0 rounded-xl"
               style={{
@@ -38,27 +39,23 @@ export default function Navbar() {
                   "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
               }}
             />
-
-            <img
-              src={LogoImg}
-              alt="Sharpman Logo"
-              className="relative z-10 w-8 h-8 object-contain"
-              style={{
-                filter: `
-          drop-shadow(0 0 6px rgba(202,239,69,0.9))
-          drop-shadow(0 0 12px rgba(202,239,69,0.35))
-          brightness(1.08)
-        `,
-              }}
-            />
-          </div>
+              <img
+                src={LogoImg}
+                alt="Sharpman Logo"
+                className="relative z-10 w-8 h-8 object-contain"
+                style={{
+                  filter: `
+                    drop-shadow(0 0 6px rgba(202,239,69,0.9))
+                    drop-shadow(0 0 12px rgba(202,239,69,0.35))
+                    brightness(1.08)
+                  `,
+                }}
+              />
+            </div>
 
           <span
             className="font-display font-semibold leading-none text-primary"
-            style={{
-              letterSpacing: "0.22em",
-              fontSize: "15px",
-            }}
+            style={{ letterSpacing: "0.22em", fontSize: "15px" }}
           >
             SHARPMAN
           </span>
@@ -89,7 +86,6 @@ export default function Navbar() {
             className="w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-200"
           >
             {dark ? (
-              // Sun — click to go light
               <svg
                 width="13"
                 height="13"
@@ -110,7 +106,6 @@ export default function Navbar() {
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
             ) : (
-              // Moon — click to go dark
               <svg
                 width="13"
                 height="13"

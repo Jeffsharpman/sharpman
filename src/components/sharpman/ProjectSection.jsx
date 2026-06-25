@@ -1,17 +1,14 @@
-// ProjectsSection.jsx — Gridlock Studio removed, QuickGrab added, real URLs, "MY WORK"
-import IMG1 from "../../assets/project1.png";
-import IMG2 from "../../assets/project2.png";
-import IMG3 from "../../assets/project3.png";
-
+// ProjectsSection.jsx
 const projects = [
   {
     num: "01",
     name: "NOVATASK",
     category: "PERSONAL PROJECT",
     tag: "BUILD. ORGANISE. ELEVATE.",
-    desc: "A task management application built with React for speed and clarity — minimal UI, intuitive workflow, built to keep you productive.",
-    image: IMG1,
-    // "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/23940907a_file_00000000d29071f79efe447a2b4fa74f.png",
+    desc: "A task management application built with React. Designed to help users organise their work, manage priorities, and stay productive — clean UI, fast, and focused.",
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/project1.png",
+    tech: "React",
     color: "#CAEF45",
     href: "https://novatodos.netlify.app/",
   },
@@ -19,10 +16,11 @@ const projects = [
     num: "02",
     name: "QUICKGRAB",
     category: "PHP PROJECT",
-    tag: "FOOD. ORDER. DELIVER.",
-    desc: "A food ordering and e-commerce platform built with PHP. Enables businesses to accept online orders and manage their digital storefront with ease.",
-    image: IMG2,
-    // "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/1f4a7909b_file_00000000ded0720cb85a54a8f0a000fb.png",
+    tag: "FOOD. ORDER. DIGITAL.",
+    desc: "A food ordering and e-commerce platform built with PHP. QuickGrab helps businesses accept online orders and digitise their operations — connecting them with customers on the internet.",
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/project2.png",
+    tech: "PHP",
     color: "#F0A644",
     href: "https://quickgrab.oyenugajoshua.com/",
   },
@@ -31,9 +29,10 @@ const projects = [
     name: "SHARPMAN SITE",
     category: "PORTFOLIO",
     tag: "DESIGN. CODE. ELEVATE.",
-    desc: "This portfolio — a personal brand built in React to showcase my skills, projects, and services as a digital solutions developer.",
-    image: IMG3,
-    // "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/607f41951_file_000000008f3871f5876d900554df5424.png",
+    desc: "This portfolio — built in React to represent the Sharpman brand and tell the story of Oyenuga Joshua as a builder, developer, and entrepreneur.",
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/project3.png",
+    tech: "React",
     color: "#5B9CF6",
     href: "https://sharpman.netlify.app/",
   },
@@ -76,7 +75,7 @@ function ProjectCard({ project, index }) {
                     "linear-gradient(to right, transparent 55%, #0C0F08 100%)",
                 }}
               />
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 flex items-center gap-2">
                 <span
                   className="font-mono text-[10px] uppercase tracking-[3px] px-3 py-1.5 rounded-full border"
                   style={{
@@ -86,6 +85,12 @@ function ProjectCard({ project, index }) {
                   }}
                 >
                   {project.category}
+                </span>
+                <span
+                  className="font-mono text-[10px] uppercase tracking-[2px] px-2 py-1.5 rounded-full border"
+                  style={{ color: "#888", borderColor: "#333" }}
+                >
+                  {project.tech}
                 </span>
               </div>
             </div>
@@ -156,18 +161,11 @@ function ProjectCard({ project, index }) {
 
 export default function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="relative bg-background"
-      style={{ paddingBottom: "6rem" }}
-    >
-      {/* Header */}
+    <section id="projects" className="relative bg-background" style={{ paddingBottom: "6rem" }}>
       <div className="px-6 sm:px-10 md:px-16 lg:px-20 pt-20 md:pt-28 pb-8">
         <div className="flex items-center gap-2 mb-4">
           <span className="w-2 h-2 bg-primary rounded-full" />
-          <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
-            MY WORK
-          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">THINGS I'VE BUILT</span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <h2
@@ -177,14 +175,11 @@ export default function ProjectsSection() {
             PROJECTS
           </h2>
           <p className="font-mono text-sm max-w-xs text-muted-foreground">
-            Built from scratch.{" "}
-            <span className="text-primary">Shipped for real.</span>
-            <br />— Sharpman
+            Built from scratch. Shipped for real.<br />
+            <span className="text-primary">Every one solves a problem.</span>
           </p>
         </div>
       </div>
-
-      {/* Stacking cards */}
       {projects.map((project, i) => (
         <ProjectCard key={project.num} project={project} index={i} />
       ))}

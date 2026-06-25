@@ -1,10 +1,9 @@
 // HeroSection.jsx
-import HERO_IMG from "../../assets/hero.png";
-// const HERO_IMG =
-//   "https://media.base44.com/images/public/6a30604c3df093c4f7f94ba2/079b2c1e8_file_00000000be7871f5ab66d8ce4c3ad2b3.png";
+const HERO_IMG =
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png";
 
 const pills = [
-  { v: "FULL STACK", l: "Developer" },
+  { v: "BUILDER", l: "By Nature" },
   { v: "LAGOS", l: "Nigeria" },
   { v: "OPEN", l: "To Work" },
 ];
@@ -23,15 +22,15 @@ export default function HeroSection() {
       />
 
       {/* Glow blobs */}
-      <div className="absolute top-1/3 right-1/3 w-140 h-140 rounded-full blur-[140px] pointer-events-none bg-primary/5" />
-      <div className="absolute bottom-0 left-1/4 w-85 h-85 rounded-full blur-[100px] pointer-events-none bg-primary/4" />
+      <div className="absolute top-1/3 right-1/3 w-[560px] h-[560px] rounded-full blur-[140px] pointer-events-none bg-primary/5" />
+      <div className="absolute bottom-0 left-1/4 w-[340px] h-[340px] rounded-full blur-[100px] pointer-events-none bg-primary/4" />
 
       <div className="flex-1 flex flex-col lg:flex-row items-center px-6 md:px-10 lg:px-16 pt-4 pb-6 gap-8 relative">
         {/* LEFT */}
         <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 mb-7 px-3.5 py-2 rounded-full bg-primary/7 border border-primary/20 w-fit">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
               Digital Solutions · Ikorodu, Lagos NG
             </span>
@@ -39,10 +38,10 @@ export default function HeroSection() {
 
           {/* Heading */}
           <h1
-            className="font-display uppercase leading-[0.86] mb-6"
-            style={{ fontSize: "clamp(3.2rem, 9vw, 7.5rem)" }}
+            className="font-display uppercase leading-[0.88] mb-6"
+            style={{ fontSize: "clamp(3rem, 8.5vw, 7rem)" }}
           >
-            <span className="block text-foreground">EXPLORE</span>
+            <span className="block text-foreground">BUILDER.</span>
             <span
               className="block text-primary"
               style={{
@@ -50,18 +49,18 @@ export default function HeroSection() {
                   "0 0 50px rgba(202,239,69,0.5), 0 0 100px rgba(202,239,69,0.2)",
               }}
             >
-              DIGITAL
+              ENTREPRENEUR.
             </span>
-            <span className="block text-foreground">POSSIBILITIES</span>
+            <span className="block text-foreground">PROBLEM SOLVER.</span>
           </h1>
 
           {/* Subtext */}
           <p className="font-mono font-light text-sm leading-relaxed max-w-sm mb-8 text-muted-foreground">
-            Websites, web apps, and digital experiences built for{" "}
-            <span className="text-primary font-medium">growth</span>,{" "}
-            <span className="text-primary font-medium">performance</span>, and{" "}
-            <span className="text-primary font-medium">impact</span> — by
-            Oyenuga Joshua.
+            I help businesses and individuals create{" "}
+            <span className="text-primary font-medium">
+              modern digital experiences
+            </span>{" "}
+            through technology, innovation, and practical problem solving.
           </p>
 
           {/* CTA row */}
@@ -99,7 +98,7 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Honest pills */}
+          {/* Pills */}
           <div className="flex gap-3 flex-wrap">
             {pills.map((s) => (
               <div
@@ -120,17 +119,14 @@ export default function HeroSection() {
         {/* RIGHT */}
         <div className="flex-1 flex flex-col items-center lg:items-end gap-4 relative z-10 w-full lg:w-auto">
           <div className="relative flex items-center justify-center">
-            {/* Outer ring */}
             <div
-              className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full border border-primary/50"
+              className="absolute w-[380px] h-[380px] sm:w-[430px] sm:h-[430px] rounded-full border border-primary/50"
               style={{
                 boxShadow:
                   "0 0 50px rgba(202,239,69,0.25), inset 0 0 50px rgba(202,239,69,0.04)",
               }}
             />
-
-            {/* Glow disc */}
-            <div className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full blur-2xl bg-primary/6" />
+            <div className="absolute w-[380px] h-[380px] sm:w-[430px] sm:h-[430px] rounded-full blur-2xl bg-primary/6" />
 
             {/* Floating badge — top left */}
             <div
@@ -138,10 +134,10 @@ export default function HeroSection() {
               style={{ boxShadow: "0 0 20px rgba(202,239,69,0.15)" }}
             >
               <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">
-                Clean Code
+                Founder
               </div>
               <div className="font-display text-sm leading-tight text-foreground">
-                PRECISE
+                SHARPMAN
               </div>
             </div>
 
@@ -159,7 +155,7 @@ export default function HeroSection() {
             </div>
 
             {/* Circle image */}
-            <div className="w-82.5 h-82.5 sm:w-97.5 sm:h-97.5 rounded-full overflow-hidden relative">
+            <div className="w-[330px] h-[330px] sm:w-[390px] sm:h-[390px] rounded-full overflow-hidden relative">
               <img
                 src={HERO_IMG}
                 alt="Oyenuga Joshua — Sharpman"

@@ -7,6 +7,7 @@ import AboutSection from "../components/sharpman/AboutSection";
 import ServicesSection from "../components/sharpman/ServiceSection";
 import ProjectsSection from "../components/sharpman/ProjectSection";
 import ContactSection from "../components/sharpman/ContactSection";
+import BeyondCodeSection from "../components/sharpman/BeyondCodeSection";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <HeroSection />
         <MarqueeSection />
         <AboutSection />
+        <BeyondCodeSection />
         <ServicesSection />
         <ProjectsSection />
         <ContactSection />

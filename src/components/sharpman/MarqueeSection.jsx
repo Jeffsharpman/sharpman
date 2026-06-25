@@ -1,28 +1,30 @@
+// MarqueeSection.jsx — updated items to match brand + fixed gradient class
 const items = [
   "WEBSITES",
   "WEB APPS",
   "UI/UX DESIGN",
-  "DIGITAL GROWTH",
-  "FAST DELIVERY",
+  "E-COMMERCE",
+  "PROBLEM SOLVING",
   "RELIABLE QUALITY",
-  "CREATIVE DIRECTION",
-  "CLIENT SATISFACTION",
+  "ENTREPRENEUR",
+  "BUILDER BY NATURE",
+  // duplicate set for seamless loop
   "WEBSITES",
   "WEB APPS",
   "UI/UX DESIGN",
-  "DIGITAL GROWTH",
-  "FAST DELIVERY",
+  "E-COMMERCE",
+  "PROBLEM SOLVING",
   "RELIABLE QUALITY",
-  "CREATIVE DIRECTION",
-  "CLIENT SATISFACTION",
+  "ENTREPRENEUR",
+  "BUILDER BY NATURE",
 ];
 
 export default function MarqueeSection() {
   return (
     <section className="relative overflow-hidden py-0 bg-card border-y border-border">
-      {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-linear-to-r from-card to-transparent" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-linear-to-l from-card to-transparent" />
+      {/* Fade edges — fixed: bg-gradient-to-r not bg-linear-to-r */}
+      <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-card to-transparent" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-card to-transparent" />
 
       <div className="flex animate-marquee whitespace-nowrap py-4">
         {items.map((label, i) => (
