@@ -1,11 +1,18 @@
 // AboutSection.jsx
+
 const values = [
   {
     label: "INDEPENDENCE",
     desc: "I build my own path — no waiting, no excuses.",
   },
-  { label: "INNOVATION", desc: "Always asking: how can this be better?" },
-  { label: "INTEGRITY", desc: "Honest work. Honest communication. Always." },
+  {
+    label: "INNOVATION",
+    desc: "Always asking: how can this be better?",
+  },
+  {
+    label: "INTEGRITY",
+    desc: "Honest work. Honest communication. Always.",
+  },
   {
     label: "GROWTH",
     desc: "Every project, every challenge — a chance to improve.",
@@ -13,18 +20,19 @@ const values = [
 ];
 
 const IMGS = [
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/service1.png",
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/service2.png",
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/service3.png",
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/service4.png",
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/independence.jpg",
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/innovation.jpg",
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/integrity.jpg",
+  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/growth.jpg",
 ];
 
 export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden px-6 md:px-10 lg:px-16 py-24 md:py-32 bg-background"
+      className="relative overflow-hidden py-24 md:py-32 px-6 md:px-10 lg:px-16 bg-background"
     >
+      {/* Grid Background */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -34,112 +42,132 @@ export default function AboutSection() {
         }}
       />
 
-      {/* Changed items-start to lg:items-stretch to force equal height columns */}
-      <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-start lg:items-stretch relative z-10">
-        {/* LEFT CONTAINER */}
-        <div className="flex-1 flex flex-col justify-center max-w-sm">
-          <div className="flex items-center gap-2 mb-5">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full" />
-            <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
-              ABOUT ME
-            </span>
+      <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-stretch">
+        {/* LEFT */}
+        <div className="flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-2 mb-5">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+              <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
+                ABOUT SHARPMAN
+              </span>
+            </div>
+
+            <h2
+              className="font-display uppercase leading-none mb-8 text-foreground"
+              style={{ fontSize: "clamp(3rem, 6vw, 80px)" }}
+            >
+              MORE THAN{" "}
+              <span
+                className="text-primary"
+                style={{
+                  textShadow: "0 0 30px rgba(202,239,69,.45)",
+                }}
+              >
+                CODE.
+              </span>
+            </h2>
+
+            <div className="space-y-5">
+              <p className="font-mono text-sm leading-relaxed text-muted-foreground">
+                I'm{" "}
+                <span className="text-foreground font-medium">
+                  Oyenuga Joshua
+                </span>
+                , founder of{" "}
+                <span className="text-primary font-medium">Sharpman</span> — a
+                digital solutions brand focused on helping businesses and
+                individuals build a stronger online presence through technology.
+              </p>
+
+              <p className="font-mono text-sm leading-relaxed text-muted-foreground">
+                My journey into web development started about three years ago
+                and became significantly more focused after completing a
+                six-month Full Stack Development program at Digital World Tech
+                Academy.
+              </p>
+
+              <p className="font-mono text-sm leading-relaxed text-muted-foreground">
+                Today, I build websites, web applications, admin systems,
+                dashboards, and digital products using modern technologies,
+                combining creativity, strategy, and clean code to solve
+                real-world problems.
+              </p>
+
+              <p className="font-mono text-sm leading-relaxed text-muted-foreground">
+                Sharpman is built on a simple belief:
+                <span className="text-primary">
+                  {" "}
+                  technology should create opportunities, elevate brands, and
+                  help people move forward.
+                </span>
+              </p>
+            </div>
           </div>
 
-          <h2
-            className="font-display uppercase leading-none mb-6 text-foreground"
-            style={{ fontSize: "clamp(2.8rem, 6vw, 76px)" }}
-          >
-            MORE THAN{" "}
-            <span
-              className="text-primary"
-              style={{ textShadow: "0 0 28px rgba(202,239,69,0.45)" }}
-            >
-              CODE.
-            </span>
-          </h2>
-
-          <p className="font-mono font-light text-sm leading-relaxed mb-4 text-muted-foreground">
-            I'm{" "}
-            <span className="text-foreground font-medium">Oyenuga Joshua</span>,
-            founder of{" "}
-            <span className="text-primary font-medium">Sharpman</span> — a web
-            developer, entrepreneur, and problem solver based in{" "}
-            <span className="text-primary">Ikorodu, Lagos, Nigeria</span>.
-          </p>
-
-          <p className="font-mono font-light text-sm leading-relaxed mb-4 text-muted-foreground">
-            I design and build modern websites, web applications, and digital
-            experiences that help businesses grow online. My journey into
-            technology began about three years ago, and deepened through a{" "}
-            <span className="text-foreground">
-              six-month Full Stack Development program
-            </span>{" "}
-            at Digital World Tech Academy — where I learned HTML, CSS,
-            JavaScript, and PHP.
-          </p>
-
-          <p className="font-mono font-light text-sm leading-relaxed mb-10 text-muted-foreground">
-            I'm currently focused on{" "}
-            <span className="text-primary">
-              React and the modern JavaScript ecosystem
-            </span>
-            , building scalable, production-ready digital products. Every
-            project is an opportunity to learn, improve, and build something{" "}
-            <span className="text-primary">meaningful</span>.
-          </p>
-
-          {/* Values grid */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-            {values.map((v) => (
+          {/* Values */}
+          <div className="grid grid-cols-2 gap-4 mt-10">
+            {values.map((value) => (
               <div
-                key={v.label}
-                className="group p-4 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-200"
+                key={value.label}
+                className="rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:bg-card/80"
               >
-                <div className="w-1.5 h-1.5 bg-primary rounded-full mb-3 opacity-70 group-hover:opacity-100 transition-opacity" />
-                <div className="font-mono font-semibold text-[10px] uppercase tracking-[1.5px] mb-1 text-foreground">
-                  {v.label}
-                </div>
-                <div className="font-mono text-[10px] leading-relaxed text-muted-foreground">
-                  {v.desc}
-                </div>
+                <div className="w-2 h-2 bg-primary rounded-full mb-3" />
+
+                <h4 className="font-mono text-[11px] tracking-[2px] uppercase text-foreground mb-2">
+                  {value.label}
+                </h4>
+
+                <p className="font-mono text-[11px] leading-relaxed text-muted-foreground">
+                  {value.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* RIGHT CONTAINER — Mosaic layout fixed to match height dynamically */}
-        <div className="flex-1 w-full min-h-[450px] lg:min-h-full">
-          <div className="grid grid-cols-2 gap-3 h-full">
-            <div className="row-span-2 rounded-3xl overflow-hidden relative">
-              <img
-                src={IMGS[0]}
-                alt="workspace"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-3xl overflow-hidden relative">
-              <img
-                src={IMGS[1]}
-                alt="design"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-3 relative">
-              <div className="rounded-2xl overflow-hidden relative">
+        {/* RIGHT */}
+        <div className="flex h-full">
+          <div className="grid grid-cols-2 gap-4 w-full">
+            {IMGS.map((img, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-[28px]"
+                style={{
+                  background: "#050505",
+                  border: "1px solid rgba(202,239,69,0.08)",
+                  boxShadow:
+                    "0 10px 40px rgba(0,0,0,.35), 0 0 30px rgba(202,239,69,.03)",
+                }}
+              >
                 <img
-                  src={IMGS[2]}
-                  alt="code"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  src={img}
+                  alt={values[index].label}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-              </div>
-              <div className="rounded-2xl overflow-hidden relative">
-                <img
-                  src={IMGS[3]}
-                  alt="build"
-                  className="absolute inset-0 w-full h-full object-cover"
+
+                {/* Overlay */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.15), transparent)",
+                  }}
                 />
+
+                {/* Value Label */}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <div
+                    className="font-display text-lg tracking-[3px] text-white"
+                    style={{
+                      textShadow: "0 0 15px rgba(0,0,0,.5)",
+                    }}
+                  >
+                    {values[index].label}
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

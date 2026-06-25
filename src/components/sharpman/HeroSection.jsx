@@ -22,8 +22,8 @@ export default function HeroSection() {
       />
 
       {/* Glow blobs */}
-      <div className="absolute top-1/3 right-1/3 w-[560px] h-[560px] rounded-full blur-[140px] pointer-events-none bg-primary/5" />
-      <div className="absolute bottom-0 left-1/4 w-[340px] h-[340px] rounded-full blur-[100px] pointer-events-none bg-primary/4" />
+      <div className="absolute top-1/3 right-1/3 w-140 h-140 rounded-full blur-[140px] pointer-events-none bg-primary/5" />
+      <div className="absolute bottom-0 left-1/4 w-85 h-85 rounded-full blur-[100px] pointer-events-none bg-primary/4" />
 
       <div className="flex-1 flex flex-col lg:flex-row items-center px-6 md:px-10 lg:px-16 pt-4 pb-6 gap-8 relative">
         {/* LEFT */}
@@ -120,13 +120,13 @@ export default function HeroSection() {
         <div className="flex-1 flex flex-col items-center lg:items-end gap-4 relative z-10 w-full lg:w-auto">
           <div className="relative flex items-center justify-center">
             <div
-              className="absolute w-[380px] h-[380px] sm:w-[430px] sm:h-[430px] rounded-full border border-primary/50"
+              className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full border border-primary/50"
               style={{
                 boxShadow:
                   "0 0 50px rgba(202,239,69,0.25), inset 0 0 50px rgba(202,239,69,0.04)",
               }}
             />
-            <div className="absolute w-[380px] h-[380px] sm:w-[430px] sm:h-[430px] rounded-full blur-2xl bg-primary/6" />
+            <div className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full blur-2xl bg-primary/6" />
 
             {/* Floating badge — top left */}
             <div
@@ -155,7 +155,7 @@ export default function HeroSection() {
             </div>
 
             {/* Circle image */}
-            <div className="w-[330px] h-[330px] sm:w-[390px] sm:h-[390px] rounded-full overflow-hidden relative">
+            <div className="w-82.5 h-82.5 sm:w-97.5 sm:h-97.5 rounded-full overflow-hidden relative">
               <img
                 src={HERO_IMG}
                 alt="Oyenuga Joshua — Sharpman"

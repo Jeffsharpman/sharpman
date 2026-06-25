@@ -100,14 +100,14 @@ export default function BeyondCodeSection() {
     <section className="relative overflow-hidden py-24 md:py-32 px-6 md:px-10 lg:px-16 border-t border-border/40 bg-background">
       {/* Dynamic Cyber Ambient Glow */}
       <div
-        className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[160px] pointer-events-none opacity-30"
+        className="absolute top-0 left-1/4 w-125 h-125 rounded-full blur-[160px] pointer-events-none opacity-30"
         style={{
           background:
             "radial-gradient(circle, rgba(202,239,69,0.15) 0%, transparent 70%)",
         }}
       />
       <div
-        className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full blur-[180px] pointer-events-none opacity-20"
+        className="absolute bottom-0 right-1/4 w-150 h-150 rounded-full blur-[180px] pointer-events-none opacity-20"
         style={{
           background:
             "radial-gradient(circle, rgba(91,156,246,0.12) 0%, transparent 70%)",
@@ -130,7 +130,7 @@ export default function BeyondCodeSection() {
             >
               BEYOND <br />
               <span
-                className="text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent"
+                className="text-primary bg-linear-to-r from-primary to-primary/70 bg-clip-text"
                 style={{
                   filter: "drop-shadow(0 0 30px rgba(202,239,69,0.25))",
                 }}
@@ -156,7 +156,7 @@ export default function BeyondCodeSection() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className={`group relative rounded-[2rem] p-8 md:p-10 bg-card/40 backdrop-blur-md border border-border/60 ${pillar.borderHover} transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1 ${pillar.sizeClass}`}
+              className={`group relative rounded-4xl p-8 md:p-10 bg-card/40 backdrop-blur-md border border-border/60 ${pillar.borderHover} transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1 ${pillar.sizeClass}`}
             >
               {/* Dynamic Internal Corner Glow */}
               <div
@@ -215,7 +215,7 @@ export default function BeyondCodeSection() {
         {/* ================= CORE DRIVERS MAP (MISSION/VISION/MOTTO) ================= */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Mission */}
-          <div className="group relative rounded-[2rem] p-8 bg-card/20 border border-border/50 flex flex-col justify-between min-h-[220px] transition-all duration-300 hover:bg-card/40">
+          <div className="group relative rounded-4xl p-8 bg-card/20 border border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/40">
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[3px] text-muted-foreground/60 mb-4 flex items-center gap-1.5">
                 <span className="text-primary">//</span> MISSION
@@ -246,7 +246,7 @@ export default function BeyondCodeSection() {
 
           {/* Vision */}
           <div
-            className="group relative rounded-[2rem] p-8 bg-[#0C0D08] border border-primary/10 flex flex-col justify-between min-h-[220px] transition-all duration-300"
+            className="group relative rounded-4xl p-8 bg-[#0C0D08] border border-primary/10 flex flex-col justify-between min-h-55 transition-all duration-300"
             style={{ boxShadow: "0 10px 40px -15px rgba(202,239,69,0.03)" }}
           >
             <div>
@@ -267,10 +267,10 @@ export default function BeyondCodeSection() {
 
           {/* High Impact Motto */}
           <div
-            className="relative rounded-[2rem] p-8 bg-primary overflow-hidden flex flex-col justify-between min-h-[220px] group transition-all duration-500 hover:scale-[1.01]"
+            className="relative rounded-4xl p-8 bg-primary overflow-hidden flex flex-col justify-between min-h-55 group transition-all duration-500 hover:scale-[1.01]"
             style={{ boxShadow: "0 20px 40px -10px rgba(202,239,69,0.25)" }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-br from-black/10 to-transparent pointer-events-none" />
             <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-background/5 blur-2xl group-hover:scale-125 transition-transform duration-700" />
 
             <div className="font-mono text-[10px] uppercase tracking-[3px] text-primary-foreground/60 relative z-10">
@@ -280,7 +280,7 @@ export default function BeyondCodeSection() {
               BUILDING THE FUTURE, <br />
               <span className="text-background/80">ONE STEP AT A TIME.</span>
             </p>
-            <div className="w-8 h-[1px] bg-primary-foreground/30 mt-4 relative z-10" />
+            <div className="w-8 h-px bg-primary-foreground/30 mt-4 relative z-10" />
           </div>
         </div>
       </div>
