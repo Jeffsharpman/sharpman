@@ -42,7 +42,7 @@ export default function AboutSection() {
             >
               MORE THAN{" "}
               <span
-                className="text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent"
+                className="bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent"
                 style={{ textShadow: "0 0 30px rgba(202,239,69,.25)" }}
               >
                 CODE.
@@ -88,7 +88,7 @@ export default function AboutSection() {
 
         {/* ================= RIGHT IMAGE COLUMN ================= */}
         <div className="flex items-center justify-center h-full">
-          <div className="relative w-full max-w-[460px] h-full flex items-center justify-center">
+          <div className="relative w-full max-w-115 h-full flex items-center justify-center">
             {/* Soft Ambient Card Glow Container */}
             <div
               className="absolute inset-0 blur-3xl opacity-20 pointer-events-none"
@@ -103,7 +103,7 @@ export default function AboutSection() {
               {IMGS.map((src, i) => (
                 <div
                   key={labels[i]}
-                  className="group relative overflow-hidden rounded-2xl aspect-[9/16] bg-card/40 border border-border/40 transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 shadow-md"
+                  className="group relative overflow-hidden rounded-2xl aspect-9/16 bg-card/40 border border-border/40 transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 shadow-md"
                 >
                   {/* Card Image */}
                   <img
@@ -113,7 +113,7 @@ export default function AboutSection() {
                   />
 
                   {/* High Contrast Gradient Overlay scrim */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
 
                   {/* Title Label Layer */}
                   <div className="absolute bottom-4 left-4 right-4 z-10">

@@ -38,6 +38,18 @@ const projects = [
     color: "#5B9CF6",
     href: "https://sharpman.netlify.app/",
   },
+  {
+    num: "04",
+    name: " ZestHaven",
+    category: "RESTAURANT SITE",
+    tag: "FOOD. MENU. DIGITAL.",
+    desc: "A modern Nigerian bukka serving slow stews, smoky grills, and hand-pounded yam in Lekki, Lagos.",
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/zesthaven.png",
+    tech: "React",
+    color: "#ef6c22",
+    href: "https://zesthaven.netlify.app/",
+  },
 ];
 
 function ProjectCard({ project, index }) {
@@ -62,9 +74,9 @@ function ProjectCard({ project, index }) {
           }}
         >
           {/* Main Grid: Hard-locked height on desktop screens */}
-          <div className="flex flex-col md:grid md:grid-cols-12 md:h-[380px]">
+          <div className="flex flex-col md:grid md:grid-cols-12 md:h-95">
             {/* Image Side (Left Column) */}
-            <div className="relative h-[220px] md:h-full md:col-span-6 overflow-hidden bg-[#0a0d07]">
+            <div className="relative h-55 md:h-full md:col-span-6 overflow-hidden bg-[#0a0d07]">
               <img
                 src={project.image}
                 alt={project.name}

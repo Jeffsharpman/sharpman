@@ -1,5 +1,6 @@
 // Navbar.jsx — removed broken motion import (was never used)
 import { useTheme } from "../lib/ThemeContext";
+// import LogoImg from "../../assets/sharpman-logo-icon.svg";
 
 const LogoImg =
   "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-logo.png";
