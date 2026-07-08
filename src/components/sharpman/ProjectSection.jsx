@@ -21,7 +21,7 @@ const projects = [
     tag: "FOOD. ORDER. DIGITAL.",
     desc: "A food ordering and e-commerce platform built with PHP. QuickGrab helps businesses accept online orders and digitise their operations — connecting them with customers on the internet.",
     image:
-    "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/quickgrab.png",
+    "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/Quicgrab.jpg",
     tech: "PHP",
     color: "#F0A644",
     href: "https://quickgrab.oyenugajoshua.com/",
@@ -45,7 +45,7 @@ const projects = [
     tag: "FOOD. MENU. DIGITAL.",
     desc: "A modern Nigerian bukka serving slow stews, smoky grills, and hand-pounded yam in Lekki, Lagos.",
     image:
-      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/zesthaven.png.png",
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/zesthaven.png",
     tech: "React",
     color: "#ef6c22",
     href: "https://zesthaven.netlify.app/",
