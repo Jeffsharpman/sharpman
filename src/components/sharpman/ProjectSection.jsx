@@ -45,7 +45,7 @@ const projects = [
     tag: "FOOD. MENU. DIGITAL.",
     desc: "A modern Nigerian bukka serving slow stews, smoky grills, and hand-pounded yam in Lekki, Lagos.",
     image:
-      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/zesthaven.png",
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/ZestHaven%20.jpg",
     tech: "React",
     color: "#ef6c22",
     href: "https://zesthaven.netlify.app/",
