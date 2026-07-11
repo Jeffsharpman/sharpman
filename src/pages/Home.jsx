@@ -7,7 +7,9 @@ import AboutSection from "../components/sharpman/AboutSection";
 import ServicesSection from "../components/sharpman/ServiceSection";
 import ProjectsSection from "../components/sharpman/ProjectSection";
 import ContactSection from "../components/sharpman/ContactSection";
+import StartProjectSection from "../components/sharpman/StartProjectSection";
 import BeyondCodeSection from "../components/sharpman/BeyondCodeSection";
+import WhatsAppFab from "../components/sharpman/WhatsAppFab";
 
 const Home = () => {
   return (
@@ -20,7 +22,9 @@ const Home = () => {
         <BeyondCodeSection />
         <ServicesSection />
         <ProjectsSection />
+        <StartProjectSection />
         <ContactSection />
+        <WhatsAppFab />
       </main>
       <TerminalFooter />
     </div>

@@ -1,4 +1,5 @@
 // BeyondCodeSection.jsx
+import { Briefcase, Plus, Code, Crosshair, ArrowUpRight } from "lucide-react";
 
 const pillars = [
   {
@@ -8,22 +9,8 @@ const pillars = [
     accent: "text-[#CAEF45]",
     glow: "rgba(202,239,69,0.15)",
     borderHover: "hover:border-[#CAEF45]/40",
-    sizeClass: "col-span-1 md:col-span-3", // Wide footprint
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4.5 21V7.5A1.5 1.5 0 0 1 6 6h12a1.5 1.5 0 0 1 1.5 1.5V21M9 21V12h6v9"
-        />
-      </svg>
-    ),
+    sizeClass: "col-span-1 md:col-span-3",
+    icon: <Briefcase size={20} />,
   },
   {
     title: "ENTREPRENEUR",
@@ -32,18 +19,8 @@ const pillars = [
     accent: "text-[#5B9CF6]",
     glow: "rgba(91,156,246,0.15)",
     borderHover: "hover:border-[#5B9CF6]/40",
-    sizeClass: "col-span-1 md:col-span-3", // Wide footprint
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
-      </svg>
-    ),
+    sizeClass: "col-span-1 md:col-span-3",
+    icon: <Plus size={20} />,
   },
   {
     title: "DEVELOPER",
@@ -52,22 +29,8 @@ const pillars = [
     accent: "text-[#B07EF0]",
     glow: "rgba(176,126,240,0.15)",
     borderHover: "hover:border-[#B07EF0]/40",
-    sizeClass: "col-span-1 md:col-span-3", // Balanced secondary footprint
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M16 18 22 12 16 6M8 6 2 12l6 6"
-        />
-      </svg>
-    ),
+    sizeClass: "col-span-1 md:col-span-3",
+    icon: <Code size={20} />,
   },
   {
     title: "PROBLEM SOLVER",
@@ -76,22 +39,8 @@ const pillars = [
     accent: "text-[#F0A644]",
     glow: "rgba(240,166,68,0.15)",
     borderHover: "hover:border-[#F0A644]/40",
-    sizeClass: "col-span-1 md:col-span-3", // Balanced secondary footprint
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M9.75 9.75 15 4.5m0 0h-3m3 0v3m-6 6L4.5 19.5m0 0h3m-3 0v-3"
-        />
-      </svg>
-    ),
+    sizeClass: "col-span-1 md:col-span-3",
+    icon: <Crosshair size={20} />,
   },
 ];
 
@@ -229,19 +178,10 @@ export default function BeyondCodeSection() {
                 , and continuous learning.
               </p>
             </div>
-            <svg
-              className="w-4 h-4 text-muted-foreground/30 ml-auto group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-              />
-            </svg>
+            <ArrowUpRight
+              size={16}
+              className="text-muted-foreground/30 ml-auto group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+            />
           </div>
 
           {/* Vision */}

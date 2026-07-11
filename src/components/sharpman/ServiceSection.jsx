@@ -1,4 +1,5 @@
 // ServicesSection.jsx — "WHAT I DO", updated service 04, removed #SHARPMANSQUAD
+import { ArrowUpRight } from "lucide-react";
 const BRAND_IMG =
   "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/banner.png";
 const LogoImg =
@@ -62,15 +63,7 @@ function ServiceCard({ service }) {
       {/* Arrow */}
       <div className="mt-5 flex items-center gap-2">
         <div className="w-6 h-6 rounded-full flex items-center justify-center border border-border group-hover:border-primary group-hover:bg-primary transition-all duration-200">
-          <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
-            <path
-              d="M1 9L9 1M9 1H3M9 1V7"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              className="text-muted-foreground group-hover:text-primary-foreground"
-            />
-          </svg>
+          <ArrowUpRight size={8} className="text-muted-foreground group-hover:text-primary-foreground" />
         </div>
         <span className="font-mono text-[10px] uppercase tracking-[2px] text-muted-foreground group-hover:text-primary transition-colors duration-200">
           Learn more
@@ -180,7 +173,7 @@ export default function ServicesSection() {
         </div>
 
         <a
-          href="mailto:buildwithsharpman@gmail.com"
+          href="#start-project"
           className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-3.5 rounded-xl text-primary-foreground bg-primary shrink-0 hover:brightness-105 transition-all duration-200"
           style={{ boxShadow: "0 0 22px rgba(202,239,69,0.3)" }}
         >

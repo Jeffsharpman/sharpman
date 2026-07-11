@@ -1,5 +1,6 @@
 // ProjectsSection.jsx
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -165,15 +166,7 @@ function ProjectCard({ project, index }) {
                   }
                 >
                   VIEW PROJECT
-                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                    <path
-                      d="M1 11L11 1M11 1H3M11 1V9"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <ArrowUpRight size={10} />
                 </a>
                 <div
                   className="flex-1 h-px"

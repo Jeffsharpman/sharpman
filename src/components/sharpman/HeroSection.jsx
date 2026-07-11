@@ -1,4 +1,6 @@
 // HeroSection.jsx
+import { ArrowUpRight, ArrowDown } from "lucide-react";
+
 const HERO_IMG =
   "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png";
 
@@ -75,14 +77,7 @@ export default function HeroSection() {
             >
               START YOUR PROJECT
               <span className="w-6 h-6 bg-primary-foreground rounded-full flex items-center justify-center">
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path
-                    d="M1 9L9 1M9 1H3M9 1V7"
-                    stroke="#CAEF45"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
+                <ArrowUpRight size={10} color="#CAEF45" />
               </span>
             </a>
 
@@ -199,15 +194,7 @@ export default function HeroSection() {
       {/* Scroll hint */}
       <div className="flex justify-center pb-6 gap-2 items-center">
         <div className="w-4 h-4 text-muted-foreground">
-          <svg viewBox="0 0 16 16" fill="none">
-            <path
-              d="M8 3v10M4 9l4 4 4-4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <ArrowDown size={16} />
         </div>
         <span className="font-mono text-[10px] uppercase tracking-[3px] text-muted-foreground">
           Scroll to explore
