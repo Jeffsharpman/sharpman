@@ -15,10 +15,10 @@ export default function HeroSection() {
     <section className="min-h-screen flex flex-col relative overflow-hidden pt-20 bg-background">
       {/* Dot grid */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-[0.12]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(202,239,69,0.12) 1px, transparent 1px)",
+            "radial-gradient(circle, var(--primary) 1px, transparent 1px)",
           backgroundSize: "44px 44px",
         }}
       />
@@ -48,7 +48,7 @@ export default function HeroSection() {
               className="block text-primary"
               style={{
                 textShadow:
-                  "0 0 50px rgba(202,239,69,0.5), 0 0 100px rgba(202,239,69,0.2)",
+                  "0 0 50px var(--lime-glow), 0 0 100px var(--lime-soft)",
               }}
             >
               ENTREPRENEUR.
@@ -72,7 +72,7 @@ export default function HeroSection() {
               className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-4 rounded-2xl text-primary-foreground bg-primary hover:brightness-105 transition-all duration-200"
               style={{
                 boxShadow:
-                  "0 0 36px rgba(202,239,69,0.45), 0 4px 20px rgba(202,239,69,0.2)",
+                  "0 0 36px var(--lime-glow), 0 4px 20px var(--lime-soft)",
               }}
             >
               START YOUR PROJECT
@@ -115,18 +115,17 @@ export default function HeroSection() {
         <div className="flex-1 flex flex-col items-center lg:items-end gap-4 relative z-10 w-full lg:w-auto">
           <div className="relative flex items-center justify-center">
             <div
-              className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full border border-primary/50"
+              className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full border border-primary/50  blur-2xl pointer-events-none bg-primary/6"
               style={{
                 boxShadow:
-                  "0 0 50px rgba(202,239,69,0.25), inset 0 0 50px rgba(202,239,69,0.04)",
+                  "0 0 50px var(--lime-soft), inset 0 0 50px var(--lime-subtle)",
               }}
             />
-            <div className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full blur-2xl bg-primary/6" />
 
             {/* Floating badge — top left */}
             <div
               className="absolute -top-2 -left-6 z-20 rounded-2xl px-3 py-2 bg-card border border-primary/30"
-              style={{ boxShadow: "0 0 20px rgba(202,239,69,0.15)" }}
+              style={{ boxShadow: "0 0 20px var(--lime-subtle)" }}
             >
               <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">
                 Founder
@@ -139,7 +138,7 @@ export default function HeroSection() {
             {/* Floating badge — bottom right */}
             <div
               className="absolute -bottom-2 -right-6 z-20 rounded-2xl px-3 py-2 bg-card border border-primary/30"
-              style={{ boxShadow: "0 0 20px rgba(202,239,69,0.15)" }}
+              style={{ boxShadow: "0 0 20px var(--lime-subtle)" }}
             >
               <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">
                 Available Now
@@ -157,10 +156,12 @@ export default function HeroSection() {
                 className="w-full h-full object-cover"
               />
               <div
-                className="absolute inset-0 rounded-full"
+                className="absolute inset-0 rounded-full bg-background"
                 style={{
-                  background:
-                    "radial-gradient(circle at center, transparent 50%, #0A0A0A 100%)",
+                  maskImage:
+                    "radial-gradient(circle at center, transparent 40%, black 100%)",
+                  WebkitMaskImage:
+                    "radial-gradient(circle at center, transparent 40%, black 100%)",
                 }}
               />
             </div>
@@ -168,8 +169,8 @@ export default function HeroSection() {
 
           {/* Code snippet */}
           <div
-            className="rounded-2xl px-5 py-4 font-mono text-[11px] self-start lg:self-auto max-w-55 bg-secondary border border-border"
-            style={{ boxShadow: "0 0 24px rgba(202,239,69,0.06)" }}
+            className="rounded-2xl px-5 py-4 font-mono text-[11px] self-start lg:self-auto max-w-55 bg-card border border-border"
+            style={{ boxShadow: "0 0 24px var(--lime-subtle)" }}
           >
             <div className="mb-1 text-muted-foreground">{"// sharpman()"}</div>
             <div>

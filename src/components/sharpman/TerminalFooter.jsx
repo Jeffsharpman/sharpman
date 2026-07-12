@@ -1,4 +1,4 @@
-// TerminalFooter.jsx — correct social handles
+// TerminalFooter.jsx
 import { ArrowUpRight } from "lucide-react";
 
 const LogoImg =
@@ -27,7 +27,7 @@ const socials = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/oyenugajoshua",
+    href: "https://www.linkedin.com/in/oyenuga-joshua-058434417?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
@@ -79,9 +79,9 @@ export default function TerminalFooter() {
                       "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.18), #050505 75%)",
                     border: "1px solid rgba(202,239,69,0.25)",
                     boxShadow: `
-                    0 0 20px rgba(202,239,69,0.15),
-                    0 0 40px rgba(202,239,69,0.08),
-                    inset 0 0 12px rgba(202,239,69,0.06)
+                    0 0 20px var(--lime-soft),
+                    0 0 40px var(--lime-subtle),
+                    inset 0 0 12px var(--lime-subtle)
                   `,
                   }}
                 >
@@ -168,7 +168,7 @@ export default function TerminalFooter() {
                 <a
                   href="#start-project"
                   className="flex items-center justify-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-4 rounded-xl text-primary-foreground w-full bg-primary hover:brightness-105 active:scale-[0.98] transition-all duration-200"
-                  style={{ boxShadow: "0 0 28px rgba(202,239,69,0.35)" }}
+                  style={{ boxShadow: "0 0 28px var(--lime-soft)" }}
                 >
                   START YOUR PROJECT
                   <ArrowUpRight size={13} color="#0A0A0A" />

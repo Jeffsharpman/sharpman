@@ -206,16 +206,6 @@
   }
 }
 
-/* ── NAV SPECIFIC ENHANCEMENTS ── */
-@layer components {
-  .sharpman-nav {
-    background: var(--bg-nav);
-    border: 1px solid var(--border-nav);
-    box-shadow: var(--shadow-nav);
-    backdrop-filter: blur(20px);
-  }
-}
-
 /* ── ANIMATIONS ── */
 @keyframes neon-pulse {
   0%, 100% { opacity: 1; }

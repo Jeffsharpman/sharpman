@@ -1,4 +1,3 @@
-// Navbar.jsx — removed broken motion import (was never used)
 import { useTheme } from "../lib/ThemeContext";
 import { Sun, Moon } from "lucide-react";
 
@@ -27,9 +26,9 @@ export default function Navbar() {
                 "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
               border: "1px solid rgba(202,239,69,0.25)",
               boxShadow: `
-                0 0 16px rgba(202,239,69,0.12),
-                0 0 32px rgba(202,239,69,0.06),
-                inset 0 0 10px rgba(202,239,69,0.05)
+                0 0 16px var(--lime-soft),
+                0 0 32px var(--lime-subtle),
+                inset 0 0 10px var(--lime-subtle)
               `,
             }}
             >

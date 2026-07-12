@@ -186,8 +186,8 @@ export default function BeyondCodeSection() {
 
           {/* Vision */}
           <div
-            className="group relative rounded-4xl p-8 bg-[#0C0D08] border border-primary/10 flex flex-col justify-between min-h-55 transition-all duration-300"
-            style={{ boxShadow: "0 10px 40px -15px rgba(202,239,69,0.03)" }}
+            className="group relative rounded-4xl p-8 bg-card border border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/80"
+            style={{ boxShadow: "0 10px 40px -15px var(--lime-subtle)" }}
           >
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[3px] text-primary mb-4 flex items-center gap-1.5">
@@ -208,7 +208,7 @@ export default function BeyondCodeSection() {
           {/* High Impact Motto */}
           <div
             className="relative rounded-4xl p-8 bg-primary overflow-hidden flex flex-col justify-between min-h-55 group transition-all duration-500 hover:scale-[1.01]"
-            style={{ boxShadow: "0 20px 40px -10px rgba(202,239,69,0.25)" }}
+            style={{ boxShadow: "0 20px 40px -10px var(--lime-soft)" }}
           >
             <div className="absolute inset-0 bg-linear-to-br from-black/10 to-transparent pointer-events-none" />
             <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-background/5 blur-2xl group-hover:scale-125 transition-transform duration-700" />

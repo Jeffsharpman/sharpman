@@ -69,10 +69,11 @@ export default function StartProjectSection() {
         {/* Form Card */}
         <div
           className="rounded-3xl p-8 md:p-10 bg-card border border-border"
-          style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(202,239,69,0.04) inset" }}
+          style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset" }}
         >
           <form
             method="POST"
+            action="/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             name="start-project"
@@ -202,7 +203,7 @@ export default function StartProjectSection() {
             <button
               type="submit"
               className="w-full flex items-center justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] text-primary-foreground py-4 rounded-xl mt-1 bg-primary hover:brightness-105 active:scale-[0.98] transition-all duration-200"
-              style={{ boxShadow: "0 0 30px rgba(202,239,69,0.35)" }}
+                style={{ boxShadow: "0 0 30px var(--lime-soft)" }}
             >
               START MY PROJECT
               <ArrowUpRight size={14} color="#0A0A0A" />

@@ -17,7 +17,6 @@ export default function ContactSection() {
       <div className="absolute top-0 right-0 w-75 h-75 rounded-full blur-[100px] pointer-events-none bg-primary/3" />
 
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-start max-w-6xl mx-auto relative z-10">
-
         {/* LEFT */}
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-6">
@@ -36,7 +35,7 @@ export default function ContactSection() {
               OR A{" "}
               <span
                 className="text-primary"
-                style={{ textShadow: "0 0 35px rgba(202,239,69,0.45)" }}
+                style={{ textShadow: "0 0 35px var(--lime-glow)" }}
               >
                 PROBLEM
               </span>
@@ -45,8 +44,8 @@ export default function ContactSection() {
           </h2>
 
           <p className="font-mono text-sm leading-relaxed max-w-xs text-muted-foreground mb-8">
-            Whether it's a website, a web app, or a digital challenge you're trying
-            to figure out — let's talk. I'm available for{" "}
+            Whether it's a website, a web app, or a digital challenge you're
+            trying to figure out — let's talk. I'm available for{" "}
             <span className="text-primary">freelance and remote work</span>.
           </p>
 
@@ -55,7 +54,7 @@ export default function ContactSection() {
               <div key={s.label}>
                 <div
                   className="font-display text-primary text-3xl leading-none mb-1"
-                  style={{ textShadow: "0 0 24px rgba(202,239,69,0.4)" }}
+                  style={{ textShadow: "0 0 24px var(--lime-glow)" }}
                 >
                   {s.value}
                 </div>
@@ -78,7 +77,7 @@ export default function ContactSection() {
               buildwithsharpman@gmail.com
             </a>
             <a
-              href="https://wa.me/2349070281022"
+              href="https://wa.link/3fl6df"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -95,10 +94,14 @@ export default function ContactSection() {
         <div className="flex-1 w-full">
           <div
             className="rounded-3xl p-8 md:p-10 bg-card border border-border"
-            style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(202,239,69,0.04) inset" }}
+            style={{
+              boxShadow:
+                "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset",
+            }}
           >
             <form
               method="POST"
+              action="/"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               name="contact"
@@ -116,8 +119,18 @@ export default function ContactSection() {
               </div>
 
               {[
-                { label: "YOUR NAME",  type: "text",  name: "name",  placeholder: "Full Name"      },
-                { label: "YOUR EMAIL", type: "email", name: "email", placeholder: "Email Address"  },
+                {
+                  label: "YOUR NAME",
+                  type: "text",
+                  name: "name",
+                  placeholder: "Full Name",
+                },
+                {
+                  label: "YOUR EMAIL",
+                  type: "email",
+                  name: "email",
+                  placeholder: "Email Address",
+                },
               ].map(({ label, type, name, placeholder }) => (
                 <div key={label}>
                   <label className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground">
@@ -149,7 +162,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] text-primary-foreground py-4 rounded-xl mt-1 bg-primary hover:brightness-105 active:scale-[0.98] transition-all duration-200"
-                style={{ boxShadow: "0 0 30px rgba(202,239,69,0.35)" }}
+                style={{ boxShadow: "0 0 30px var(--lime-soft)" }}
               >
                 SEND MESSAGE
                 <ArrowRight size={14} color="#0A0A0A" />
@@ -157,7 +170,6 @@ export default function ContactSection() {
             </form>
           </div>
         </div>
-
       </div>
     </section>
   );

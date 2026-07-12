@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/sharpman/Navbar";
 import TerminalFooter from "../components/sharpman/TerminalFooter";
 import HeroSection from "../components/sharpman/HeroSection";

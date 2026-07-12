@@ -99,7 +99,7 @@ export default function ServicesSection() {
         <div className="hidden lg:block">
           <div
             className="relative w-44 h-24 rounded-2xl overflow-hidden shrink-0 border border-border"
-            style={{ boxShadow: "0 0 28px rgba(202,239,69,0.08)" }}
+            style={{               boxShadow: "0 0 28px var(--lime-subtle)" }}
           >
             <img
               src={BRAND_IMG}
@@ -126,7 +126,7 @@ export default function ServicesSection() {
       {/* Bottom CTA */}
       <div
         className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-card border border-border"
-        style={{ boxShadow: "0 0 50px rgba(202,239,69,0.04)" }}
+        style={{ boxShadow: "0 0 50px var(--lime-subtle)" }}
       >
         <div className="flex items-center gap-4">
           <div
@@ -136,9 +136,9 @@ export default function ServicesSection() {
                 "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
               border: "1px solid rgba(202,239,69,0.25)",
               boxShadow: `
-                  0 0 16px rgba(202,239,69,0.12),
-                  0 0 32px rgba(202,239,69,0.06),
-                  inset 0 0 10px rgba(202,239,69,0.05)
+                  0 0 16px var(--lime-soft),
+                  0 0 32px var(--lime-subtle),
+                  inset 0 0 10px var(--lime-subtle)
                 `,
             }}
           >
@@ -175,7 +175,7 @@ export default function ServicesSection() {
         <a
           href="#start-project"
           className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-3.5 rounded-xl text-primary-foreground bg-primary shrink-0 hover:brightness-105 transition-all duration-200"
-          style={{ boxShadow: "0 0 22px rgba(202,239,69,0.3)" }}
+          style={{ boxShadow: "0 0 22px var(--lime-soft)" }}
         >
           START YOUR PROJECT →
         </a>

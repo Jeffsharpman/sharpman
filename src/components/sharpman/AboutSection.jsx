@@ -69,9 +69,9 @@ export default function AboutSection() {
               </p>
 
               <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                As an{" "}
+                As a{" "}
                 <span className="text-foreground font-medium">
-                  Oyenuga Joshua web developer
+                  Web developer
                 </span>
                 , I combine creativity with technical expertise to transform
                 ideas into fully functional websites and web applications. I
@@ -124,9 +124,9 @@ export default function AboutSection() {
               <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
                 My goal is to help businesses{" "}
                 <span className="text-foreground font-medium">
-                  build websites in Lagos, Nigeria
+                  build websites in Nigeria and far beyond,
                 </span>{" "}
-                that not only look professional but also generate leads, improve
+                That not only look professional but also generate leads, improve
                 customer engagement, and support long-term growth. Whether you
                 need a new business website, a custom web application, or a
                 redesign of your existing site, I'm committed to delivering
@@ -182,7 +182,7 @@ export default function AboutSection() {
                   />
 
                   {/* High Contrast Gradient Overlay scrim */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
 
                   {/* Title Label Layer */}
                   <div className="absolute bottom-4 left-4 right-4 z-10">

@@ -1,5 +1,4 @@
 // ProjectsSection.jsx
-import React from "react";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
@@ -41,7 +40,7 @@ const projects = [
   },
   {
     num: "04",
-    name: " ZestHaven",
+    name: "ZESTHAVEN",
     category: "RESTAURANT SITE",
     tag: "FOOD. MENU. DIGITAL.",
     desc: "A modern Nigerian bukka serving slow stews, smoky grills, and hand-pounded yam in Lekki, Lagos.",
@@ -70,14 +69,13 @@ function ProjectCard({ project, index }) {
           className="overflow-hidden rounded-2xl border transition-all duration-300"
           style={{
             borderColor: project.color + "25",
-            backgroundColor: "#0C0F08",
-            boxShadow: `0 30px 80px rgba(0,0,0,0.9), 0 0 0 1px ${project.color}10`,
+            boxShadow: `0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px ${project.color}10`,
           }}
         >
           {/* Main Grid: Hard-locked height on desktop screens */}
           <div className="flex flex-col md:grid md:grid-cols-12 md:h-95">
             {/* Image Side (Left Column) */}
-            <div className="relative h-55 md:h-full md:col-span-6 overflow-hidden bg-[#0a0d07]">
+            <div className="relative h-55 md:h-full md:col-span-6 overflow-hidden bg-muted">
               <img
                 src={project.image}
                 alt={project.name}
@@ -101,7 +99,7 @@ function ProjectCard({ project, index }) {
             </div>
 
             {/* Content Message Side (Right Column) */}
-            <div className="md:col-span-6 flex flex-col justify-between p-6 md:p-8 bg-[#0C0F08]">
+            <div className="md:col-span-6 flex flex-col justify-between p-6 md:p-8 bg-card">
               {/* Header Context Layout */}
               <div>
                 {/* Badges placed neatly on the message side */}
@@ -129,7 +127,7 @@ function ProjectCard({ project, index }) {
                 </div>
 
                 <div className="relative flex items-baseline justify-between mt-1 mb-2">
-                  <h3 className="font-display uppercase text-xl md:text-2xl font-bold tracking-tight text-white">
+                  <h3 className="font-display uppercase text-xl md:text-2xl font-bold tracking-tight text-foreground">
                     {project.name}
                   </h3>
                   <span
@@ -140,7 +138,7 @@ function ProjectCard({ project, index }) {
                   </span>
                 </div>
 
-                <p className="font-mono font-light text-xs leading-relaxed text-neutral-400 max-w-sm line-clamp-3 md:line-clamp-4">
+                <p className="font-mono font-light text-xs leading-relaxed text-muted-foreground max-w-sm line-clamp-3 md:line-clamp-4">
                   {project.desc}
                 </p>
               </div>
