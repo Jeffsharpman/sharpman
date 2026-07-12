@@ -1,3 +1,77 @@
+# robots.txt for Sharpman — https://sharpman.netlify.app
+# Generated: 2026-07-12
+
+# ============================================
+# GENERAL RULES
+# ============================================
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?preview=
+Disallow: /*?bot=
+
+# ============================================
+# GOOGLE SPECIFIC
+# ============================================
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# ============================================
+# BING SPECIFIC
+# ============================================
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# ============================================
+# AI CRAWLERS (allow for AI Overview visibility)
+# ============================================
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ============================================
+# BLOCKED BOTS
+# ============================================
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# ============================================
+# SITEMAP
+# ============================================
 Sitemap: https://sharpman.netlify.app/sitemap.xml

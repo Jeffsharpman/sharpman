@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- HOME -->
   <url>
     <loc>https://sharpman.netlify.app/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sharpman.netlify.app/sharpman-og-image.png</image:loc>
+      <image:title>Oyenuga Joshua — Sharpman | Web Developer in Lagos Nigeria</image:title>
+      <image:caption>Sharpman is the personal web development brand of Oyenuga Joshua, a full stack developer in Lagos, Nigeria.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png</image:loc>
+      <image:title>Oyenuga Joshua Portrait — Sharpman</image:title>
+      <image:caption>Oyenuga Joshua, founder of Sharpman, web developer and entrepreneur in Lagos, Nigeria.</image:caption>
+    </image:image>
   </url>
+
 </urlset>

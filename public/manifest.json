@@ -1,0 +1,58 @@
+{
+  "name": "Sharpman — Web Developer in Lagos, Nigeria",
+  "short_name": "Sharpman",
+  "description": "Sharpman is the personal web development brand of Oyenuga Joshua, a full stack web developer in Lagos, Nigeria. Building modern websites, web applications, and digital solutions.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "lang": "en",
+  "dir": "ltr",
+  "id": "/",
+  "categories": ["business", "portfolio", "developer"],
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://sharpman.netlify.app/sharpman-og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Sharpman Portfolio — Web Developer in Lagos, Nigeria"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact Sharpman",
+      "short_name": "Contact",
+      "url": "/#contact",
+      "description": "Get in touch with Oyenuga Joshua for web development projects"
+    },
+    {
+      "name": "View Projects",
+      "short_name": "Projects",
+      "url": "/#projects",
+      "description": "View web development projects by Sharpman"
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "url": "/#services",
+      "description": "Web development services offered by Sharpman"
+    }
+  ]
+}
