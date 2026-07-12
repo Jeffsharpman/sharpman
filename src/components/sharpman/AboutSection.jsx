@@ -51,36 +51,105 @@ export default function AboutSection() {
 
             <div className="space-y-5 max-w-xl">
               <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                I'm{" "}
+                Hi, I'm{" "}
                 <span className="text-foreground font-medium">
                   Oyenuga Joshua
                 </span>
-                , founder of{" "}
-                <span className="text-primary font-medium">Sharpman</span> — a
-                digital solutions brand focused on helping businesses and
-                individuals build a stronger online presence through technology.
-              </p>
-
-              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                My journey into web development started about three years ago
-                and became significantly more focused after completing a
-                six-month Full Stack Development program at Digital World Tech
-                Academy.
-              </p>
-
-              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                Today, I build websites, web applications, admin systems,
-                dashboards, and digital products using modern technologies,
-                combining creativity, strategy, and clean code to solve
-                real-world problems.
-              </p>
-
-              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                Sharpman is built on a simple belief:{" "}
-                <span className="text-primary underline decoration-primary/20 decoration-2 underline-offset-4 font-medium">
-                  technology should create opportunities, elevate brands, and
-                  help people move forward.
+                , a passionate web developer in Ikorodu, Lagos and the founder
+                of{" "}
+                <span className="text-primary font-medium">
+                  Sharpman Digital Solutions
                 </span>
+                . I specialize in designing and building modern, responsive, and
+                user-focused websites that help businesses establish a strong
+                online presence and achieve their digital goals. My mission is
+                simple: to create fast, functional, and visually appealing
+                digital experiences that deliver real value to businesses and
+                their customers.
+              </p>
+
+              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
+                As an{" "}
+                <span className="text-foreground font-medium">
+                  Oyenuga Joshua web developer
+                </span>
+                , I combine creativity with technical expertise to transform
+                ideas into fully functional websites and web applications. I
+                believe every business — whether it's a startup, a local shop,
+                a restaurant, a school, or an established company — deserves a
+                professional online presence that reflects its brand and
+                attracts more customers.
+              </p>
+
+              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
+                Through Sharpman Digital Solutions, I offer a range of web
+                development services tailored to meet different business needs.
+                These include{" "}
+                <span className="text-primary font-medium">
+                  custom website development
+                </span>
+                , responsive business websites, portfolio websites, landing
+                pages, web application development, e-commerce solutions, admin
+                dashboard development, and website maintenance. Every project is
+                built with performance, accessibility, search engine
+                optimization (SEO), and user experience in mind.
+              </p>
+
+              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
+                My development stack includes{" "}
+                <span className="text-foreground font-medium">
+                  HTML, CSS, JavaScript, React, PHP, Laravel, Livewire, and
+                  Filament
+                </span>
+                . I continuously improve my skills by learning modern
+                technologies and following industry best practices, allowing me
+                to build secure, scalable, and maintainable web solutions.
+              </p>
+
+              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
+                I've worked on projects such as{" "}
+                <span className="text-primary font-medium">
+                  Sharpman Portfolio
+                </span>
+                ,{" "}
+                <span className="text-primary font-medium">NovaTask</span>, a
+                React-based task management application, and{" "}
+                <span className="text-primary font-medium">QuickGrab</span>, a
+                PHP-powered food ordering platform. These projects demonstrate
+                my ability to build practical solutions that solve real-world
+                problems while maintaining clean design and efficient
+                functionality.
+              </p>
+
+              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
+                My goal is to help businesses{" "}
+                <span className="text-foreground font-medium">
+                  build websites in Lagos, Nigeria
+                </span>{" "}
+                that not only look professional but also generate leads, improve
+                customer engagement, and support long-term growth. Whether you
+                need a new business website, a custom web application, or a
+                redesign of your existing site, I'm committed to delivering
+                solutions that align with your vision and business objectives.
+              </p>
+
+              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
+                Beyond web development, I'm also an entrepreneur who understands
+                the challenges faced by small businesses. This perspective helps
+                me create digital solutions that are practical,
+                results-driven, and focused on helping clients succeed in
+                today's competitive online landscape.
+              </p>
+
+              <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
+                If you're looking for a{" "}
+                <span className="text-primary underline decoration-primary/20 decoration-2 underline-offset-4 font-medium">
+                  reliable developer who values quality, communication, and
+                  continuous improvement
+                </span>
+                , I'd be happy to work with you. Let's collaborate to create a
+                website or web application that elevates your brand and helps
+                your business grow in Lagos, across Nigeria, and beyond.
               </p>
             </div>
           </div>
