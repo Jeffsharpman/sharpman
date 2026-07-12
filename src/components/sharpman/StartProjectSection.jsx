@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 const projectTypes = [
@@ -25,6 +26,26 @@ const timelines = [
 ];
 
 export default function StartProjectSection() {
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    })
+      .then(() => {
+        setSubmitted(true);
+        form.reset();
+      })
+      .catch(() => {
+        alert("Something went wrong. Please try again.");
+      });
+  }
   return (
     <section
       id="start-project"
@@ -71,13 +92,28 @@ export default function StartProjectSection() {
           className="rounded-3xl p-8 md:p-10 bg-card border border-border"
           style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset" }}
         >
+          {submitted ? (
+            <div className="text-center py-16">
+              <div className="font-display text-4xl text-primary mb-3">THANK YOU!</div>
+              <p className="font-mono text-sm text-muted-foreground max-w-sm mx-auto">
+                Your project request has been received. I'll review it and get back to you within 24 hours with next steps.
+              </p>
+              <button
+                type="button"
+                onClick={() => setSubmitted(false)}
+                className="mt-6 font-mono text-xs uppercase tracking-[2px] text-primary hover:underline"
+              >
+                Submit another project
+              </button>
+            </div>
+          ) : (
           <form
             method="POST"
-            action="/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             name="start-project"
             className="flex flex-col gap-6"
+            onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="start-project" />
             <p className="hidden">
@@ -213,6 +249,7 @@ export default function StartProjectSection() {
               No spam. I'll respond within 24 hours with a plan.
             </p>
           </form>
+          )}
         </div>
       </div>
     </section>

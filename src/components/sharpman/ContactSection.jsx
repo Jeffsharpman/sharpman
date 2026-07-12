@@ -1,4 +1,5 @@
 // ContactSection.jsx
+import { useState } from "react";
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
 
 const highlights = [
@@ -8,6 +9,26 @@ const highlights = [
 ];
 
 export default function ContactSection() {
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    })
+      .then(() => {
+        setSubmitted(true);
+        form.reset();
+      })
+      .catch(() => {
+        alert("Something went wrong. Please try again.");
+      });
+  }
   return (
     <section
       id="contact"
@@ -99,13 +120,28 @@ export default function ContactSection() {
                 "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset",
             }}
           >
+            {submitted ? (
+              <div className="text-center py-10">
+                <div className="font-display text-3xl text-primary mb-3">THANK YOU!</div>
+                <p className="font-mono text-sm text-muted-foreground">
+                  Your message has been sent. I'll get back to you within 24 hours.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="mt-6 font-mono text-xs uppercase tracking-[2px] text-primary hover:underline"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
             <form
               method="POST"
-              action="/"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               name="contact"
               className="flex flex-col gap-6"
+              onSubmit={handleSubmit}
             >
               <input type="hidden" name="form-name" value="contact" />
               <p className="hidden">
@@ -168,6 +204,7 @@ export default function ContactSection() {
                 <ArrowRight size={14} color="#0A0A0A" />
               </button>
             </form>
+            )}
           </div>
         </div>
       </div>
