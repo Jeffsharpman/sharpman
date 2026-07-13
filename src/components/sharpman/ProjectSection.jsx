@@ -1,4 +1,3 @@
-// ProjectsSection.jsx
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
@@ -10,6 +9,7 @@ const projects = [
     desc: "A task management application built with React. Designed to help users organise their work, manage priorities, and stay productive — clean UI, fast, and focused.",
     image:
       "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/novatodos.png",
+    imageAlt: "NovaTask — A modern task management application built with React by Sharpman",
     tech: "React",
     color: "#CAEF45",
     href: "https://novatodos.netlify.app/",
@@ -21,7 +21,8 @@ const projects = [
     tag: "FOOD. ORDER. DIGITAL.",
     desc: "A food ordering and e-commerce platform built with PHP. QuickGrab helps businesses accept online orders and digitise their operations — connecting them with customers on the internet.",
     image:
-    "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/Quicgrab.jpg",
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/Quicgrab.jpg",
+    imageAlt: "QuickGrab — A PHP-powered food ordering and e-commerce platform for Nigerian businesses",
     tech: "PHP",
     color: "#F0A644",
     href: "https://quickgrab.oyenugajoshua.com/",
@@ -34,6 +35,7 @@ const projects = [
     desc: "This portfolio — built in React to represent the Sharpman brand and tell the story of Oyenuga Joshua as a builder, developer, and entrepreneur.",
     image:
       "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman.png",
+    imageAlt: "Sharpman Portfolio — A modern developer portfolio built with React and Tailwind CSS",
     tech: "React",
     color: "#5B9CF6",
     href: "https://sharpman.netlify.app/",
@@ -46,6 +48,7 @@ const projects = [
     desc: "A modern Nigerian bukka serving slow stews, smoky grills, and hand-pounded yam in Lekki, Lagos.",
     image:
       "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/ZestHaven%20.jpg",
+    imageAlt: "ZestHaven — A modern Nigerian restaurant website built by Sharpman",
     tech: "React",
     color: "#ef6c22",
     href: "https://zesthaven.netlify.app/",
@@ -54,10 +57,10 @@ const projects = [
 
 function ProjectCard({ project, index }) {
   return (
-    <div
+    <article
       className="sticky w-full flex justify-center px-4 sm:px-8 md:px-16"
       style={{
-        top: `${120 + index * 35}px`, // Slightly increased gap for scannability
+        top: `${120 + index * 35}px`,
         zIndex: 10 + index,
       }}
     >
@@ -72,18 +75,22 @@ function ProjectCard({ project, index }) {
             boxShadow: `0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px ${project.color}10`,
           }}
         >
-          {/* Main Grid: Hard-locked height on desktop screens */}
+          {/* Main Grid */}
           <div className="flex flex-col md:grid md:grid-cols-12 md:h-95">
-            {/* Image Side (Left Column) */}
+            {/* Image Side */}
             <div className="relative h-55 md:h-full md:col-span-6 overflow-hidden bg-muted">
               <img
                 src={project.image}
-                alt={project.name}
+                alt={project.imageAlt}
                 className="w-full h-full object-cover object-top"
+                loading="lazy"
+                width="430"
+                height="380"
               />
-              {/* Responsive Gradient Bleed Scrims */}
+              {/* Responsive Gradient Bleed Scrims - decorative */}
               <div
                 className="absolute inset-0 hidden md:block"
+                aria-hidden="true"
                 style={{
                   background:
                     "linear-gradient(to right, transparent 50%, #0C0F08 100%)",
@@ -91,6 +98,7 @@ function ProjectCard({ project, index }) {
               />
               <div
                 className="absolute inset-0 block md:hidden"
+                aria-hidden="true"
                 style={{
                   background:
                     "linear-gradient(to bottom, transparent 50%, #0C0F08 100%)",
@@ -98,11 +106,10 @@ function ProjectCard({ project, index }) {
               />
             </div>
 
-            {/* Content Message Side (Right Column) */}
+            {/* Content Side */}
             <div className="md:col-span-6 flex flex-col justify-between p-6 md:p-8 bg-card">
-              {/* Header Context Layout */}
               <div>
-                {/* Badges placed neatly on the message side */}
+                {/* Badges */}
                 <div className="flex items-center gap-2 mb-3">
                   <span
                     className="font-mono text-[9px] uppercase tracking-[2px] px-2.5 py-0.5 rounded-full border"
@@ -133,6 +140,7 @@ function ProjectCard({ project, index }) {
                   <span
                     className="font-display font-black leading-none select-none text-[32px] md:text-[40px]"
                     style={{ color: project.color + "18" }}
+                    aria-hidden="true"
                   >
                     {project.num}
                   </span>
@@ -143,7 +151,7 @@ function ProjectCard({ project, index }) {
                 </p>
               </div>
 
-              {/* Action Buttons Footer Row */}
+              {/* Action Button */}
               <div className="flex items-center gap-3 mt-6 relative z-30">
                 <a
                   href={project.href}
@@ -164,11 +172,12 @@ function ProjectCard({ project, index }) {
                   }
                 >
                   VIEW PROJECT
-                  <ArrowUpRight size={10} />
+                  <ArrowUpRight size={10} aria-hidden="true" />
                 </a>
                 <div
                   className="flex-1 h-px"
                   style={{ backgroundColor: project.color + "15" }}
+                  aria-hidden="true"
                 />
                 <div
                   className="w-1.5 h-1.5 rounded-full"
@@ -176,29 +185,31 @@ function ProjectCard({ project, index }) {
                     backgroundColor: project.color,
                     boxShadow: `0 0 8px ${project.color}`,
                   }}
+                  aria-hidden="true"
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative bg-background pb-12">
+    <section id="projects" className="relative bg-background pb-12" aria-labelledby="projects-heading">
       {/* Title Header Block */}
       <div className="px-6 sm:px-10 md:px-16 lg:px-20 pt-20 md:pt-28 pb-12">
         <div className="flex items-center gap-2 mb-4">
-          <span className="w-2 h-2 bg-primary rounded-full" />
+          <span className="w-2 h-2 bg-primary rounded-full" aria-hidden="true" />
           <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
-            THINGS I'VE BUILT
+            THINGS I&apos;VE BUILT
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <h2
+            id="projects-heading"
             className="font-display font-black uppercase text-foreground"
             style={{ fontSize: "clamp(3rem, 12vw, 140px)", lineHeight: 0.88 }}
           >
@@ -212,7 +223,7 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      {/* Stacked Cards Tracking Container */}
+      {/* Stacked Cards */}
       <div className="relative w-full flex flex-col items-center">
         {projects.map((project, i) => (
           <ProjectCard key={project.num} project={project} index={i} />

@@ -1,4 +1,3 @@
-// HeroSection.jsx
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 
 const HERO_IMG =
@@ -12,10 +11,11 @@ const pills = [
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col relative overflow-hidden pt-20 bg-background">
-      {/* Dot grid */}
+    <section className="min-h-screen flex flex-col relative overflow-hidden pt-20 bg-background" aria-label="Hero">
+      {/* Dot grid - decorative */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.12]"
+        aria-hidden="true"
         style={{
           backgroundImage:
             "radial-gradient(circle, var(--primary) 1px, transparent 1px)",
@@ -23,16 +23,16 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Glow blobs */}
-      <div className="absolute top-1/3 right-1/3 w-140 h-140 rounded-full blur-[140px] pointer-events-none bg-primary/5" />
-      <div className="absolute bottom-0 left-1/4 w-85 h-85 rounded-full blur-[100px] pointer-events-none bg-primary/4" />
+      {/* Glow blobs - decorative */}
+      <div className="absolute top-1/3 right-1/3 w-140 h-140 rounded-full blur-[140px] pointer-events-none bg-primary/5" aria-hidden="true" />
+      <div className="absolute bottom-0 left-1/4 w-85 h-85 rounded-full blur-[100px] pointer-events-none bg-primary/4" aria-hidden="true" />
 
       <div className="flex-1 flex flex-col lg:flex-row items-center px-6 md:px-10 lg:px-16 pt-4 pb-6 gap-8 relative">
         {/* LEFT */}
         <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 mb-7 px-3.5 py-2 rounded-full bg-primary/7 border border-primary/20 w-fit">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" aria-hidden="true" />
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
               Digital Solutions · Ikorodu, Lagos NG
             </span>
@@ -76,18 +76,17 @@ export default function HeroSection() {
               }}
             >
               START YOUR PROJECT
-              <span className="w-6 h-6 bg-primary-foreground rounded-full flex items-center justify-center">
+              <span className="w-6 h-6 bg-primary-foreground rounded-full flex items-center justify-center" aria-hidden="true">
                 <ArrowUpRight size={10} color="#CAEF45" />
               </span>
             </a>
 
-            {/* Secondary CTA - Futuristic Link */}
             <a
               href="#projects"
               className="group font-mono text-xs uppercase tracking-[2.5px] px-6 py-4 rounded-2xl border border-border hover:border-primary/60 text-muted-foreground hover:text-primary flex items-center gap-2 transition-all duration-300"
             >
               VIEW MY WORK
-              <span className="group-hover:translate-x-1 transition-transform">
+              <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 →
               </span>
             </a>
@@ -115,7 +114,8 @@ export default function HeroSection() {
         <div className="flex-1 flex flex-col items-center lg:items-end gap-4 relative z-10 w-full lg:w-auto">
           <div className="relative flex items-center justify-center">
             <div
-              className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full border border-primary/50  blur-2xl pointer-events-none bg-primary/6"
+              className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full border border-primary/50 blur-2xl pointer-events-none bg-primary/6"
+              aria-hidden="true"
               style={{
                 boxShadow:
                   "0 0 50px var(--lime-soft), inset 0 0 50px var(--lime-subtle)",
@@ -152,11 +152,15 @@ export default function HeroSection() {
             <div className="w-82.5 h-82.5 sm:w-97.5 sm:h-97.5 rounded-full overflow-hidden relative">
               <img
                 src={HERO_IMG}
-                alt="Oyenuga Joshua — Sharpman"
+                alt="Oyenuga Joshua, founder of Sharpman, web developer in Lagos Nigeria"
                 className="w-full h-full object-cover"
+                width="390"
+                height="390"
+                fetchpriority="high"
               />
               <div
                 className="absolute inset-0 rounded-full bg-background"
+                aria-hidden="true"
                 style={{
                   maskImage:
                     "radial-gradient(circle at center, transparent 40%, black 100%)",
@@ -193,7 +197,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll hint */}
-      <div className="flex justify-center pb-6 gap-2 items-center">
+      <div className="flex justify-center pb-6 gap-2 items-center" aria-hidden="true">
         <div className="w-4 h-4 text-muted-foreground">
           <ArrowDown size={16} />
         </div>

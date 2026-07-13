@@ -33,12 +33,18 @@
     <meta name="creator" content="Oyenuga Joshua" />
     <meta name="publisher" content="Oyenuga Joshua" />
     <meta name="application-name" content="Sharpman" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="3 days" />
     <meta name="rating" content="general" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="referrer"
+      content="strict-origin-when-cross-origin"
+    />
     <meta name="format-detection" content="telephone=no" />
 
     <!-- =============================== -->
@@ -53,6 +59,7 @@
     <!-- THEME & DISPLAY                  -->
     <!-- =============================== -->
     <meta name="theme-color" content="#0A0A0A" />
+    <meta name="theme-color" content="#CAEF45" media="(prefers-color-scheme: light)" />
     <meta name="msapplication-TileColor" content="#0A0A0A" />
     <meta name="msapplication-navbutton-color" content="#CAEF45" />
 
@@ -67,6 +74,40 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- =============================== -->
+    <!-- GOOGLE FONTS (loaded async via link, not CSS @import) -->
+    <!-- =============================== -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- =============================== -->
+    <!-- FONT PRELOADS (eliminate render-blocking) -->
+    <!-- =============================== -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXooxW5rygbi49c.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/jetbrainsmono/v20/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2"
+      crossorigin="anonymous"
+    />
 
     <!-- =============================== -->
     <!-- CANONICAL                        -->
@@ -89,11 +130,31 @@
       href="https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png"
     />
     <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png"
+    />
+    <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png"
     />
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png" />
+    <link
+      rel="mask-icon"
+      href="https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png"
+      color="#CAEF45"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png"
+    />
+
+    <!-- =============================== -->
+    <!-- MICROSOFT TILE                   -->
+    <!-- =============================== -->
+    <meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png" />
+    <meta name="msapplication-config" content="none" />
 
     <!-- =============================== -->
     <!-- WEB APP MANIFEST                 -->
@@ -149,7 +210,10 @@
       name="twitter:image"
       content="https://sharpman.netlify.app/sharpman-og-image.png"
     />
-    <meta name="twitter:image:alt" content="Oyenuga Joshua — Sharpman | Full Stack Web Developer in Lagos, Nigeria" />
+    <meta
+      name="twitter:image:alt"
+      content="Oyenuga Joshua — Sharpman | Full Stack Web Developer in Lagos, Nigeria"
+    />
     <meta name="twitter:site" content="@sharpman_dev" />
     <meta name="twitter:creator" content="@sharpman_dev" />
 
@@ -165,8 +229,8 @@
         "alternateName": ["Sharpman", "BuildWithSharpman"],
         "url": "https://sharpman.netlify.app/",
         "image": "https://sharpman.netlify.app/sharpman-og-image.png",
-        "description": "Oyenuga Joshua, known professionally as Sharpman, is a web developer and entrepreneur based in Ikorodu, Lagos, Nigeria, building modern websites, web applications, and digital solutions that help businesses grow online.",
-        "jobTitle": "Web Developer & Digital Solutions Architect",
+        "description": "Oyenuga Joshua, known professionally as Sharpman, is a full stack web developer and entrepreneur based in Ikorodu, Lagos, Nigeria, building modern websites, web applications, and digital solutions that help businesses grow online.",
+        "jobTitle": "Full Stack Web Developer",
         "honorificPrefix": "",
         "knowsAbout": [
           "Web Development",
@@ -193,18 +257,30 @@
           "@type": "Country",
           "name": "Nigeria"
         },
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Ikorodu, Lagos, Nigeria"
+        },
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Ikorodu, Lagos, Nigeria",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 6.61,
+            "longitude": 3.46
+          }
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Ikorodu",
           "addressLocality": "Lagos",
           "addressRegion": "Lagos State",
-          "postalCode": "",
           "addressCountry": "NG"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 6.6100,
-          "longitude": 3.4600
+          "latitude": 6.61,
+          "longitude": 3.46
         },
         "email": "buildwithsharpman@gmail.com",
         "telephone": "+234-907-028-1022",
@@ -280,12 +356,9 @@
         "logo": "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-logo.png",
         "image": "https://sharpman.netlify.app/sharpman-og-image.png",
         "description": "Sharpman is a digital solutions brand by Oyenuga Joshua, specializing in modern websites, web applications, and technology-driven digital solutions for businesses across Lagos and Nigeria.",
-
+        "foundingDate": "2024",
         "founder": {
-          "@type": "Person",
-          "@id": "https://sharpman.netlify.app/#person",
-          "name": "Oyenuga Joshua",
-          "url": "https://sharpman.netlify.app/"
+          "@id": "https://sharpman.netlify.app/#person"
         },
         "address": {
           "@type": "PostalAddress",
@@ -296,24 +369,35 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 6.6100,
-          "longitude": 3.4600
+          "latitude": 6.61,
+          "longitude": 3.46
         },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+234-907-028-1022",
-          "contactType": "sales",
+          "contactType": "customer service",
           "email": "buildwithsharpman@gmail.com",
-          "availableLanguage": ["English"],
+          "availableLanguage": ["English", "Yoruba"],
           "areaServed": ["NG"]
         },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Lagos"
+          },
+          {
+            "@type": "Country",
+            "name": "Nigeria"
+          }
+        ],
         "sameAs": [
           "https://github.com/Jeffsharpman",
           "https://www.linkedin.com/in/oyenuga-joshua-058434417",
           "https://www.instagram.com/sharpman_dev",
           "https://x.com/sharpman_dev",
           "https://youtube.com/@sharpman_dev",
-          "https://www.tiktok.com/@sharpman.dev"
+          "https://www.tiktok.com/@sharpman.dev",
+          "https://www.facebook.com/"
         ]
       }
     </script>
@@ -393,8 +477,7 @@
     </script>
 
     <!-- =============================== -->
-    <!-- STRUCTURED DATA — PROFESSIONAL   -->
-    <!-- SERVICE (LocalBusiness)          -->
+    <!-- STRUCTURED DATA — PROFESSIONAL SERVICE -->
     <!-- =============================== -->
     <script type="application/ld+json">
       {
@@ -406,6 +489,7 @@
         "url": "https://sharpman.netlify.app/",
         "image": "https://sharpman.netlify.app/sharpman-og-image.png",
         "description": "Sharpman provides professional web development services including custom website development, web application development, e-commerce solutions, and digital solutions for businesses in Lagos, Nigeria.",
+        "foundingDate": "2024",
         "founder": {
           "@id": "https://sharpman.netlify.app/#person"
         },
@@ -418,8 +502,8 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 6.6100,
-          "longitude": 3.4600
+          "latitude": 6.61,
+          "longitude": 3.46
         },
         "telephone": "+234-907-028-1022",
         "email": "buildwithsharpman@gmail.com",
@@ -522,24 +606,6 @@
     </script>
 
     <!-- =============================== -->
-    <!-- STRUCTURED DATA — SITE NAV       -->
-    <!-- =============================== -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SiteNavigationElement",
-        "name": ["Home", "About", "Services", "Projects", "Contact"],
-        "url": [
-          "https://sharpman.netlify.app/",
-          "https://sharpman.netlify.app/#about",
-          "https://sharpman.netlify.app/#services",
-          "https://sharpman.netlify.app/#projects",
-          "https://sharpman.netlify.app/#contact"
-        ]
-      }
-    </script>
-
-    <!-- =============================== -->
     <!-- STRUCTURED DATA — FAQ            -->
     <!-- =============================== -->
     <script type="application/ld+json">
@@ -577,11 +643,35 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Sharpman uses HTML5, CSS3, JavaScript, React for frontend development, and PHP, Laravel, Livewire, and Filament for backend development."
-              }
             }
-          ]
-        }
-      </script>
+          },
+          {
+            "@type": "Question",
+            "name": "How can I contact Sharpman for a web development project?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can contact Sharpman (Oyenuga Joshua) via email at buildwithsharpman@gmail.com, WhatsApp at +234 907 028 1022, or through the contact form at https://sharpman.netlify.app/#contact. Sharpman is available for freelance and remote web development projects."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What types of businesses does Sharpman work with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sharpman works with restaurants, hotels, salons, churches, schools, clinics, real estate companies, SMEs, startups, and businesses throughout Lagos and Nigeria. Services include custom websites, e-commerce platforms, web applications, and digital solutions tailored to each business."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Sharpman located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sharpman (Oyenuga Joshua) is located in Ikorodu, Lagos, Nigeria. Sharpman serves clients throughout Lagos, across Nigeria, and works remotely with clients worldwide."
+            }
+          }
+        ]
+      }
+    </script>
 
     <!-- =============================== -->
     <!-- STRUCTURED DATA — LOCAL BUSINESS -->
@@ -598,17 +688,19 @@
         "telephone": "+234-907-028-1022",
         "email": "buildwithsharpman@gmail.com",
         "description": "Professional web development services in Lagos, Nigeria. Custom websites, web applications, and digital solutions by Oyenuga Joshua.",
+        "foundingDate": "2024",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Ikorodu",
           "addressLocality": "Lagos",
           "addressRegion": "Lagos State",
+          "postalCode": "",
           "addressCountry": "NG"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 6.6100,
-          "longitude": 3.4600
+          "latitude": 6.61,
+          "longitude": 3.46
         },
         "areaServed": [
           {
@@ -627,7 +719,13 @@
         "founder": {
           "@id": "https://sharpman.netlify.app/#person"
         },
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
       }
     </script>
 
@@ -651,7 +749,43 @@
       }
     </script>
 
-    <!-- Preload critical image -->
+    <!-- =============================== -->
+    <!-- STRUCTURED DATA — PROFILE PAGE  -->
+    <!-- =============================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://sharpman.netlify.app/#profilepage",
+        "url": "https://sharpman.netlify.app/",
+        "name": "Oyenuga Joshua — Sharpman | Full Stack Web Developer in Lagos, Nigeria",
+        "description": "Professional profile of Oyenuga Joshua (Sharpman), a full stack web developer in Lagos, Nigeria specializing in React, Laravel, PHP, and digital solutions.",
+        "mainEntity": {
+          "@id": "https://sharpman.netlify.app/#person"
+        },
+        "dateModified": "2026-07-12"
+      }
+    </script>
+
+    <!-- =============================== -->
+    <!-- STRUCTURED DATA — SITE NAV       -->
+    <!-- =============================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": ["Home", "About", "Services", "Projects", "Contact"],
+        "url": [
+          "https://sharpman.netlify.app/",
+          "https://sharpman.netlify.app/#about",
+          "https://sharpman.netlify.app/#services",
+          "https://sharpman.netlify.app/#projects",
+          "https://sharpman.netlify.app/#contact"
+        ]
+      }
+    </script>
+
+    <!-- Preload critical hero image -->
     <link
       rel="preload"
       as="image"

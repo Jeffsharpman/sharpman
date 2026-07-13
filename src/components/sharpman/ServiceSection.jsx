@@ -1,4 +1,3 @@
-// ServicesSection.jsx — "WHAT I DO", updated service 04, removed #SHARPMANSQUAD
 import { ArrowUpRight } from "lucide-react";
 const BRAND_IMG =
   "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/banner.png";
@@ -32,7 +31,7 @@ const services = [
   },
   {
     num: "05",
-    name: "DIGITAL SOLUTIONS", // ← was PORTFOLIOS
+    name: "DIGITAL SOLUTIONS",
     desc: "Custom business solutions built around your specific challenge — whether it's a system, a tool, or a new digital product.",
     color: "#CAEF45",
   },
@@ -40,16 +39,17 @@ const services = [
 
 function ServiceCard({ service }) {
   return (
-    <div className="relative rounded-2xl p-6 h-full flex flex-col bg-card border border-border hover:border-primary/40 transition-all duration-300 overflow-hidden group">
-      {/* Number watermark */}
-      <div className="absolute top-4 right-4 font-display text-5xl leading-none select-none text-foreground/5 group-hover:text-foreground/10 transition-colors duration-300">
+    <article className="relative rounded-2xl p-6 h-full flex flex-col bg-card border border-border hover:border-primary/40 transition-all duration-300 overflow-hidden group">
+      {/* Number watermark - decorative */}
+      <div className="absolute top-4 right-4 font-display text-5xl leading-none select-none text-foreground/5 group-hover:text-foreground/10 transition-colors duration-300" aria-hidden="true">
         {service.num}
       </div>
 
-      {/* Accent dot */}
+      {/* Accent dot - decorative */}
       <div
         className="w-2 h-2 rounded-full mb-5"
         style={{ backgroundColor: service.color }}
+        aria-hidden="true"
       />
 
       <h3 className="font-display uppercase text-2xl mb-2.5 text-foreground group-hover:text-primary transition-colors duration-200">
@@ -60,8 +60,8 @@ function ServiceCard({ service }) {
         {service.desc}
       </p>
 
-      {/* Arrow */}
-      <div className="mt-5 flex items-center gap-2">
+      {/* Arrow - decorative */}
+      <div className="mt-5 flex items-center gap-2" aria-hidden="true">
         <div className="w-6 h-6 rounded-full flex items-center justify-center border border-border group-hover:border-primary group-hover:bg-primary transition-all duration-200">
           <ArrowUpRight size={8} className="text-muted-foreground group-hover:text-primary-foreground" />
         </div>
@@ -69,7 +69,7 @@ function ServiceCard({ service }) {
           Learn more
         </span>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -78,17 +78,19 @@ export default function ServicesSection() {
     <section
       id="services"
       className="relative overflow-hidden px-6 sm:px-8 md:px-12 lg:px-20 py-20 md:py-28 bg-background"
+      aria-labelledby="services-heading"
     >
       {/* Header */}
       <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-14">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+            <span className="w-1.5 h-1.5 bg-primary rounded-full" aria-hidden="true" />
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
               WHAT I DO
             </span>
           </div>
           <h2
+            id="services-heading"
             className="font-display font-black uppercase text-foreground"
             style={{ fontSize: "clamp(2.8rem, 8vw, 100px)", lineHeight: 0.88 }}
           >
@@ -99,14 +101,18 @@ export default function ServicesSection() {
         <div className="hidden lg:block">
           <div
             className="relative w-44 h-24 rounded-2xl overflow-hidden shrink-0 border border-border"
-            style={{               boxShadow: "0 0 28px var(--lime-subtle)" }}
+            style={{ boxShadow: "0 0 28px var(--lime-subtle)" }}
           >
             <img
               src={BRAND_IMG}
-              alt="Sharpman services"
+              alt="Sharpman — Design, Code, Elevate"
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="176"
+              height="96"
             />
-            <div className="absolute inset-0 bg-black/45" />
+            {/* Overlay - decorative */}
+            <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
             <div className="absolute bottom-2 left-2">
               <p className="font-mono text-[9px] text-foreground uppercase tracking-[2px]">
                 Design. Code. Elevate.
@@ -142,9 +148,10 @@ export default function ServicesSection() {
                 `,
             }}
           >
-            {/* Subtle highlight */}
+            {/* Subtle highlight - decorative */}
             <div
               className="absolute inset-0 rounded-xl"
+              aria-hidden="true"
               style={{
                 background:
                   "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
@@ -153,8 +160,11 @@ export default function ServicesSection() {
 
             <img
               src={LogoImg}
-              alt="Sharpman Logo"
+              alt=""
+              aria-hidden="true"
               className="relative z-10 w-8 h-8 object-contain"
+              width="32"
+              height="32"
               style={{
                 filter: `
                     drop-shadow(0 0 6px rgba(202,239,69,0.9))
@@ -168,7 +178,7 @@ export default function ServicesSection() {
             GOT A PROBLEM TO SOLVE?
           </div>
           <div className="font-mono text-[11px] mt-0.5 text-muted-foreground">
-            Available for freelance & remote work · buildwithsharpman@gmail.com
+            Available for freelance &amp; remote work · buildwithsharpman@gmail.com
           </div>
         </div>
 
@@ -177,7 +187,7 @@ export default function ServicesSection() {
           className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-3.5 rounded-xl text-primary-foreground bg-primary shrink-0 hover:brightness-105 transition-all duration-200"
           style={{ boxShadow: "0 0 22px var(--lime-soft)" }}
         >
-          START YOUR PROJECT →
+          START YOUR PROJECT <span aria-hidden="true">→</span>
         </a>
       </div>
     </section>

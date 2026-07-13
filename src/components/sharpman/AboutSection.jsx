@@ -1,23 +1,37 @@
-// AboutSection.jsx
-
 const IMGS = [
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/independence.jpg",
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/innovation.jpg",
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/integrity.jpg",
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/growth.jpg",
+  {
+    src: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/independence.jpg",
+    label: "INDEPENDENCE",
+    alt: "Sharpman value — Independence: Building solutions with self-reliance and ownership",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/innovation.jpg",
+    label: "INNOVATION",
+    alt: "Sharpman value — Innovation: Embracing new technologies and creative problem solving",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/integrity.jpg",
+    label: "INTEGRITY",
+    alt: "Sharpman value — Integrity: Delivering honest, quality work with transparency",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/growth.jpg",
+    label: "GROWTH",
+    alt: "Sharpman value — Growth: Continuously improving skills and helping businesses scale",
+  },
 ];
-
-const labels = ["INDEPENDENCE", "INNOVATION", "INTEGRITY", "GROWTH"];
 
 export default function AboutSection() {
   return (
     <section
       id="about"
       className="relative overflow-hidden py-24 md:py-32 px-6 md:px-10 lg:px-16 bg-background border-t border-border/40"
+      aria-labelledby="about-heading"
     >
-      {/* Grid Background */}
+      {/* Grid Background - decorative */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.015]"
+        aria-hidden="true"
         style={{
           backgroundImage:
             "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
@@ -26,17 +40,18 @@ export default function AboutSection() {
       />
 
       <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch max-w-6xl mx-auto">
-        {/* ================= LEFT CONTENT COLUMN ================= */}
+        {/* LEFT CONTENT COLUMN */}
         <div className="flex flex-col justify-center h-full">
           <div>
             <div className="flex items-center gap-2 mb-5">
-              <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+              <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" aria-hidden="true" />
               <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
                 ABOUT SHARPMAN
               </span>
             </div>
 
             <h2
+              id="about-heading"
               className="font-display uppercase leading-[0.9] mb-8 text-foreground tracking-tighter"
               style={{ fontSize: "clamp(2.8rem, 6vw, 80px)" }}
             >
@@ -51,7 +66,7 @@ export default function AboutSection() {
 
             <div className="space-y-5 max-w-xl">
               <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="text-foreground font-medium">
                   Oyenuga Joshua
                 </span>
@@ -75,7 +90,7 @@ export default function AboutSection() {
                 </span>
                 , I combine creativity with technical expertise to transform
                 ideas into fully functional websites and web applications. I
-                believe every business — whether it's a startup, a local shop,
+                believe every business — whether it&apos;s a startup, a local shop,
                 a restaurant, a school, or an established company — deserves a
                 professional online presence that reflects its brand and
                 attracts more customers.
@@ -107,7 +122,7 @@ export default function AboutSection() {
               </p>
 
               <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                I've worked on projects such as{" "}
+                I&apos;ve worked on projects such as{" "}
                 <span className="text-primary font-medium">
                   Sharpman Portfolio
                 </span>
@@ -129,25 +144,25 @@ export default function AboutSection() {
                 That not only look professional but also generate leads, improve
                 customer engagement, and support long-term growth. Whether you
                 need a new business website, a custom web application, or a
-                redesign of your existing site, I'm committed to delivering
+                redesign of your existing site, I&apos;m committed to delivering
                 solutions that align with your vision and business objectives.
               </p>
 
               <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                Beyond web development, I'm also an entrepreneur who understands
+                Beyond web development, I&apos;m also an entrepreneur who understands
                 the challenges faced by small businesses. This perspective helps
                 me create digital solutions that are practical,
                 results-driven, and focused on helping clients succeed in
-                today's competitive online landscape.
+                today&apos;s competitive online landscape.
               </p>
 
               <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
-                If you're looking for a{" "}
+                If you&apos;re looking for a{" "}
                 <span className="text-primary underline decoration-primary/20 decoration-2 underline-offset-4 font-medium">
                   reliable developer who values quality, communication, and
                   continuous improvement
                 </span>
-                , I'd be happy to work with you. Let's collaborate to create a
+                , I&apos;d be happy to work with you. Let&apos;s collaborate to create a
                 website or web application that elevates your brand and helps
                 your business grow in Lagos, across Nigeria, and beyond.
               </p>
@@ -155,12 +170,13 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* ================= RIGHT IMAGE COLUMN ================= */}
+        {/* RIGHT IMAGE COLUMN */}
         <div className="flex items-center justify-center h-full">
           <div className="relative w-full max-w-115 h-full flex items-center justify-center">
-            {/* Soft Ambient Card Glow Container */}
+            {/* Soft Ambient Card Glow Container - decorative */}
             <div
               className="absolute inset-0 blur-3xl opacity-20 pointer-events-none"
+              aria-hidden="true"
               style={{
                 background:
                   "radial-gradient(circle, rgba(202,239,69,.15), transparent 70%)",
@@ -169,25 +185,27 @@ export default function AboutSection() {
 
             {/* Structured 2x2 Bento Cards Grid */}
             <div className="grid grid-cols-2 gap-3 w-full self-center">
-              {IMGS.map((src, i) => (
+              {IMGS.map((img) => (
                 <div
-                  key={labels[i]}
+                  key={img.label}
                   className="group relative overflow-hidden rounded-2xl aspect-9/16 bg-card/40 border border-border/40 transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 shadow-md"
                 >
-                  {/* Card Image */}
                   <img
-                    src={src}
-                    alt={labels[i]}
+                    src={img.src}
+                    alt={img.alt}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    width="200"
+                    height="356"
                   />
 
-                  {/* High Contrast Gradient Overlay scrim */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                  {/* High Contrast Gradient Overlay scrim - decorative */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
 
                   {/* Title Label Layer */}
                   <div className="absolute bottom-4 left-4 right-4 z-10">
                     <span className="font-display text-[11px] md:text-xs text-white/90 tracking-[2.5px] uppercase block truncate transition-colors duration-300 group-hover:text-primary">
-                      {labels[i]}
+                      {img.label}
                     </span>
                   </div>
                 </div>

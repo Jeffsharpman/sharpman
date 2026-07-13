@@ -1,4 +1,3 @@
-// MarqueeSection.jsx — updated items to match brand + fixed gradient class
 const items = [
   "WEBSITES",
   "WEB APPS",
@@ -21,8 +20,8 @@ const items = [
 
 export default function MarqueeSection() {
   return (
-    <section className="relative overflow-hidden py-0 bg-card border-y border-border">
-      {/* Fade edges — fixed: bg-gradient-to-r not bg-linear-to-r */}
+    <section className="relative overflow-hidden py-0 bg-card border-y border-border" aria-hidden="true">
+      {/* Fade edges */}
       <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-linear-to-r from-card to-transparent" />
       <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-linear-to-l from-card to-transparent" />
 
@@ -32,7 +31,7 @@ export default function MarqueeSection() {
             <span className="font-mono text-[11px] uppercase tracking-[3px] font-medium text-muted-foreground">
               {label}
             </span>
-            <span className="font-mono text-xs text-primary opacity-70">◆</span>
+            <span className="font-mono text-xs text-primary opacity-70">&#9670;</span>
           </span>
         ))}
       </div>

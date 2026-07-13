@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 /* ── KEEP @theme ONLY for non-color tokens ── */
@@ -7,7 +6,7 @@
   --font-display: "Bebas Neue", sans-serif;
   --font-body: "JetBrains Mono", monospace;
   --font-mono: "JetBrains Mono", monospace;
-  --radius: 0.5rem; /* Slightly more modern rounded feel */
+  --radius: 0.5rem;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -36,7 +35,7 @@
   --foreground: #f0ede6;
   --card: #0f0f0f;
   --card-foreground: #f0ede6;
-  --primary: #caef45;           /* Neon Lime Green */
+  --primary: #caef45;
   --primary-foreground: #0a0a0a;
   --secondary: #121212;
   --secondary-foreground: #f0ede6;
@@ -52,11 +51,12 @@
   --lime-glow: rgba(202, 239, 69, 0.45);
   --lime-soft: rgba(202, 239, 69, 0.15);
   --lime-subtle: rgba(202, 239, 69, 0.08);
-  
+
   --bg-nav: rgba(10, 10, 10, 0.92);
   --border-nav: rgba(202, 239, 69, 0.18);
-  --shadow-nav: 0 10px 50px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(202, 239, 69, 0.1) inset;
-  
+  --shadow-nav: 0 10px 50px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(202, 239, 69, 0.1) inset;
+
   --destructive: #ef4444;
 }
 
@@ -68,7 +68,7 @@
   --foreground: #11110c;
   --card: #ffffff;
   --card-foreground: #11110c;
-  --primary: #a3d900;           /* Brighter lime for light mode */
+  --primary: #a3d900;
   --primary-foreground: #0a0a0a;
   --secondary: #f0ede6;
   --secondary-foreground: #11110c;
@@ -83,7 +83,7 @@
   --lime-glow: rgba(163, 217, 0, 0.35);
   --lime-soft: rgba(163, 217, 0, 0.12);
   --lime-subtle: rgba(163, 217, 0, 0.06);
-  
+
   --bg-nav: rgba(248, 247, 242, 0.95);
   --border-nav: rgba(0, 0, 0, 0.1);
   --shadow-nav: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -105,20 +105,12 @@
     background-color: var(--background);
     color: var(--foreground);
     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   body {
     font-family: var(--font-body);
     line-height: 1.6;
-  }
-
-  /* Futuristic Cursor */
-  * {
-    cursor: crosshair;
-  }
-  a, button, [role="button"] {
-    cursor: pointer;
   }
 
   /* Scrollbar - Neon Style */
@@ -132,6 +124,80 @@
     background: var(--primary);
     border-radius: 2px;
     box-shadow: 0 0 6px var(--lime-glow);
+  }
+}
+
+/* ── ACCESSIBILITY ── */
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 20px var(--lime-glow);
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Focus-visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── PREFERS REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none !important;
+  }
+
+  .animate-pulse {
+    animation: none !important;
+  }
+
+  .animate-neon {
+    animation: none !important;
+  }
+
+  .animate-ping {
+    animation: none !important;
   }
 }
 
@@ -154,9 +220,7 @@
 
   /* Premium Neon Glow Text */
   .neon-text {
-    text-shadow: 
-      0 0 8px var(--lime-glow),
-      0 0 20px var(--lime-glow);
+    text-shadow: 0 0 8px var(--lime-glow), 0 0 20px var(--lime-glow);
   }
 
   /* Subtle tech grain */
@@ -166,7 +230,7 @@
     inset: 0;
     pointer-events: none;
     opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'%3E%3C/rect%3E%3C/svg%3E");
   }
 }
 
@@ -190,9 +254,7 @@
   .sharpman-btn:hover {
     background-color: var(--primary);
     color: var(--primary-foreground);
-    box-shadow: 
-      0 0 25px var(--lime-glow),
-      0 0 40px var(--lime-soft);
+    box-shadow: 0 0 25px var(--lime-glow), 0 0 40px var(--lime-soft);
     transform: translateY(-1px);
   }
 
@@ -202,14 +264,19 @@
     border: 1px solid var(--border);
     border-radius: 1rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
-                inset 0 0 12px var(--lime-subtle);
+      inset 0 0 12px var(--lime-subtle);
   }
 }
 
 /* ── ANIMATIONS ── */
 @keyframes neon-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.85; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
 }
 
 .animate-neon {
@@ -217,8 +284,12 @@
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -227,14 +298,4 @@
 
 img {
   aspect-ratio: auto;
-  content-visibility: auto; /* Optimizes rendering of off-screen elements */
-}
-
-img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-img.loaded {
-  opacity: 1;
 }

@@ -13,8 +13,11 @@ import WhatsAppFab from "../components/sharpman/WhatsAppFab";
 const Home = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-clip">
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <MarqueeSection />
         <AboutSection />

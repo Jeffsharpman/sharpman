@@ -18,9 +18,49 @@
     </image:image>
     <image:image>
       <image:loc>https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png</image:loc>
-      <image:title>Oyenuga Joshua Portrait — Sharpman</image:title>
+      <image:title>Oyenuga Joshua Portrait — Sharpman Web Developer</image:title>
       <image:caption>Oyenuga Joshua, founder of Sharpman, web developer and entrepreneur in Lagos, Nigeria.</image:caption>
     </image:image>
+  </url>
+
+  <!-- ABOUT -->
+  <url>
+    <loc>https://sharpman.netlify.app/#about</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SERVICES -->
+  <url>
+    <loc>https://sharpman.netlify.app/#services</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- PROJECTS -->
+  <url>
+    <loc>https://sharpman.netlify.app/#projects</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- CONTACT -->
+  <url>
+    <loc>https://sharpman.netlify.app/#contact</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- START PROJECT -->
+  <url>
+    <loc>https://sharpman.netlify.app/#start-project</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

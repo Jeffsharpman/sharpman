@@ -1,4 +1,3 @@
-// BeyondCodeSection.jsx
 import { Briefcase, Plus, Code, Crosshair, ArrowUpRight } from "lucide-react";
 
 const pillars = [
@@ -10,7 +9,7 @@ const pillars = [
     glow: "rgba(202,239,69,0.15)",
     borderHover: "hover:border-[#CAEF45]/40",
     sizeClass: "col-span-1 md:col-span-3",
-    icon: <Briefcase size={20} />,
+    icon: <Briefcase size={20} aria-hidden="true" />,
   },
   {
     title: "ENTREPRENEUR",
@@ -20,7 +19,7 @@ const pillars = [
     glow: "rgba(91,156,246,0.15)",
     borderHover: "hover:border-[#5B9CF6]/40",
     sizeClass: "col-span-1 md:col-span-3",
-    icon: <Plus size={20} />,
+    icon: <Plus size={20} aria-hidden="true" />,
   },
   {
     title: "DEVELOPER",
@@ -30,7 +29,7 @@ const pillars = [
     glow: "rgba(176,126,240,0.15)",
     borderHover: "hover:border-[#B07EF0]/40",
     sizeClass: "col-span-1 md:col-span-3",
-    icon: <Code size={20} />,
+    icon: <Code size={20} aria-hidden="true" />,
   },
   {
     title: "PROBLEM SOLVER",
@@ -40,16 +39,17 @@ const pillars = [
     glow: "rgba(240,166,68,0.15)",
     borderHover: "hover:border-[#F0A644]/40",
     sizeClass: "col-span-1 md:col-span-3",
-    icon: <Crosshair size={20} />,
+    icon: <Crosshair size={20} aria-hidden="true" />,
   },
 ];
 
 export default function BeyondCodeSection() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32 px-6 md:px-10 lg:px-16 border-t border-border/40 bg-background">
-      {/* Dynamic Cyber Ambient Glow */}
+    <section className="relative overflow-hidden py-24 md:py-32 px-6 md:px-10 lg:px-16 border-t border-border/40 bg-background" aria-labelledby="beyond-code-heading">
+      {/* Decorative ambient glow blobs */}
       <div
         className="absolute top-0 left-1/4 w-125 h-125 rounded-full blur-[160px] pointer-events-none opacity-30"
+        aria-hidden="true"
         style={{
           background:
             "radial-gradient(circle, rgba(202,239,69,0.15) 0%, transparent 70%)",
@@ -57,6 +57,7 @@ export default function BeyondCodeSection() {
       />
       <div
         className="absolute bottom-0 right-1/4 w-150 h-150 rounded-full blur-[180px] pointer-events-none opacity-20"
+        aria-hidden="true"
         style={{
           background:
             "radial-gradient(circle, rgba(91,156,246,0.12) 0%, transparent 70%)",
@@ -64,16 +65,17 @@ export default function BeyondCodeSection() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        {/* ================= HEADER SECTION ================= */}
+        {/* HEADER SECTION */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" aria-hidden="true" />
               <span className="font-mono text-[11px] uppercase tracking-[4px] text-primary">
                 WHO I AM
               </span>
             </div>
             <h2
+              id="beyond-code-heading"
               className="font-display uppercase leading-[0.9] text-foreground tracking-tighter"
               style={{ fontSize: "clamp(2.8rem, 7.5vw, 96px)" }}
             >
@@ -100,17 +102,18 @@ export default function BeyondCodeSection() {
           </div>
         </div>
 
-        {/* ================= PILLARS BENTO GRID ================= */}
+        {/* PILLARS BENTO GRID */}
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-16">
           {pillars.map((pillar) => (
-            <div
+            <article
               key={pillar.title}
               className={`group relative rounded-4xl p-8 md:p-10 bg-card/40 backdrop-blur-md border border-border/60 ${pillar.borderHover} transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1 ${pillar.sizeClass}`}
             >
-              {/* Dynamic Internal Corner Glow */}
+              {/* Decorative internal corner glow */}
               <div
                 className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ background: pillar.glow }}
+                aria-hidden="true"
               />
 
               <div>
@@ -133,12 +136,12 @@ export default function BeyondCodeSection() {
               <p className="font-mono text-[12px] leading-relaxed text-muted-foreground/85 tracking-tight max-w-xl">
                 {pillar.desc}
               </p>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* ================= PHILOSOPHY BLOCK ================= */}
-        <div className="group relative rounded-[2.5rem] border border-border/50 bg-card/20 p-8 md:p-16 mb-16 overflow-hidden transition-all duration-300 hover:bg-card/40">
+        {/* PHILOSOPHY BLOCK */}
+        <article className="group relative rounded-[2.5rem] border border-border/50 bg-card/20 p-8 md:p-16 mb-16 overflow-hidden transition-all duration-300 hover:bg-card/40">
           <div className="max-w-4xl relative z-10">
             <div className="font-mono text-[11px] tracking-[4px] uppercase text-primary mb-6">
               MY PHILOSOPHY
@@ -151,7 +154,7 @@ export default function BeyondCodeSection() {
             </h3>
 
             <p className="font-mono text-xs md:text-sm text-muted-foreground leading-relaxed max-w-3xl">
-              I believe great solutions begin with understanding. Whether I'm
+              I believe great solutions begin with understanding. Whether I&apos;m
               building a web application, improving a business process, or
               solving a technical challenge, I start by asking questions,
               learning how the system works, and identifying the real problem.
@@ -159,15 +162,15 @@ export default function BeyondCodeSection() {
               solutions that make a meaningful difference.
             </p>
           </div>
-        </div>
+        </article>
 
-        {/* ================= CORE DRIVERS MAP (MISSION/VISION/MOTTO) ================= */}
+        {/* CORE DRIVERS MAP (MISSION/VISION/MOTTO) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Mission */}
-          <div className="group relative rounded-4xl p-8 bg-card/20 border border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/40">
+          <article className="group relative rounded-4xl p-8 bg-card/20 border border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/40">
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[3px] text-muted-foreground/60 mb-4 flex items-center gap-1.5">
-                <span className="text-primary">//</span> MISSION
+                <span className="text-primary" aria-hidden="true">//</span> MISSION
               </div>
               <p className="font-mono text-sm leading-relaxed text-muted-foreground">
                 To solve problems, create opportunities, and build a better
@@ -181,17 +184,18 @@ export default function BeyondCodeSection() {
             <ArrowUpRight
               size={16}
               className="text-muted-foreground/30 ml-auto group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+              aria-hidden="true"
             />
-          </div>
+          </article>
 
           {/* Vision */}
-          <div
+          <article
             className="group relative rounded-4xl p-8 bg-card border border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/80"
             style={{ boxShadow: "0 10px 40px -15px var(--lime-subtle)" }}
           >
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[3px] text-primary mb-4 flex items-center gap-1.5">
-                <span>//</span> VISION
+                <span aria-hidden="true">//</span> VISION
               </div>
               <p className="font-mono text-sm leading-relaxed text-muted-foreground">
                 To become an{" "}
@@ -202,16 +206,17 @@ export default function BeyondCodeSection() {
                 generate opportunities, and leave a lasting impact.
               </p>
             </div>
-            <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto shadow-[0_0_12px_#CAEF45] animate-ping" />
-          </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto shadow-[0_0_12px_#CAEF45] animate-ping" aria-hidden="true" />
+          </article>
 
-          {/* High Impact Motto */}
-          <div
+          {/* Motto */}
+          <article
             className="relative rounded-4xl p-8 bg-primary overflow-hidden flex flex-col justify-between min-h-55 group transition-all duration-500 hover:scale-[1.01]"
             style={{ boxShadow: "0 20px 40px -10px var(--lime-soft)" }}
           >
-            <div className="absolute inset-0 bg-linear-to-br from-black/10 to-transparent pointer-events-none" />
-            <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-background/5 blur-2xl group-hover:scale-125 transition-transform duration-700" />
+            {/* Decorative overlays */}
+            <div className="absolute inset-0 bg-linear-to-br from-black/10 to-transparent pointer-events-none" aria-hidden="true" />
+            <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-background/5 blur-2xl group-hover:scale-125 transition-transform duration-700" aria-hidden="true" />
 
             <div className="font-mono text-[10px] uppercase tracking-[3px] text-primary-foreground/60 relative z-10">
               // MOTTO
@@ -220,8 +225,8 @@ export default function BeyondCodeSection() {
               BUILDING THE FUTURE, <br />
               <span className="text-background/80">ONE STEP AT A TIME.</span>
             </p>
-            <div className="w-8 h-px bg-primary-foreground/30 mt-4 relative z-10" />
-          </div>
+            <div className="w-8 h-px bg-primary-foreground/30 mt-4 relative z-10" aria-hidden="true" />
+          </article>
         </div>
       </div>
     </section>
