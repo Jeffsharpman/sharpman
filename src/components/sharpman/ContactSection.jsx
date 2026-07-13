@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react";
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
 import { SITE } from "../../data/siteConfig";
 
@@ -48,7 +49,13 @@ export default function ContactSection() {
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-start max-w-6xl mx-auto relative z-10">
         {/* LEFT */}
         <div className="flex-1">
-          <div className="flex items-center gap-2 mb-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-2 mb-6"
+          >
             <span
               className="w-1.5 h-1.5 bg-primary rounded-full"
               aria-hidden="true"
@@ -56,10 +63,14 @@ export default function ContactSection() {
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
               GET IN TOUCH
             </span>
-          </div>
+          </motion.div>
 
-          <h2
+          <motion.h2
             id="contact-heading"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display uppercase leading-none mb-6 text-foreground"
             style={{ fontSize: "clamp(2.8rem, 6vw, 80px)" }}
           >
@@ -74,16 +85,28 @@ export default function ContactSection() {
               </span>
             </span>
             <span className="block">TO SOLVE?</span>
-          </h2>
+          </motion.h2>
 
-          <p className="font-mono text-sm leading-relaxed max-w-xs text-muted-foreground mb-8">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="font-mono text-sm leading-relaxed max-w-xs text-muted-foreground mb-8"
+          >
             Whether it&apos;s a website, a web app, or a digital challenge
             you&apos;re trying to figure out — let&apos;s talk. I&apos;m available
             for{" "}
             <span className="text-primary">freelance and remote work</span>.
-          </p>
+          </motion.p>
 
-          <div className="flex gap-8 mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="flex gap-8 mb-10"
+          >
             {highlights.map((s) => (
               <div key={s.label}>
                 <div
@@ -97,10 +120,16 @@ export default function ContactSection() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Contact links */}
-          <div className="flex flex-col gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col gap-3"
+          >
             <a
               href={`mailto:${SITE.email}`}
               className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -121,11 +150,17 @@ export default function ContactSection() {
               </span>
               {SITE.phoneDisplay} · WhatsApp
             </a>
-          </div>
+          </motion.div>
         </div>
 
         {/* RIGHT — Form */}
-        <div className="flex-1 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="flex-1 w-full"
+        >
           <div
             className="rounded-3xl p-8 md:p-10 bg-card border border-border"
             style={{
@@ -232,7 +267,7 @@ export default function ContactSection() {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

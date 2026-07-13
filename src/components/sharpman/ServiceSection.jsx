@@ -1,4 +1,7 @@
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import useScrollTo from "../../hooks/useScrollTo";
+
 const BRAND_IMG =
   "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/banner.png";
 const LogoImg =
@@ -37,9 +40,15 @@ const services = [
   },
 ];
 
-function ServiceCard({ service }) {
+function ServiceCard({ service, index }) {
   return (
-    <article className="relative rounded-2xl p-6 h-full flex flex-col bg-card border border-border hover:border-primary/40 transition-all duration-300 overflow-hidden group">
+    <motion.article
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="relative rounded-2xl p-6 h-full flex flex-col bg-card border border-border hover:border-primary/40 transition-all duration-300 overflow-hidden group"
+    >
       {/* Number watermark - decorative */}
       <div className="absolute top-4 right-4 font-display text-5xl leading-none select-none text-foreground/5 group-hover:text-foreground/10 transition-colors duration-300" aria-hidden="true">
         {service.num}
@@ -69,11 +78,13 @@ function ServiceCard({ service }) {
           Learn more
         </span>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
 export default function ServicesSection() {
+  const scrollTo = useScrollTo();
+
   return (
     <section
       id="services"
@@ -83,22 +94,38 @@ export default function ServicesSection() {
       {/* Header */}
       <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-14">
         <div>
-          <div className="flex items-center gap-2 mb-4">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-2 mb-4"
+          >
             <span className="w-1.5 h-1.5 bg-primary rounded-full" aria-hidden="true" />
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
               WHAT I DO
             </span>
-          </div>
-          <h2
+          </motion.div>
+          <motion.h2
             id="services-heading"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-black uppercase text-foreground"
             style={{ fontSize: "clamp(2.8rem, 8vw, 100px)", lineHeight: 0.88 }}
           >
             SERVICES
-          </h2>
+          </motion.h2>
         </div>
 
-        <div className="hidden lg:block">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="hidden lg:block"
+        >
           <div
             className="relative w-44 h-24 rounded-2xl overflow-hidden shrink-0 border border-border"
             style={{ boxShadow: "0 0 28px var(--lime-subtle)" }}
@@ -119,18 +146,22 @@ export default function ServicesSection() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
-        {services.map((s) => (
-          <ServiceCard key={s.num} service={s} />
+        {services.map((s, i) => (
+          <ServiceCard key={s.num} service={s} index={i} />
         ))}
       </div>
 
       {/* Bottom CTA */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
         className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-card border border-border"
         style={{ boxShadow: "0 0 50px var(--lime-subtle)" }}
       >
@@ -184,12 +215,16 @@ export default function ServicesSection() {
 
         <a
           href="#start-project"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollTo("#start-project");
+          }}
           className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-3.5 rounded-xl text-primary-foreground bg-primary shrink-0 hover:brightness-105 transition-all duration-200"
           style={{ boxShadow: "0 0 22px var(--lime-soft)" }}
         >
           START YOUR PROJECT <span aria-hidden="true">→</span>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }

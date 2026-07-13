@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { Briefcase, Plus, Code, Crosshair, ArrowUpRight } from "lucide-react";
 
 const pillars = [
@@ -68,14 +69,24 @@ export default function BeyondCodeSection() {
         {/* HEADER SECTION */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 mb-4">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center gap-2 mb-4"
+            >
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse" aria-hidden="true" />
               <span className="font-mono text-[11px] uppercase tracking-[4px] text-primary">
                 WHO I AM
               </span>
-            </div>
-            <h2
+            </motion.div>
+            <motion.h2
               id="beyond-code-heading"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="font-display uppercase leading-[0.9] text-foreground tracking-tighter"
               style={{ fontSize: "clamp(2.8rem, 7.5vw, 96px)" }}
             >
@@ -88,9 +99,15 @@ export default function BeyondCodeSection() {
               >
                 THE CODE.
               </span>
-            </h2>
+            </motion.h2>
           </div>
-          <div className="relative max-w-md lg:mb-2 pl-6 border-l-2 border-primary/20">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative max-w-md lg:mb-2 pl-6 border-l-2 border-primary/20"
+          >
             <p className="font-mono text-xs md:text-sm text-muted-foreground leading-relaxed">
               Technology is only one part of my journey. Alongside web
               development, I run a retail gas business, repair electronic
@@ -99,14 +116,18 @@ export default function BeyondCodeSection() {
               challenge: with curiosity, practical thinking, and a commitment to
               building meaningful solutions.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* PILLARS BENTO GRID */}
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-16">
-          {pillars.map((pillar) => (
-            <article
+          {pillars.map((pillar, i) => (
+            <motion.article
               key={pillar.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`group relative rounded-4xl p-8 md:p-10 bg-card/40 backdrop-blur-md border border-border/60 ${pillar.borderHover} transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1 ${pillar.sizeClass}`}
             >
               {/* Decorative internal corner glow */}
@@ -136,12 +157,18 @@ export default function BeyondCodeSection() {
               <p className="font-mono text-[12px] leading-relaxed text-muted-foreground/85 tracking-tight max-w-xl">
                 {pillar.desc}
               </p>
-            </article>
+            </motion.article>
           ))}
         </div>
 
         {/* PHILOSOPHY BLOCK */}
-        <article className="group relative rounded-[2.5rem] border border-border/50 bg-card/20 p-8 md:p-16 mb-16 overflow-hidden transition-all duration-300 hover:bg-card/40">
+        <motion.article
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="group relative rounded-[2.5rem] border border-border/50 bg-card/20 p-8 md:p-16 mb-16 overflow-hidden transition-all duration-300 hover:bg-card/40"
+        >
           <div className="max-w-4xl relative z-10">
             <div className="font-mono text-[11px] tracking-[4px] uppercase text-primary mb-6">
               MY PHILOSOPHY
@@ -162,12 +189,18 @@ export default function BeyondCodeSection() {
               solutions that make a meaningful difference.
             </p>
           </div>
-        </article>
+        </motion.article>
 
         {/* CORE DRIVERS MAP (MISSION/VISION/MOTTO) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Mission */}
-          <article className="group relative rounded-4xl p-8 bg-card/20 border border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/40">
+          <motion.article
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0 }}
+            className="group relative rounded-4xl p-8 bg-card/20 border border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/40"
+          >
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[3px] text-muted-foreground/60 mb-4 flex items-center gap-1.5">
                 <span className="text-primary" aria-hidden="true">//</span> MISSION
@@ -186,10 +219,14 @@ export default function BeyondCodeSection() {
               className="text-muted-foreground/30 ml-auto group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
               aria-hidden="true"
             />
-          </article>
+          </motion.article>
 
           {/* Vision */}
-          <article
+          <motion.article
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="group relative rounded-4xl p-8 bg-card border border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/80"
             style={{ boxShadow: "0 10px 40px -15px var(--lime-subtle)" }}
           >
@@ -207,10 +244,14 @@ export default function BeyondCodeSection() {
               </p>
             </div>
             <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto shadow-[0_0_12px_#CAEF45] animate-ping" aria-hidden="true" />
-          </article>
+          </motion.article>
 
           {/* Motto */}
-          <article
+          <motion.article
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="relative rounded-4xl p-8 bg-primary overflow-hidden flex flex-col justify-between min-h-55 group transition-all duration-500 hover:scale-[1.01]"
             style={{ boxShadow: "0 20px 40px -10px var(--lime-soft)" }}
           >
@@ -226,7 +267,7 @@ export default function BeyondCodeSection() {
               <span className="text-background/80">ONE STEP AT A TIME.</span>
             </p>
             <div className="w-8 h-px bg-primary-foreground/30 mt-4 relative z-10" aria-hidden="true" />
-          </article>
+          </motion.article>
         </div>
       </div>
     </section>

@@ -1,7 +1,16 @@
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { SITE, FOOTER_LINKS, SOCIAL_LINKS } from "../../data/siteConfig";
+import useScrollTo from "../../hooks/useScrollTo";
 
 export default function TerminalFooter() {
+  const scrollTo = useScrollTo();
+
+  const handleLinkClick = (e, href) => {
+    e.preventDefault();
+    scrollTo(href);
+  };
+
   return (
     <footer className="relative overflow-hidden bg-card" role="contentinfo">
       {/* Top lime line - decorative */}
@@ -19,7 +28,13 @@ export default function TerminalFooter() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12">
             {/* Left */}
-            <div className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex-1"
+            >
               <div className="flex items-center gap-4 mb-8">
                 <div
                   className="relative flex items-center justify-center w-12 h-12 shrink-0 rounded-2xl overflow-hidden"
@@ -99,10 +114,16 @@ export default function TerminalFooter() {
                 Drop a line and let&apos;s turn your vision into a{" "}
                 <span className="text-primary">digital reality.</span>
               </p>
-            </div>
+            </motion.div>
 
             {/* Right — CTA card */}
-            <div className="shrink-0 w-full lg:w-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="shrink-0 w-full lg:w-auto"
+            >
               <div
                 className="rounded-3xl p-8 lg:p-10 bg-background border border-border min-w-72.5"
                 style={{ boxShadow: "0 40px 80px rgba(0,0,0,0.6)" }}
@@ -119,6 +140,7 @@ export default function TerminalFooter() {
 
                 <a
                   href="#start-project"
+                  onClick={(e) => handleLinkClick(e, "#start-project")}
                   className="flex items-center justify-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-4 rounded-xl text-primary-foreground w-full bg-primary hover:brightness-105 active:scale-[0.98] transition-all duration-200"
                   style={{ boxShadow: "0 0 28px var(--lime-soft)" }}
                 >
@@ -126,7 +148,7 @@ export default function TerminalFooter() {
                   <ArrowUpRight size={13} color="#0A0A0A" aria-hidden="true" />
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -145,6 +167,7 @@ export default function TerminalFooter() {
               <a
                 key={l.label}
                 href={l.href}
+                onClick={(e) => handleLinkClick(e, l.href)}
                 className="font-mono text-[11px] uppercase tracking-[2px] text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 {l.label}

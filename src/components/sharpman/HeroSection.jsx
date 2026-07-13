@@ -1,4 +1,6 @@
+import { motion } from "motion/react";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
+import useScrollTo from "../../hooks/useScrollTo";
 
 const HERO_IMG =
   "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png";
@@ -9,7 +11,16 @@ const pills = [
   { v: "OPEN", l: "To Work" },
 ];
 
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
+};
+
 export default function HeroSection() {
+  const scrollTo = useScrollTo();
+
   return (
     <section
       className="min-h-screen flex flex-col relative overflow-hidden pt-20 bg-background"
@@ -40,7 +51,12 @@ export default function HeroSection() {
         {/* LEFT */}
         <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 mb-7 px-3.5 py-2 rounded-full bg-primary/7 border border-primary/20 w-fit">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2 mb-7 px-3.5 py-2 rounded-full bg-primary/7 border border-primary/20 w-fit"
+          >
             <span
               className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"
               aria-hidden="true"
@@ -48,15 +64,25 @@ export default function HeroSection() {
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
               Digital Solutions · Ikorodu, Lagos NG
             </span>
-          </div>
+          </motion.div>
 
           {/* Heading */}
           <h1
             className="font-display uppercase leading-[0.88] mb-6"
             style={{ fontSize: "clamp(3rem, 8.5vw, 7rem)" }}
           >
-            <span className="block text-foreground">BUILDER.</span>
-            <span
+            <motion.span
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="block text-foreground"
+            >
+              BUILDER.
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
               className="block text-primary"
               style={{
                 textShadow:
@@ -64,21 +90,38 @@ export default function HeroSection() {
               }}
             >
               ENTREPRENEUR.
-            </span>
-            <span className="block text-foreground">PROBLEM SOLVER.</span>
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="block text-foreground"
+            >
+              PROBLEM SOLVER.
+            </motion.span>
           </h1>
 
           {/* Subtext */}
-          <p className="font-mono font-light text-sm leading-relaxed max-w-sm mb-8 text-muted-foreground">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.75 }}
+            className="font-mono font-light text-sm leading-relaxed max-w-sm mb-8 text-muted-foreground"
+          >
             I help businesses and individuals create{" "}
             <span className="text-primary font-medium">
               modern digital experiences
             </span>{" "}
             through technology, innovation, and practical problem solving.
-          </p>
+          </motion.p>
 
           {/* CTA row */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8"
+          >
             <a
               href="mailto:buildwithsharpman@gmail.com"
               className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-4 rounded-2xl text-primary-foreground bg-primary hover:brightness-105 transition-all duration-200"
@@ -98,6 +141,10 @@ export default function HeroSection() {
 
             <a
               href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("#projects");
+              }}
               className="group font-mono text-xs uppercase tracking-[2.5px] px-6 py-4 rounded-2xl border border-border hover:border-primary/60 text-muted-foreground hover:text-primary flex items-center gap-2 transition-all duration-300"
             >
               VIEW MY WORK
@@ -108,13 +155,21 @@ export default function HeroSection() {
                 →
               </span>
             </a>
-          </div>
+          </motion.div>
 
           {/* Pills */}
-          <div className="flex gap-3 flex-wrap">
-            {pills.map((s) => (
-              <div
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.05 }}
+            className="flex gap-3 flex-wrap"
+          >
+            {pills.map((s, i) => (
+              <motion.div
                 key={s.l}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.1 + i * 0.08, duration: 0.4 }}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary border border-border"
               >
                 <span className="font-display text-primary text-base leading-none">
@@ -123,13 +178,18 @@ export default function HeroSection() {
                 <span className="font-mono text-[10px] uppercase tracking-[1px] text-muted-foreground">
                   {s.l}
                 </span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* RIGHT */}
-        <div className="flex-1 flex flex-col items-center lg:items-end gap-4 relative z-10 w-full lg:w-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex-1 flex flex-col items-center lg:items-end gap-4 relative z-10 w-full lg:w-auto"
+        >
           <div className="relative flex items-center justify-center">
             <div
               className="absolute w-95 h-95 sm:w-107.5 sm:h-107.5 rounded-full border border-primary/50 blur-2xl pointer-events-none bg-primary/6"
@@ -141,8 +201,10 @@ export default function HeroSection() {
             />
 
             {/* Founder Card */}
-
-            <div
+            {/* <motion.div
+              initial={{ opacity: 0, x: -20, y: 20 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
               className="
                   absolute
                   top-10
@@ -167,12 +229,15 @@ export default function HeroSection() {
               <p className="font-mono text-[11px] text-muted-foreground">
                 Digital Solutions
               </p>
-            </div>
+            </motion.div> */}
 
             {/* Status Card */}
 
-              <div
-                className="
+            {/* <motion.div
+              initial={{ opacity: 0, x: 20, y: -20 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ delay: 0.95, duration: 0.5 }}
+              className="
                   absolute
                   bottom-0
                   right-2
@@ -186,21 +251,21 @@ export default function HeroSection() {
                   py-4
                   shadow-[0_0_30px_rgba(202,239,69,.15)]
                 "
-              >
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            >
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
 
-                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-primary">
-                    Available
-                  </span>
-                </div>
-
-                <h3 className="font-display mt-3">Remote</h3>
-
-                <p className="font-mono text-[11px] text-muted-foreground">
-                  Freelance • Contract
-                </p>
+                <span className="font-mono text-[10px] uppercase tracking-[2px] text-primary">
+                  Available
+                </span>
               </div>
+
+              <h3 className="font-display mt-3">Remote</h3>
+
+              <p className="font-mono text-[11px] text-muted-foreground">
+                Freelance • Contract
+              </p>
+            </motion.div> */}
 
             {/* ===========================================
                       HERO ARTWORK
@@ -221,83 +286,27 @@ export default function HeroSection() {
 
               {/* Hero Artwork */}
 
-              <img
+              <motion.img
                 src={HERO_IMG}
                 alt="Sharpman Hero Artwork"
                 draggable={false}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 className="
                 w-full
                 object-contain
                 drop-shadow-[0_0_60px_rgba(202,239,69,.18)]
                 "
               />
-
-              {/* Founder Card */}
-
-              {/* <div
-                className="
-                  absolute
-                  top-10
-                  left-0
-                  z-30
-                  rounded-3xl
-                  border
-                  border-primary/20
-                  bg-card/70
-                  backdrop-blur-xl
-                  px-5
-                  py-4
-                  shadow-[0_0_30px_rgba(202,239,69,.15)]
-    "
-              >
-                <p className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
-                  Founder
-                </p>
-
-                <h3 className="font-display text-lg">SHARPMAN</h3>
-
-                <p className="font-mono text-[11px] text-muted-foreground">
-                  Digital Solutions
-                </p>
-              </div> */}
-
-              {/* Status Card */}
-
-              {/* <div
-                className="
-                  absolute
-                  bottom-14
-                  right-2
-                  z-30
-                  rounded-3xl
-                  border
-                  border-primary/20
-                  bg-card/70
-                  backdrop-blur-xl
-                  px-5
-                  py-4
-                  shadow-[0_0_30px_rgba(202,239,69,.15)]
-                "
-              >
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-
-                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-primary">
-                    Available
-                  </span>
-                </div>
-
-                <h3 className="font-display mt-3">Remote</h3>
-
-                <p className="font-mono text-[11px] text-muted-foreground">
-                  Freelance • Contract
-                </p>
-              </div> */}
             </div>
           </div>
 
           {/* Code snippet */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
             className="rounded-2xl px-5 py-4 font-mono text-[11px] self-start lg:self-auto max-w-55 bg-card border border-border"
             style={{ boxShadow: "0 0 24px var(--lime-subtle)" }}
           >
@@ -317,12 +326,15 @@ export default function HeroSection() {
               <span className="text-foreground">success</span>
               <span className="text-muted-foreground">;</span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Scroll hint */}
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.5 }}
         className="flex justify-center pb-6 gap-2 items-center"
         aria-hidden="true"
       >
@@ -332,7 +344,7 @@ export default function HeroSection() {
         <span className="font-mono text-[10px] uppercase tracking-[3px] text-muted-foreground">
           Scroll to explore
         </span>
-      </div>
+      </motion.div>
     </section>
   );
 }

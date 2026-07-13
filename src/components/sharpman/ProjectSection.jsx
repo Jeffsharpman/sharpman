@@ -7,6 +7,7 @@
    ================================================================ */
 
 import { useState } from "react";
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS_WITH_SEO, getRelatedProjects } from "../../data/projects";
 import { ProjectSchemas } from "../seo/ProjectSchema";
@@ -17,7 +18,11 @@ function ProjectCard({ project, index }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <article
+    <motion.article
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
       className="sticky w-full flex justify-center px-4 sm:px-8 md:px-16"
       style={{
         top: `${120 + index * 35}px`,
@@ -181,7 +186,7 @@ function ProjectCard({ project, index }) {
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
@@ -197,25 +202,41 @@ export default function ProjectsSection() {
 
       {/* Title Header Block */}
       <div className="px-6 sm:px-10 md:px-16 lg:px-20 pt-20 md:pt-28 pb-12">
-        <div className="flex items-center gap-2 mb-4">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-2 mb-4"
+        >
           <span className="w-2 h-2 bg-primary rounded-full" aria-hidden="true" />
           <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
             THINGS I&apos;VE BUILT
           </span>
-        </div>
+        </motion.div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <h2
+          <motion.h2
             id="projects-heading"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-black uppercase text-foreground"
             style={{ fontSize: "clamp(3rem, 12vw, 140px)", lineHeight: 0.88 }}
           >
             PROJECTS
-          </h2>
-          <p className="font-mono text-sm max-w-xs text-muted-foreground">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="font-mono text-sm max-w-xs text-muted-foreground"
+          >
             Built from scratch. Shipped for real.
             <br />
             <span className="text-primary">Every one solves a problem.</span>
-          </p>
+          </motion.p>
         </div>
 
         {/* Breadcrumbs */}

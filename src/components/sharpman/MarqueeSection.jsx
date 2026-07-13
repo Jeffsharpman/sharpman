@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 const items = [
   "WEBSITES",
   "WEB APPS",
@@ -20,7 +22,14 @@ const items = [
 
 export default function MarqueeSection() {
   return (
-    <section className="relative overflow-hidden py-0 bg-card border-y border-border" aria-hidden="true">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="relative overflow-hidden py-0 bg-card border-y border-border"
+      aria-hidden="true"
+    >
       {/* Fade edges */}
       <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-linear-to-r from-card to-transparent" />
       <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-linear-to-l from-card to-transparent" />
@@ -35,6 +44,6 @@ export default function MarqueeSection() {
           </span>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

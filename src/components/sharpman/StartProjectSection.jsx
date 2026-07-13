@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
 const projectTypes = [
@@ -59,16 +60,26 @@ export default function StartProjectSection() {
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-2 mb-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center justify-center gap-2 mb-6"
+          >
             <span className="w-1.5 h-1.5 bg-primary rounded-full" aria-hidden="true" />
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
               START A PROJECT
             </span>
             <span className="w-1.5 h-1.5 bg-primary rounded-full" aria-hidden="true" />
-          </div>
+          </motion.div>
 
-          <h2
+          <motion.h2
             id="start-project-heading"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display uppercase leading-none mb-5 text-foreground"
             style={{ fontSize: "clamp(2.4rem, 5.5vw, 72px)" }}
           >
@@ -82,16 +93,26 @@ export default function StartProjectSection() {
                 GREAT
               </span>
             </span>
-          </h2>
+          </motion.h2>
 
-          <p className="font-mono text-sm leading-relaxed max-w-md mx-auto text-muted-foreground">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="font-mono text-sm leading-relaxed max-w-md mx-auto text-muted-foreground"
+          >
             Tell me about your project and I&apos;ll get back to you within{" "}
             <span className="text-primary">24 hours</span> with next steps.
-          </p>
+          </motion.p>
         </div>
 
         {/* Form Card */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="rounded-3xl p-8 md:p-10 bg-card border border-border"
           style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset" }}
         >
@@ -277,7 +298,7 @@ export default function StartProjectSection() {
               </form>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
