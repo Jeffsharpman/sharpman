@@ -1,16 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../lib/ThemeContext";
 import { Sun, Moon, Menu, X } from "lucide-react";
-
-const LogoImg =
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-logo.png";
-
-const links = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#projects" },
-];
+import { SITE, NAV_LINKS } from "../../data/siteConfig";
 
 export default function Navbar() {
   const { dark, toggle } = useTheme();
@@ -36,7 +27,7 @@ export default function Navbar() {
         <a
           href="#"
           className="flex items-center gap-3 no-underline"
-          aria-label="Sharpman — Go to top"
+          aria-label={`${SITE.name} — Go to top`}
         >
           <div
             className="relative flex items-center justify-center w-10 h-10 shrink-0 rounded-xl overflow-hidden"
@@ -53,13 +44,14 @@ export default function Navbar() {
           >
             <div
               className="absolute inset-0 rounded-xl"
+              aria-hidden="true"
               style={{
                 background:
                   "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
               }}
             />
             <img
-              src={LogoImg}
+              src={SITE.logo}
               alt=""
               aria-hidden="true"
               className="relative z-10 w-8 h-8 object-contain"
@@ -87,7 +79,7 @@ export default function Navbar() {
           aria-label="Main navigation"
           className="hidden md:flex items-center gap-0.5"
         >
-          {links.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
@@ -100,16 +92,18 @@ export default function Navbar() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-2">
-          {/* Theme toggle */}
           <button
             onClick={toggle}
             aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
             className="w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-200"
           >
-            {dark ? <Sun size={13} aria-hidden="true" /> : <Moon size={13} aria-hidden="true" />}
+            {dark ? (
+              <Sun size={13} aria-hidden="true" />
+            ) : (
+              <Moon size={13} aria-hidden="true" />
+            )}
           </button>
 
-          {/* CTA - desktop */}
           <a
             href="#start-project"
             className="hidden md:inline-flex font-mono font-semibold text-[11px] uppercase tracking-[2px] px-5 py-2.5 rounded-xl bg-primary text-primary-foreground hover:brightness-110 active:scale-95 transition-all duration-200"
@@ -117,14 +111,19 @@ export default function Navbar() {
             LET&apos;S TALK
           </a>
 
-          {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              mobileOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={mobileOpen}
             className="md:hidden w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-200"
           >
-            {mobileOpen ? <X size={14} aria-hidden="true" /> : <Menu size={14} aria-hidden="true" />}
+            {mobileOpen ? (
+              <X size={14} aria-hidden="true" />
+            ) : (
+              <Menu size={14} aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
@@ -148,7 +147,7 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col p-4 gap-1">
-          {links.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}

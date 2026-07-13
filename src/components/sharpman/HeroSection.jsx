@@ -156,7 +156,7 @@ export default function HeroSection() {
                 className="w-full h-full object-cover"
                 width="390"
                 height="390"
-                fetchpriority="high"
+                fetchPriority="high"
               />
               <div
                 className="absolute inset-0 rounded-full bg-background"

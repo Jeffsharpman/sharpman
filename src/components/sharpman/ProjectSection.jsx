@@ -1,61 +1,21 @@
-import { ArrowUpRight } from "lucide-react";
+/* ================================================================
+   ProjectSection.jsx — Renders all projects from the central
+   registry. Never hardcode projects here.
 
-const projects = [
-  {
-    num: "01",
-    name: "NOVATASK",
-    category: "PERSONAL PROJECT",
-    tag: "BUILD. ORGANISE. ELEVATE.",
-    desc: "A task management application built with React. Designed to help users organise their work, manage priorities, and stay productive — clean UI, fast, and focused.",
-    image:
-      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/novatodos.png",
-    imageAlt: "NovaTask — A modern task management application built with React by Sharpman",
-    tech: "React",
-    color: "#CAEF45",
-    href: "https://novatodos.netlify.app/",
-  },
-  {
-    num: "02",
-    name: "QUICKGRAB",
-    category: "PHP PROJECT",
-    tag: "FOOD. ORDER. DIGITAL.",
-    desc: "A food ordering and e-commerce platform built with PHP. QuickGrab helps businesses accept online orders and digitise their operations — connecting them with customers on the internet.",
-    image:
-      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/Quicgrab.jpg",
-    imageAlt: "QuickGrab — A PHP-powered food ordering and e-commerce platform for Nigerian businesses",
-    tech: "PHP",
-    color: "#F0A644",
-    href: "https://quickgrab.oyenugajoshua.com/",
-  },
-  {
-    num: "03",
-    name: "SHARPMAN SITE",
-    category: "PORTFOLIO",
-    tag: "DESIGN. CODE. ELEVATE.",
-    desc: "This portfolio — built in React to represent the Sharpman brand and tell the story of Oyenuga Joshua as a builder, developer, and entrepreneur.",
-    image:
-      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman.png",
-    imageAlt: "Sharpman Portfolio — A modern developer portfolio built with React and Tailwind CSS",
-    tech: "React",
-    color: "#5B9CF6",
-    href: "https://sharpman.netlify.app/",
-  },
-  {
-    num: "04",
-    name: "ZESTHAVEN",
-    category: "RESTAURANT SITE",
-    tag: "FOOD. MENU. DIGITAL.",
-    desc: "A modern Nigerian bukka serving slow stews, smoky grills, and hand-pounded yam in Lekki, Lagos.",
-    image:
-      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/ZestHaven%20.jpg",
-    imageAlt: "ZestHaven — A modern Nigerian restaurant website built by Sharpman",
-    tech: "React",
-    color: "#ef6c22",
-    href: "https://zesthaven.netlify.app/",
-  },
-];
+   Uses: PROJECTS_WITH_SEO from src/data/projects.js
+   Features: Internal links, per-project schema, breadcrumbs
+   ================================================================ */
+
+import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { PROJECTS_WITH_SEO, getRelatedProjects } from "../../data/projects";
+import { ProjectSchemas } from "../seo/ProjectSchema";
+import Breadcrumbs from "../seo/Breadcrumbs";
+import InternalLinks from "../seo/InternalLinks";
 
 function ProjectCard({ project, index }) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <article
       className="sticky w-full flex justify-center px-4 sm:px-8 md:px-16"
@@ -63,6 +23,8 @@ function ProjectCard({ project, index }) {
         top: `${120 + index * 35}px`,
         zIndex: 10 + index,
       }}
+      itemScope
+      itemType="https://schema.org/CreativeWork"
     >
       <div
         className="w-full pb-20 sm:pb-24 md:pb-32"
@@ -86,8 +48,9 @@ function ProjectCard({ project, index }) {
                 loading="lazy"
                 width="430"
                 height="380"
+                itemProp="image"
               />
-              {/* Responsive Gradient Bleed Scrims - decorative */}
+              {/* Gradient overlays - decorative */}
               <div
                 className="absolute inset-0 hidden md:block"
                 aria-hidden="true"
@@ -122,19 +85,23 @@ function ProjectCard({ project, index }) {
                     {project.category}
                   </span>
                   <span className="font-mono text-[9px] uppercase tracking-[1.5px] px-2 py-0.5 rounded-full border border-neutral-800 text-neutral-400 bg-neutral-900/40">
-                    {project.tech}
+                    {project.technologies[0]}
                   </span>
                 </div>
 
                 <div
                   className="font-mono text-[9px] uppercase tracking-[2.5px] mb-2"
                   style={{ color: project.color }}
+                  itemProp="keywords"
                 >
-                  {project.tag}
+                  {project.tagline}
                 </div>
 
                 <div className="relative flex items-baseline justify-between mt-1 mb-2">
-                  <h3 className="font-display uppercase text-xl md:text-2xl font-bold tracking-tight text-foreground">
+                  <h3
+                    className="font-display uppercase text-xl md:text-2xl font-bold tracking-tight text-foreground"
+                    itemProp="name"
+                  >
                     {project.name}
                   </h3>
                   <span
@@ -142,19 +109,40 @@ function ProjectCard({ project, index }) {
                     style={{ color: project.color + "18" }}
                     aria-hidden="true"
                   >
-                    {project.num}
+                    {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <p className="font-mono font-light text-xs leading-relaxed text-muted-foreground max-w-sm line-clamp-3 md:line-clamp-4">
-                  {project.desc}
+                <p
+                  className="font-mono font-light text-xs leading-relaxed text-muted-foreground max-w-sm line-clamp-3 md:line-clamp-4"
+                  itemProp="description"
+                >
+                  {project.shortDesc}
                 </p>
+
+                {/* Technology tags */}
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="font-mono text-[8px] uppercase tracking-[1.5px] px-2 py-0.5 rounded-full border border-border text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Internal links */}
+                <InternalLinks
+                  currentProjectId={project.id}
+                  limit={2}
+                />
               </div>
 
               {/* Action Button */}
               <div className="flex items-center gap-3 mt-6 relative z-30">
                 <a
-                  href={project.href}
+                  href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 font-mono text-[9px] uppercase tracking-[2.5px] border rounded-full transition-all duration-200 hover:scale-[1.02]"
@@ -170,8 +158,9 @@ function ProjectCard({ project, index }) {
                   onMouseLeave={(e) =>
                     (e.currentTarget.style.backgroundColor = "transparent")
                   }
+                  itemProp="url"
                 >
-                  VIEW PROJECT
+                  VIEW {project.name} WEBSITE
                   <ArrowUpRight size={10} aria-hidden="true" />
                 </a>
                 <div
@@ -198,7 +187,14 @@ function ProjectCard({ project, index }) {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative bg-background pb-12" aria-labelledby="projects-heading">
+    <section
+      id="projects"
+      className="relative bg-background pb-12"
+      aria-labelledby="projects-heading"
+    >
+      {/* Emit JSON-LD for ALL projects */}
+      <ProjectSchemas />
+
       {/* Title Header Block */}
       <div className="px-6 sm:px-10 md:px-16 lg:px-20 pt-20 md:pt-28 pb-12">
         <div className="flex items-center gap-2 mb-4">
@@ -221,12 +217,17 @@ export default function ProjectsSection() {
             <span className="text-primary">Every one solves a problem.</span>
           </p>
         </div>
+
+        {/* Breadcrumbs */}
+        <div className="mt-4">
+          <Breadcrumbs items={[{ label: "Projects", href: "#projects" }]} />
+        </div>
       </div>
 
       {/* Stacked Cards */}
       <div className="relative w-full flex flex-col items-center">
-        {projects.map((project, i) => (
-          <ProjectCard key={project.num} project={project} index={i} />
+        {PROJECTS_WITH_SEO.map((project, i) => (
+          <ProjectCard key={project.id} project={project} index={i} />
         ))}
       </div>
     </section>
