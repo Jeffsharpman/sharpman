@@ -55,8 +55,10 @@ export const PROJECTS = [
     businessOutcome:
       "Demonstrates Sharpman's capability to deliver fast, focused web applications that solve real productivity challenges for individuals and teams.",
     technologies: ["React", "JavaScript", "CSS3", "HTML5"],
-    image: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/novatodos.png",
-    imageAlt: "NovaTask — A modern task management application built with React by Sharpman, full stack web developer in Lagos Nigeria",
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/novatodos.png",
+    imageAlt:
+      "NovaTask — A modern task management application built with React by Sharpman, full stack web developer in Lagos Nigeria",
     liveUrl: "https://novatodos.netlify.app/",
     githubUrl: null,
     color: "#CAEF45",
@@ -78,8 +80,10 @@ export const PROJECTS = [
     businessOutcome:
       "Enables food businesses to accept online orders, digitise operations, and reach customers beyond their physical location — a critical need in Nigeria's growing food-tech space.",
     technologies: ["PHP", "HTML5", "CSS3", "JavaScript", "MySQL"],
-    image: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/Quicgrab.jpg",
-    imageAlt: "QuickGrab — A PHP-powered food ordering and e-commerce platform for Nigerian businesses, built by Sharpman web developer Lagos",
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/quickgrab.png",
+    imageAlt:
+      "QuickGrab — A PHP-powered food ordering and e-commerce platform for Nigerian businesses, built by Sharpman web developer Lagos",
     liveUrl: "https://quickgrab.oyenugajoshua.com/",
     githubUrl: null,
     color: "#F0A644",
@@ -101,8 +105,10 @@ export const PROJECTS = [
     businessOutcome:
       "Establishes the Sharpman brand online, demonstrates technical capability to potential clients, and serves as a living example of the quality Sharpman delivers.",
     technologies: ["React", "Tailwind CSS", "Vite", "JavaScript"],
-    image: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman.png",
-    imageAlt: "Sharpman Portfolio — A modern developer portfolio built with React and Tailwind CSS by Oyenuga Joshua, web developer in Lagos Nigeria",
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman.png",
+    imageAlt:
+      "Sharpman Portfolio — A modern developer portfolio built with React and Tailwind CSS by Oyenuga Joshua, web developer in Lagos Nigeria",
     liveUrl: "https://sharpman.netlify.app/",
     githubUrl: null,
     color: "#5B9CF6",
@@ -124,8 +130,10 @@ export const PROJECTS = [
     businessOutcome:
       "Gives a local Nigerian restaurant a professional online presence, showcases the menu digitally, and helps attract customers through a modern, mobile-first website.",
     technologies: ["React", "JavaScript", "CSS3", "HTML5"],
-    image: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/ZestHaven%20.jpg",
-    imageAlt: "ZestHaven — A modern Nigerian restaurant website built by Sharpman, web developer in Lagos Nigeria",
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/zesthaven.png",
+    imageAlt:
+      "ZestHaven — A modern Nigerian restaurant website built by Sharpman, web developer in Lagos Nigeria",
     liveUrl: "https://zesthaven.netlify.app/",
     githubUrl: null,
     color: "#ef6c22",

@@ -11,7 +11,10 @@ const pills = [
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col relative overflow-hidden pt-20 bg-background" aria-label="Hero">
+    <section
+      className="min-h-screen flex flex-col relative overflow-hidden pt-20 bg-background"
+      aria-label="Hero"
+    >
       {/* Dot grid - decorative */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.12]"
@@ -24,15 +27,24 @@ export default function HeroSection() {
       />
 
       {/* Glow blobs - decorative */}
-      <div className="absolute top-1/3 right-1/3 w-140 h-140 rounded-full blur-[140px] pointer-events-none bg-primary/5" aria-hidden="true" />
-      <div className="absolute bottom-0 left-1/4 w-85 h-85 rounded-full blur-[100px] pointer-events-none bg-primary/4" aria-hidden="true" />
+      <div
+        className="absolute top-1/3 right-1/3 w-140 h-140 rounded-full blur-[140px] pointer-events-none bg-primary/5"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 left-1/4 w-85 h-85 rounded-full blur-[100px] pointer-events-none bg-primary/4"
+        aria-hidden="true"
+      />
 
       <div className="flex-1 flex flex-col lg:flex-row items-center px-6 md:px-10 lg:px-16 pt-4 pb-6 gap-8 relative">
         {/* LEFT */}
         <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 mb-7 px-3.5 py-2 rounded-full bg-primary/7 border border-primary/20 w-fit">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" aria-hidden="true" />
+            <span
+              className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"
+              aria-hidden="true"
+            />
             <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
               Digital Solutions · Ikorodu, Lagos NG
             </span>
@@ -76,7 +88,10 @@ export default function HeroSection() {
               }}
             >
               START YOUR PROJECT
-              <span className="w-6 h-6 bg-primary-foreground rounded-full flex items-center justify-center" aria-hidden="true">
+              <span
+                className="w-6 h-6 bg-primary-foreground rounded-full flex items-center justify-center"
+                aria-hidden="true"
+              >
                 <ArrowUpRight size={10} color="#CAEF45" />
               </span>
             </a>
@@ -86,7 +101,10 @@ export default function HeroSection() {
               className="group font-mono text-xs uppercase tracking-[2.5px] px-6 py-4 rounded-2xl border border-border hover:border-primary/60 text-muted-foreground hover:text-primary flex items-center gap-2 transition-all duration-300"
             >
               VIEW MY WORK
-              <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">
+              <span
+                className="group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              >
                 →
               </span>
             </a>
@@ -122,52 +140,159 @@ export default function HeroSection() {
               }}
             />
 
-            {/* Floating badge — top left */}
+            {/* Founder Card */}
+
             <div
-              className="absolute -top-2 -left-6 z-20 rounded-2xl px-3 py-2 bg-card border border-primary/30"
-              style={{ boxShadow: "0 0 20px var(--lime-subtle)" }}
+              className="
+                  absolute
+                  top-10
+                  left-0
+                  z-30
+                  rounded-3xl
+                  border
+                  border-primary/20
+                  bg-card/70
+                  backdrop-blur-xl
+                  px-5
+                  py-4
+                  shadow-[0_0_30px_rgba(202,239,69,.15)]
+    "
             >
-              <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">
+              <p className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
                 Founder
-              </div>
-              <div className="font-display text-sm leading-tight text-foreground">
-                SHARPMAN
-              </div>
+              </p>
+
+              <h3 className="font-display text-lg">SHARPMAN</h3>
+
+              <p className="font-mono text-[11px] text-muted-foreground">
+                Digital Solutions
+              </p>
             </div>
 
-            {/* Floating badge — bottom right */}
-            <div
-              className="absolute -bottom-2 -right-6 z-20 rounded-2xl px-3 py-2 bg-card border border-primary/30"
-              style={{ boxShadow: "0 0 20px var(--lime-subtle)" }}
-            >
-              <div className="font-mono text-primary text-[9px] uppercase tracking-[2px]">
-                Available Now
-              </div>
-              <div className="font-display text-sm leading-tight text-foreground">
-                REMOTE
-              </div>
-            </div>
+            {/* Status Card */}
 
-            {/* Circle image */}
-            <div className="w-82.5 h-82.5 sm:w-97.5 sm:h-97.5 rounded-full overflow-hidden relative">
+              <div
+                className="
+                  absolute
+                  bottom-0
+                  right-2
+                  z-30
+                  rounded-3xl
+                  border
+                  border-primary/20
+                  bg-card/70
+                  backdrop-blur-xl
+                  px-5
+                  py-4
+                  shadow-[0_0_30px_rgba(202,239,69,.15)]
+                "
+              >
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+
+                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-primary">
+                    Available
+                  </span>
+                </div>
+
+                <h3 className="font-display mt-3">Remote</h3>
+
+                <p className="font-mono text-[11px] text-muted-foreground">
+                  Freelance • Contract
+                </p>
+              </div>
+
+            {/* ===========================================
+                      HERO ARTWORK
+                =========================================== */}
+
+            <div className="relative w-full flex justify-center lg:justify-end">
+              {/* Background Glow */}
+
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="absolute w-[720px] h-[720px] rounded-full bg-primary/8 blur-[180px]" />
+
+                <div className="absolute w-[600px] h-[360px] border border-primary/20 rounded-full rotate-[18deg]" />
+
+                <div className="absolute w-[520px] h-[320px] border border-primary/30 rounded-full -rotate-[18deg]" />
+
+                <div className="absolute w-[420px] h-[260px] border border-primary/15 rounded-full rotate-[45deg]" />
+              </div>
+
+              {/* Hero Artwork */}
+
               <img
                 src={HERO_IMG}
-                alt="Oyenuga Joshua, founder of Sharpman, web developer in Lagos Nigeria"
-                className="w-full h-full object-cover"
-                width="390"
-                height="390"
-                fetchPriority="high"
+                alt="Sharpman Hero Artwork"
+                draggable={false}
+                className="
+                w-full
+                object-contain
+                drop-shadow-[0_0_60px_rgba(202,239,69,.18)]
+                "
               />
-              <div
-                className="absolute inset-0 rounded-full bg-background"
-                aria-hidden="true"
-                style={{
-                  maskImage:
-                    "radial-gradient(circle at center, transparent 40%, black 100%)",
-                  WebkitMaskImage:
-                    "radial-gradient(circle at center, transparent 40%, black 100%)",
-                }}
-              />
+
+              {/* Founder Card */}
+
+              {/* <div
+                className="
+                  absolute
+                  top-10
+                  left-0
+                  z-30
+                  rounded-3xl
+                  border
+                  border-primary/20
+                  bg-card/70
+                  backdrop-blur-xl
+                  px-5
+                  py-4
+                  shadow-[0_0_30px_rgba(202,239,69,.15)]
+    "
+              >
+                <p className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
+                  Founder
+                </p>
+
+                <h3 className="font-display text-lg">SHARPMAN</h3>
+
+                <p className="font-mono text-[11px] text-muted-foreground">
+                  Digital Solutions
+                </p>
+              </div> */}
+
+              {/* Status Card */}
+
+              {/* <div
+                className="
+                  absolute
+                  bottom-14
+                  right-2
+                  z-30
+                  rounded-3xl
+                  border
+                  border-primary/20
+                  bg-card/70
+                  backdrop-blur-xl
+                  px-5
+                  py-4
+                  shadow-[0_0_30px_rgba(202,239,69,.15)]
+                "
+              >
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+
+                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-primary">
+                    Available
+                  </span>
+                </div>
+
+                <h3 className="font-display mt-3">Remote</h3>
+
+                <p className="font-mono text-[11px] text-muted-foreground">
+                  Freelance • Contract
+                </p>
+              </div> */}
             </div>
           </div>
 
@@ -197,7 +322,10 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll hint */}
-      <div className="flex justify-center pb-6 gap-2 items-center" aria-hidden="true">
+      <div
+        className="flex justify-center pb-6 gap-2 items-center"
+        aria-hidden="true"
+      >
         <div className="w-4 h-4 text-muted-foreground">
           <ArrowDown size={16} />
         </div>
