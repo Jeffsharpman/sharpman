@@ -2,6 +2,8 @@ import { Briefcase, Plus, Code, Crosshair, ArrowUpRight } from "lucide-react";
 import Card from "../UI/Card";
 import ScrollReveal from "../UI/ScrollReveal";
 import Eyebrow from "../UI/Eyebrow";
+import GlowBlob from "../UI/GlowBlob";
+import SectionComment from "../UI/SectionComment";
 
 const pillars = [
   {
@@ -49,22 +51,8 @@ const pillars = [
 export default function BeyondCodeSection() {
   return (
     <section id="beyond-code" className="relative overflow-hidden py-24 md:py-32 px-6 md:px-10 lg:px-16 border-t border-border/40 bg-background" aria-labelledby="beyond-code-heading">
-      <div
-        className="absolute top-0 left-1/4 w-125 h-125 rounded-full blur-[160px] pointer-events-none opacity-30"
-        aria-hidden="true"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(202,239,69,0.15) 0%, transparent 70%)",
-        }}
-      />
-      <div
-        className="absolute bottom-0 right-1/4 w-150 h-150 rounded-full blur-[180px] pointer-events-none opacity-20"
-        aria-hidden="true"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(91,156,246,0.12) 0%, transparent 70%)",
-        }}
-      />
+      <GlowBlob size="xl" className="top-0 left-1/4" blur="160px" opacity={0.3} />
+      <GlowBlob size="2xl" className="bottom-0 right-1/4" blur="180px" opacity={0.2} />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
@@ -151,9 +139,7 @@ export default function BeyondCodeSection() {
             className="group relative !rounded-[2.5rem] !border-border/50 bg-card/20 p-8 md:p-16 mb-16 overflow-hidden transition-all duration-300 hover:bg-card/40"
           >
             <div className="max-w-4xl relative z-10">
-              <div className="font-mono text-[11px] tracking-[4px] uppercase text-primary mb-6">
-                MY PHILOSOPHY
-              </div>
+              <SectionComment className="text-[11px] tracking-[4px] mb-6">MY PHILOSOPHY</SectionComment>
 
               <h3 className="font-display uppercase text-3xl md:text-5xl tracking-tight mb-8 text-foreground">
                 Understanding Problems
@@ -180,9 +166,9 @@ export default function BeyondCodeSection() {
               className="group relative !rounded-4xl p-8 bg-card/20 !border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/40 h-full"
             >
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-[3px] text-muted-foreground/60 mb-4 flex items-center gap-1.5">
+                <SectionComment className="text-muted-foreground/60 mb-4 flex items-center gap-1.5">
                   <span className="text-primary" aria-hidden="true">//</span> MISSION
-                </div>
+                </SectionComment>
                 <p className="font-mono text-sm leading-relaxed text-muted-foreground">
                   To solve problems, create opportunities, and build a better
                   future through{" "}
@@ -207,9 +193,9 @@ export default function BeyondCodeSection() {
               style={{ boxShadow: "0 10px 40px -15px var(--lime-subtle)" }}
             >
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-[3px] text-primary mb-4 flex items-center gap-1.5">
+                <SectionComment className="mb-4 flex items-center gap-1.5">
                   <span aria-hidden="true">//</span> VISION
-                </div>
+                </SectionComment>
                 <p className="font-mono text-sm leading-relaxed text-muted-foreground">
                   To become an{" "}
                   <span className="text-foreground font-medium">
@@ -231,9 +217,9 @@ export default function BeyondCodeSection() {
               <div className="absolute inset-0 bg-linear-to-br from-black/10 to-transparent pointer-events-none" aria-hidden="true" />
               <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-background/5 blur-2xl group-hover:scale-125 transition-transform duration-700" aria-hidden="true" />
 
-              <div className="font-mono text-[10px] uppercase tracking-[3px] text-primary-foreground/60 relative z-10">
+              <SectionComment className="text-primary-foreground/60 relative z-10">
                 // MOTTO
-              </div>
+              </SectionComment>
               <p className="font-display text-3xl leading-none text-primary-foreground uppercase tracking-tighter mt-8 relative z-10">
                 BUILDING THE FUTURE, <br />
                 <span className="text-background/80">ONE STEP AT A TIME.</span>

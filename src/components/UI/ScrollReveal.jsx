@@ -50,25 +50,6 @@ const ScrollReveal = ({
   );
 };
 
-export const StaggerItem = ({ children, className = "", as = "div", ...props }) => {
-  const shouldReduceMotion = useReducedMotion();
-  const MotionTag = motion[as] || motion.div;
-
-  const resolvedVariant = shouldReduceMotion
-    ? { hidden: { opacity: 0 }, visible: { opacity: 1, transition: instant } }
-    : animations.fadeUp;
-
-  return (
-    <MotionTag
-      variants={resolvedVariant}
-      className={className}
-      {...props}
-    >
-      {children}
-    </MotionTag>
-  );
-};
-
 export const HeroReveal = ({
   children,
   className = "",

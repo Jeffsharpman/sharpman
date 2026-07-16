@@ -4,6 +4,7 @@ import useScrollTo from "../../hooks/useScrollTo";
 import Button from "../UI/Button";
 import Badge from "../UI/Badge";
 import Particles from "../UI/Particles";
+import GlowBlob from "../UI/GlowBlob";
 import { HeroReveal } from "../UI/ScrollReveal";
 
 const HERO_IMG =
@@ -36,14 +37,8 @@ export default function HeroSection() {
         }}
       />
 
-      <div
-        className="absolute top-1/3 right-1/3 w-140 h-140 rounded-full blur-[140px] pointer-events-none bg-primary/5"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-1/4 w-85 h-85 rounded-full blur-[100px] pointer-events-none bg-primary/4"
-        aria-hidden="true"
-      />
+      <GlowBlob size="xl" className="top-1/3 right-1/3 w-140 h-140" blur="140px" opacity={1} />
+      <GlowBlob size="md" className="bottom-0 left-1/4 w-85 h-85" blur="100px" opacity={1} />
 
       <div className="flex-1 flex flex-col lg:flex-row items-center px-6 md:px-10 lg:px-16 pt-4 pb-6 gap-8 relative">
         <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">

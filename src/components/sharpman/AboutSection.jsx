@@ -1,5 +1,6 @@
 import ScrollReveal from "../UI/ScrollReveal";
 import Eyebrow from "../UI/Eyebrow";
+import GlowBlob from "../UI/GlowBlob";
 
 const IMGS = [
   {
@@ -176,14 +177,7 @@ export default function AboutSection() {
 
         <div className="flex items-center justify-center h-full">
           <div className="relative w-full max-w-115 h-full flex items-center justify-center">
-            <div
-              className="absolute inset-0 blur-3xl opacity-20 pointer-events-none"
-              aria-hidden="true"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(202,239,69,.15), transparent 70%)",
-              }}
-            />
+            <GlowBlob className="absolute inset-0" blur="80px" opacity={0.2} />
 
             <div className="grid grid-cols-2 gap-3 w-full self-center">
               {IMGS.map((img, i) => (

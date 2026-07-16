@@ -1,9 +1,12 @@
-import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 import ScrollReveal from "../UI/ScrollReveal";
 import SectionHeader from "../UI/SectionHeader";
+import GlowBlob from "../UI/GlowBlob";
+import FormField from "../UI/FormField";
+import SectionComment from "../UI/SectionComment";
+import { useNetlifyForm } from "../../hooks/useNetlifyForm";
 
 const projectTypes = [
   "Website / Landing Page",
@@ -30,34 +33,16 @@ const timelines = [
 ];
 
 export default function StartProjectSection() {
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, handleSubmit, reset } = useNetlifyForm("start-project");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString(),
-    })
-      .then(() => {
-        setSubmitted(true);
-        form.reset();
-      })
-      .catch(() => {
-        alert("Something went wrong. Please try again.");
-      });
-  }
   return (
     <section
       id="start-project"
       className="relative overflow-hidden px-6 md:px-10 lg:px-20 py-24 md:py-32 bg-background"
       aria-labelledby="start-project-heading"
     >
-      <div className="absolute top-1/4 left-0 w-100 h-100 rounded-full blur-[130px] pointer-events-none bg-primary/4" aria-hidden="true" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full blur-[110px] pointer-events-none bg-primary/3" aria-hidden="true" />
+      <GlowBlob size="lg" className="top-1/4 left-0" />
+      <GlowBlob size="md" className="bottom-0 right-1/4" blur="110px" />
 
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-14">
@@ -71,8 +56,7 @@ export default function StartProjectSection() {
         <ScrollReveal animation="fadeUp" delay={0.15}>
           <Card
             variant="elevated"
-            className="!rounded-3xl !p-8 md:!p-10 !bg-card"
-            style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset" }}
+            className="!rounded-3xl !p-8 md:!p-10 !bg-card shadow-lime-inset"
           >
             <div aria-live="polite">
               {submitted ? (
@@ -83,7 +67,7 @@ export default function StartProjectSection() {
                   </p>
                   <button
                     type="button"
-                    onClick={() => setSubmitted(false)}
+                    onClick={reset}
                     className="mt-6 font-mono text-xs uppercase tracking-[2px] text-primary hover:underline"
                   >
                     Submit another project
@@ -105,93 +89,31 @@ export default function StartProjectSection() {
                     </label>
                   </p>
 
-                  <div className="font-mono text-[10px] uppercase tracking-[3px] text-primary mb-1">
-                    // PROJECT DETAILS
+                  <SectionComment>// PROJECT DETAILS</SectionComment>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <FormField label="YOUR NAME" name="name" placeholder="Full Name" required />
+                    <FormField label="YOUR EMAIL" type="email" name="email" placeholder="Email Address" required />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="project-name"
-                        className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground"
-                      >
-                        YOUR NAME
-                      </label>
-                      <input
-                        id="project-name"
-                        type="text"
-                        name="name"
-                        placeholder="Full Name"
-                        required
-                        className="w-full rounded-xl px-4 py-3 font-mono text-sm outline-none bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:border-primary/50 transition-all duration-200"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="project-email"
-                        className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground"
-                      >
-                        YOUR EMAIL
-                      </label>
-                      <input
-                        id="project-email"
-                        type="email"
-                        name="email"
-                        placeholder="Email Address"
-                        required
-                        className="w-full rounded-xl px-4 py-3 font-mono text-sm outline-none bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:border-primary/50 transition-all duration-200"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="project-type"
-                        className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground"
-                      >
-                        PROJECT TYPE
-                      </label>
-                      <select
-                        id="project-type"
-                        name="project-type"
-                        required
-                        className="w-full rounded-xl px-4 py-3 font-mono text-sm outline-none bg-secondary border border-border text-foreground appearance-none focus:border-primary/50 transition-all duration-200"
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Select a service
-                        </option>
-                        {projectTypes.map((t) => (
-                          <option key={t} value={t}>
-                            {t}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="project-budget"
-                        className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground"
-                      >
-                        ESTIMATED BUDGET
-                      </label>
-                      <select
-                        id="project-budget"
-                        name="budget"
-                        className="w-full rounded-xl px-4 py-3 font-mono text-sm outline-none bg-secondary border border-border text-foreground appearance-none focus:border-primary/50 transition-all duration-200"
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Select budget range
-                        </option>
-                        {budgetRanges.map((b) => (
-                          <option key={b} value={b}>
-                            {b}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                    <FormField
+                      label="PROJECT TYPE"
+                      as="select"
+                      name="project-type"
+                      placeholder="Select a service"
+                      options={projectTypes}
+                      required
+                      defaultValue=""
+                    />
+                    <FormField
+                      label="ESTIMATED BUDGET"
+                      as="select"
+                      name="budget"
+                      placeholder="Select budget range"
+                      options={budgetRanges}
+                      defaultValue=""
+                    />
                   </div>
 
                   <div>
@@ -220,29 +142,20 @@ export default function StartProjectSection() {
                     </fieldset>
                   </div>
 
-                  <div>
-                    <label
-                      htmlFor="project-message"
-                      className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground"
-                    >
-                      TELL ME ABOUT YOUR PROJECT
-                    </label>
-                    <textarea
-                      id="project-message"
-                      name="message"
-                      placeholder="What are you trying to build? What problem does it solve? Any specific features or ideas?"
-                      rows={5}
-                      required
-                      className="w-full rounded-xl px-4 py-3 font-mono text-sm outline-none resize-none bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:border-primary/50 transition-all duration-200"
-                    />
-                  </div>
+                  <FormField
+                    label="TELL ME ABOUT YOUR PROJECT"
+                    as="textarea"
+                    name="message"
+                    placeholder="What are you trying to build? What problem does it solve? Any specific features or ideas?"
+                    rows={5}
+                    required
+                  />
 
                   <Button
                     type="submit"
                     variant="primary"
                     size="lg"
-                    className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1"
-                    style={{ boxShadow: "0 0 30px var(--lime-soft)" }}
+                    className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1 shadow-lime-soft"
                   >
                     START MY PROJECT
                     <ArrowUpRight size={14} color="#0A0A0A" aria-hidden="true" />

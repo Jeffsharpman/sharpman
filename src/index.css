@@ -393,6 +393,22 @@ img {
   .animate-pulse-gold {
     animation: pulse-gold 2s ease-in-out infinite;
   }
+
+  .shadow-lime-subtle {
+    box-shadow: 0 0 20px var(--lime-subtle);
+  }
+
+  .shadow-lime-soft {
+    box-shadow: 0 0 30px var(--lime-soft);
+  }
+
+  .shadow-lime-glow {
+    box-shadow: 0 0 40px var(--lime-glow), 0 0 80px var(--lime-soft);
+  }
+
+  .shadow-lime-inset {
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset;
+  }
 }
 
 @keyframes pulse-gold {

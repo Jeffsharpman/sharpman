@@ -1,10 +1,13 @@
-import { useState } from "react";
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
 import { SITE } from "../../data/siteConfig";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 import ScrollReveal from "../UI/ScrollReveal";
 import SectionHeader from "../UI/SectionHeader";
+import GlowBlob from "../UI/GlowBlob";
+import FormField from "../UI/FormField";
+import SectionComment from "../UI/SectionComment";
+import { useNetlifyForm } from "../../hooks/useNetlifyForm";
 
 const highlights = [
   { value: "REMOTE", label: "FRIENDLY" },
@@ -13,40 +16,16 @@ const highlights = [
 ];
 
 export default function ContactSection() {
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, handleSubmit, reset } = useNetlifyForm("contact");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString(),
-    })
-      .then(() => {
-        setSubmitted(true);
-        form.reset();
-      })
-      .catch(() => {
-        alert("Something went wrong. Please try again.");
-      });
-  }
   return (
     <section
       id="contact"
       className="relative overflow-hidden px-6 md:px-10 lg:px-20 py-24 md:py-32 bg-background"
       aria-labelledby="contact-heading"
     >
-      <div
-        className="absolute bottom-0 left-1/3 w-125 h-100 rounded-full blur-[130px] pointer-events-none bg-primary/4"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute top-0 right-0 w-75 h-75 rounded-full blur-[100px] pointer-events-none bg-primary/3"
-        aria-hidden="true"
-      />
+      <GlowBlob size="lg" className="bottom-0 left-1/3 w-125 h-100" />
+      <GlowBlob size="md" className="top-0 right-0 w-75 h-75" />
 
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-start max-w-6xl mx-auto relative z-10">
         <div className="flex-1">
@@ -103,11 +82,7 @@ export default function ContactSection() {
         <ScrollReveal animation="fadeUp" delay={0.15} className="flex-1 w-full">
           <Card
             variant="elevated"
-            className="!rounded-3xl !p-8 md:!p-10 !bg-card"
-            style={{
-              boxShadow:
-                "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset",
-            }}
+            className="!rounded-3xl !p-8 md:!p-10 !bg-card shadow-lime-inset"
           >
             <div aria-live="polite">
               {submitted ? (
@@ -121,7 +96,7 @@ export default function ContactSection() {
                   </p>
                   <button
                     type="button"
-                    onClick={() => setSubmitted(false)}
+                    onClick={reset}
                     className="mt-6 font-mono text-xs uppercase tracking-[2px] text-primary hover:underline"
                   >
                     Send another message
@@ -143,65 +118,24 @@ export default function ContactSection() {
                     </label>
                   </p>
 
-                  <div className="font-mono text-[10px] uppercase tracking-[3px] text-primary mb-1">
-                    // START THE CONVERSATION
-                  </div>
+                  <SectionComment>// START THE CONVERSATION</SectionComment>
 
-                  {[
-                    {
-                      label: "YOUR NAME",
-                      type: "text",
-                      name: "name",
-                      placeholder: "Full Name",
-                    },
-                    {
-                      label: "YOUR EMAIL",
-                      type: "email",
-                      name: "email",
-                      placeholder: "Email Address",
-                    },
-                  ].map(({ label, type, name, placeholder }) => (
-                    <div key={label}>
-                      <label
-                        htmlFor={`contact-${name}`}
-                        className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground"
-                      >
-                        {label}
-                      </label>
-                      <input
-                        id={`contact-${name}`}
-                        type={type}
-                        name={name}
-                        placeholder={placeholder}
-                        required
-                        className="w-full rounded-xl px-4 py-3 font-mono text-sm outline-none bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:border-primary/50 transition-all duration-200"
-                      />
-                    </div>
-                  ))}
-
-                  <div>
-                    <label
-                      htmlFor="contact-message"
-                      className="font-mono text-[10px] uppercase tracking-[3px] block mb-2 text-muted-foreground"
-                    >
-                      WHAT ARE YOU TRYING TO BUILD OR SOLVE?
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      placeholder="Tell me about your project or challenge..."
-                      rows={4}
-                      required
-                      className="w-full rounded-xl px-4 py-3 font-mono text-sm outline-none resize-none bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:border-primary/50 transition-all duration-200"
-                    />
-                  </div>
+                  <FormField label="YOUR NAME" name="name" placeholder="Full Name" required />
+                  <FormField label="YOUR EMAIL" type="email" name="email" placeholder="Email Address" required />
+                  <FormField
+                    label="WHAT ARE YOU TRYING TO BUILD OR SOLVE?"
+                    as="textarea"
+                    name="message"
+                    placeholder="Tell me about your project or challenge..."
+                    rows={4}
+                    required
+                  />
 
                   <Button
                     type="submit"
                     variant="primary"
                     size="lg"
-                    className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1"
-                    style={{ boxShadow: "0 0 30px var(--lime-soft)" }}
+                    className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1 shadow-lime-soft"
                   >
                     SEND MESSAGE
                     <ArrowRight size={14} color="#0A0A0A" aria-hidden="true" />

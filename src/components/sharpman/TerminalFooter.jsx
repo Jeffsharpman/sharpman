@@ -4,6 +4,7 @@ import useScrollTo from "../../hooks/useScrollTo";
 import Button from "../UI/Button";
 import ScrollReveal from "../UI/ScrollReveal";
 import Logo from "../UI/Logo";
+import SectionComment from "../UI/SectionComment";
 
 export default function TerminalFooter() {
   const scrollTo = useScrollTo();
@@ -56,9 +57,7 @@ export default function TerminalFooter() {
                 className="rounded-3xl p-8 lg:p-10 bg-background border border-border min-w-72.5"
                 style={{ boxShadow: "0 40px 80px rgba(0,0,0,0.6)" }}
               >
-                <div className="font-mono text-[10px] uppercase tracking-[3px] mb-3 text-primary">
-                  // INITIATE CONTACT
-                </div>
+                <SectionComment className="mb-3">// INITIATE CONTACT</SectionComment>
                 <div className="font-display text-3xl mb-1 text-foreground">
                   LET&apos;S TALK
                 </div>
