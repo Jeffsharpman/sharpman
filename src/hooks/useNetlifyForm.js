@@ -2,9 +2,14 @@ import { useState } from "react";
 
 export function useNetlifyForm(formName) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
+
     const form = e.target;
     const data = new FormData(form);
 
@@ -18,13 +23,17 @@ export function useNetlifyForm(formName) {
         form.reset();
       })
       .catch(() => {
-        alert("Something went wrong. Please try again.");
+        setError("Something went wrong. Please try again.");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }
 
   function reset() {
     setSubmitted(false);
+    setError(null);
   }
 
-  return { submitted, handleSubmit, reset, formName };
+  return { submitted, loading, error, handleSubmit, reset, formName };
 }

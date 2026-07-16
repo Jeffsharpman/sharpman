@@ -19,10 +19,10 @@ export default function TerminalFooter() {
       <div
         className="w-full h-px"
         aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(90deg,transparent,#CAEF45 40%,#CAEF45 60%,transparent)",
-        }}
+          style={{
+            background:
+              "linear-gradient(90deg,transparent,var(--primary) 40%,var(--primary) 60%,transparent)",
+          }}
       />
 
       <div className="relative z-10 px-6 sm:px-12 lg:px-20 pt-20 pb-16">
@@ -145,7 +145,7 @@ export default function TerminalFooter() {
       <div className="relative z-10 px-6 sm:px-12 lg:px-20 py-5">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[2px]">
           <span className="text-muted-foreground">
-            &copy; 2026 {SITE.name} &middot; Oyenuga Joshua. All rights reserved.
+            &copy; {new Date().getFullYear()} {SITE.name} &middot; Oyenuga Joshua. All rights reserved.
           </span>
           <div className="flex items-center gap-2">
             <span

@@ -2,13 +2,13 @@ import { Sparkles } from "lucide-react";
 
 function Marquee({
   items = [
-    "Tailored Suits",
-    "Formal Wear",
-    "Accessories",
-    "Fragrances",
-    "Footwear",
-    "Traditional Wear",
-    "Luxury Collections",
+    "Web Development",
+    "UI/UX Design",
+    "E-Commerce",
+    "Digital Solutions",
+    "Web Applications",
+    "Business Automation",
+    "Responsive Design",
   ],
   separator = <Sparkles className="h-5 w-5 text-(--primary)/50" />,
   className = "",

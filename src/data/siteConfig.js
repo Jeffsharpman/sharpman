@@ -318,10 +318,12 @@ export const FAQ_ITEMS = [
 /* ── NAVIGATION ─────────────────────────────────────────────── */
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
+  { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#projects" },
+  { label: "Beyond the Code", href: "#beyond-code" },
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const FOOTER_LINKS = [

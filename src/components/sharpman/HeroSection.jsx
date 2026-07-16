@@ -1,14 +1,12 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
+import { SITE } from "../../data/siteConfig";
 import useScrollTo from "../../hooks/useScrollTo";
 import Button from "../UI/Button";
 import Badge from "../UI/Badge";
 import Particles from "../UI/Particles";
 import GlowBlob from "../UI/GlowBlob";
 import { HeroReveal } from "../UI/ScrollReveal";
-
-const HERO_IMG =
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png";
 
 const pills = [
   { v: "BUILDER", l: "By Nature" },
@@ -103,7 +101,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8"
           >
             <Button
-              href="mailto:buildwithsharpman@gmail.com"
+              href={`mailto:${SITE.email}`}
               variant="primary"
               size="lg"
               className="font-mono font-semibold text-xs uppercase tracking-[2px] !px-7 !py-4 !rounded-2xl"
@@ -192,7 +190,7 @@ export default function HeroSection() {
               </div>
 
               <motion.img
-                src={HERO_IMG}
+                src={SITE.heroImage}
                 alt="Sharpman Hero Artwork"
                 draggable={false}
                 initial={{ opacity: 0, scale: 0.9 }}

@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from "motion/react";
 import { SITE } from "../../data/siteConfig";
 
+const letters = "SHARPMAN".split("");
+
 function LoadingScreen({ done }) {
   return (
     <AnimatePresence>
@@ -9,39 +11,38 @@ function LoadingScreen({ done }) {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background"
           exit={{
             opacity: 0,
-            scale: 1.03,
-            filter: "blur(8px)",
-            transition: {
-              duration: 0.8,
-              ease: "easeInOut",
-            },
+            scale: 1.02,
+            filter: "blur(6px)",
+            transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
           }}
         >
-          {/* Logo */}
+          {/* Subtle radial glow */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            aria-hidden="true"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, rgba(202,239,69,0.04) 0%, transparent 60%)",
+            }}
+          />
+
+          {/* Logo mark */}
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.85 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center gap-3"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mb-8"
           >
             <div
-              className="relative flex items-center justify-center w-14 h-14 rounded-2xl overflow-hidden"
+              className="relative flex items-center justify-center w-16 h-16 rounded-2xl"
               style={{
                 background:
-                  "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
-                border: "1px solid rgba(202,239,69,0.25)",
+                  "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.12), #0a0a0a 70%)",
+                border: "1px solid rgba(202,239,69,0.2)",
                 boxShadow:
-                  "0 0 20px var(--lime-soft), 0 0 40px var(--lime-subtle), inset 0 0 12px var(--lime-subtle)",
+                  "0 0 24px var(--lime-soft), 0 0 48px var(--lime-subtle), inset 0 0 12px var(--lime-subtle)",
               }}
             >
-              <div
-                className="absolute inset-0 rounded-2xl"
-                aria-hidden="true"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
-                }}
-              />
               <img
                 src={SITE.logo}
                 alt=""
@@ -51,49 +52,67 @@ function LoadingScreen({ done }) {
                 height="40"
                 style={{
                   filter:
-                    "drop-shadow(0 0 6px rgba(202,239,69,0.9)) drop-shadow(0 0 14px rgba(202,239,69,0.4)) brightness(1.08)",
+                    "drop-shadow(0 0 6px rgba(202,239,69,0.8)) drop-shadow(0 0 14px rgba(202,239,69,0.3))",
                 }}
               />
             </div>
 
-            <div className="flex flex-col">
-              <span
-                className="font-display font-semibold leading-none text-foreground"
-                style={{ fontSize: "2rem", letterSpacing: "0.22em" }}
-              >
-                SHARPMAN
-              </span>
-              <span
-                className="text-xs uppercase tracking-[0.35em] text-primary/70"
-              >
-                {SITE.tagline}
-              </span>
-            </div>
+            {/* Breathing glow ring */}
+            <motion.div
+              className="absolute inset-0 rounded-2xl pointer-events-none"
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(202,239,69,0.08), inset 0 0 20px rgba(202,239,69,0.04)",
+                  "0 0 40px rgba(202,239,69,0.15), inset 0 0 30px rgba(202,239,69,0.08)",
+                  "0 0 20px rgba(202,239,69,0.08), inset 0 0 20px rgba(202,239,69,0.04)",
+                ],
+              }}
+              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+            />
           </motion.div>
 
-          {/* Progress bar */}
+          {/* Brand name — staggered letter reveal */}
+          <div className="flex items-center gap-[0.35em] mb-3 overflow-hidden">
+            {letters.map((char, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.3 + i * 0.05,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="font-display text-3xl sm:text-4xl tracking-[0.18em] text-foreground"
+              >
+                {char}
+              </motion.span>
+            ))}
+          </div>
+
+          {/* Expanding center line */}
           <motion.div
-            className="mt-10 h-[2px] w-64 overflow-hidden rounded-full bg-primary/10"
+            className="relative h-px w-48 mb-5 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.6 }}
           >
             <motion.div
-              className="h-full bg-gold-gradient"
-              initial={{ x: "-100%" }}
-              animate={{ x: "0%" }}
-              transition={{ duration: 1.8, ease: "easeInOut" }}
+              className="absolute inset-y-0 left-1/2 -translate-x-1/2 bg-primary/40"
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1.4, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             />
           </motion.div>
 
           {/* Tagline */}
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="mt-6 text-center font-mono text-[10px] tracking-[0.45em] uppercase text-primary/60"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="font-mono text-[10px] tracking-[0.5em] uppercase text-primary/50"
           >
-            DESIGN. CODE. ELEVATE.
+            {SITE.tagline}
           </motion.p>
         </motion.div>
       )}

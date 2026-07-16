@@ -1,7 +1,9 @@
+import { SITE } from "../../data/siteConfig";
+
 function WhatsAppFAB() {
   return (
     <a
-      href="https://wa.me/2349070281022"
+      href={SITE.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"

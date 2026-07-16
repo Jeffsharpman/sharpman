@@ -205,7 +205,7 @@ export default function BeyondCodeSection() {
                   generate opportunities, and leave a lasting impact.
                 </p>
               </div>
-              <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto shadow-[0_0_12px_#CAEF45] animate-ping" aria-hidden="true" />
+              <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto shadow-[0_0_12px_var(--primary)] animate-ping" aria-hidden="true" />
             </Card>
           </ScrollReveal>
 

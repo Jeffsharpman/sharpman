@@ -33,7 +33,7 @@ const timelines = [
 ];
 
 export default function StartProjectSection() {
-  const { submitted, handleSubmit, reset } = useNetlifyForm("start-project");
+  const { submitted, loading, error, handleSubmit, reset } = useNetlifyForm("start-project");
 
   return (
     <section
@@ -155,15 +155,16 @@ export default function StartProjectSection() {
                     type="submit"
                     variant="primary"
                     size="lg"
+                    disabled={loading}
                     className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1 shadow-lime-soft"
                   >
-                    START MY PROJECT
+                    {loading ? "SENDING..." : "START MY PROJECT"}
                     <ArrowUpRight size={14} color="#0A0A0A" aria-hidden="true" />
                   </Button>
 
-                  <p className="font-mono text-[10px] text-center text-muted-foreground mt-1">
-                    No spam. I&apos;ll respond within 24 hours with a plan.
-                  </p>
+                  {error && (
+                    <p className="font-mono text-[10px] text-center text-destructive mt-1">{error}</p>
+                  )}
                 </form>
               )}
             </div>

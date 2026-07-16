@@ -8,7 +8,7 @@ const sizeMap = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 cursor-pointer select-none";
+  "group inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 cursor-pointer select-none";
 
 const variants = {
   primary: `${base} bg-primary text-primary-foreground shadow-elegant hover:scale-[1.03]`,
@@ -31,11 +31,18 @@ const Button = forwardRef(function Button(
   },
   ref
 ) {
-  const classes = `${variants[variant]} ${sizeMap[size]} ${className}`;
+  const classes = `${variants[variant]} ${sizeMap[size]} ${disabled ? "opacity-50 pointer-events-none" : ""} ${className}`;
 
   if (href) {
     return (
-      <a ref={ref} href={href} className={classes} onClick={onClick} {...props}>
+      <a
+        ref={ref}
+        href={href}
+        className={classes}
+        onClick={onClick}
+        aria-disabled={disabled || undefined}
+        {...props}
+      >
         {children}
         {arrow && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />}
       </a>
@@ -43,7 +50,14 @@ const Button = forwardRef(function Button(
   }
 
   return (
-    <button ref={ref} className={classes} onClick={onClick} disabled={disabled} type={type} {...props}>
+    <button
+      ref={ref}
+      className={classes}
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
+      {...props}
+    >
       {children}
       {arrow && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />}
     </button>

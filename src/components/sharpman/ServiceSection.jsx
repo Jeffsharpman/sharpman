@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { SITE } from "../../data/siteConfig";
 import useScrollTo from "../../hooks/useScrollTo";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
@@ -7,8 +8,6 @@ import Eyebrow from "../UI/Eyebrow";
 
 const BRAND_IMG =
   "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/banner.png";
-const LogoImg =
-  "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-logo.png";
 
 const services = [
   {
@@ -169,7 +168,7 @@ export default function ServicesSection() {
                 }}
               />
               <img
-                src={LogoImg}
+                src={SITE.logo}
                 alt=""
                 aria-hidden="true"
                 className="relative z-10 w-8 h-8 object-contain"
@@ -188,7 +187,7 @@ export default function ServicesSection() {
               GOT A PROBLEM TO SOLVE?
             </div>
             <div className="font-mono text-[11px] mt-0.5 text-muted-foreground">
-              Available for freelance &amp; remote work · buildwithsharpman@gmail.com
+              Available for freelance &amp; remote work · {SITE.email}
             </div>
           </div>
 

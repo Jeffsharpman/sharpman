@@ -141,6 +141,31 @@ export const PROJECTS = [
     dateCreated: "2024-08-01",
     relatedProjects: ["quickgrab", "sharpman-site"],
   },
+  {
+    id: "magicstitch",
+    name: "MAGICSTITCH",
+    slug: slugify("MAGICSTITCH"),
+    category: "FASHION SITE",
+    client: "Fashion Brand",
+    tagline: "FASHION. STYLE. DIGITAL.",
+    shortDesc:
+      "A modern Nigerian fashion website for a boutique showcasing trendy clothing and accessories in Lekki, Lagos.",
+    fullDesc:
+      "MagicStitch is a fashion website built for a modern Nigerian boutique in Lekki, Lagos. The site showcases the brand's collection, style, and identity through a clean, appealing design. Built with React, it features responsive layouts that work beautifully on mobile — where most Nigerian shoppers browse — and fast loading times that keep customers engaged. MagicStitch demonstrates Sharpman's ability to build industry-specific websites that help fashion brands establish a professional online presence and attract more customers.",
+    businessOutcome:
+      "Gives a local Nigerian fashion brand a professional online presence, showcases the collection digitally, and helps attract customers through a modern, mobile-first website.",
+    technologies: ["React", "JavaScript", "CSS3", "HTML5"],
+    image:
+      "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/magicstitch.png",
+    imageAlt:
+      "MagicStitch — A modern Nigerian fashion website built by Sharpman, web developer in Lagos Nigeria",
+    liveUrl: "https://magicstitch.netlify.app/",
+    githubUrl: null,
+    color: "#D4AF37",
+    featured: true,
+    dateCreated: "2024-08-01",
+    relatedProjects: ["quickgrab", "sharpman-site"],
+  },
 ];
 
 /* ── DERIVED DATA (auto-generated, never edit manually) ────── */

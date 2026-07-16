@@ -16,7 +16,7 @@ const highlights = [
 ];
 
 export default function ContactSection() {
-  const { submitted, handleSubmit, reset } = useNetlifyForm("contact");
+  const { submitted, loading, error, handleSubmit, reset } = useNetlifyForm("contact");
 
   return (
     <section
@@ -135,11 +135,15 @@ export default function ContactSection() {
                     type="submit"
                     variant="primary"
                     size="lg"
+                    disabled={loading}
                     className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1 shadow-lime-soft"
                   >
-                    SEND MESSAGE
+                    {loading ? "SENDING..." : "SEND MESSAGE"}
                     <ArrowRight size={14} color="#0A0A0A" aria-hidden="true" />
                   </Button>
+                  {error && (
+                    <p className="font-mono text-xs text-center text-destructive mt-2">{error}</p>
+                  )}
                 </form>
               )}
             </div>

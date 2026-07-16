@@ -1,4 +1,4 @@
-const Card = ({ variant = "default", padding = "", rounded = "2xl", hover = false, className = "", children }) => {
+const Card = ({ variant = "default", padding = "", rounded = "2xl", hover = false, className = "", children, style, ...props }) => {
   const roundeds = {
     "2xl": "rounded-2xl",
     "3xl": "rounded-3xl",
@@ -20,6 +20,8 @@ const Card = ({ variant = "default", padding = "", rounded = "2xl", hover = fals
   return (
     <div
       className={`relative overflow-hidden ${roundeds[rounded]} ${variants[variant]} ${hov} ${padding} ${className}`}
+      style={style}
+      {...props}
     >
       {children}
     </div>

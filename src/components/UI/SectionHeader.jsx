@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import Eyebrow from "./Eyebrow";
 
 function SectionHeader({ eyebrow, title, sub }) {
   return (
@@ -12,9 +13,7 @@ function SectionHeader({ eyebrow, title, sub }) {
       >
         <span className="h-px w-8 bg-gold-gradient" />
 
-        <span className="font-ui text-[10px] tracking-[0.4em] text-(--primary)">
-          {eyebrow}
-        </span>
+        <Eyebrow>{eyebrow}</Eyebrow>
 
         <span className="h-px w-8 bg-gold-gradient" />
       </motion.div>
