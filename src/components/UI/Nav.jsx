@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useTheme } from "../lib/ThemeContext";
 import { Sun, Moon } from "lucide-react";
 import useScrollTo from "../../hooks/useScrollTo";
+import useActiveSection from "../../hooks/useActiveSection";
 import { NAV_LINKS } from "../../data/siteConfig";
 import Logo from "./Logo";
 import Button from "./Button";
@@ -32,6 +33,12 @@ function Nav() {
   const scrollTo = useScrollTo();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const sectionIds = useMemo(
+    () => NAV_LINKS.map(({ href }) => href.replace("#", "")),
+    []
+  );
+  const activeId = useActiveSection(sectionIds);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -95,6 +102,7 @@ function Nav() {
             <NavLink
               key={href}
               href={href}
+              active={activeId === href.replace("#", "")}
               onClick={(e) => handleNavClick(e, href)}
             >
               {label}
@@ -159,6 +167,7 @@ function Nav() {
                 <NavLink
                   key={href}
                   href={href}
+                  active={activeId === href.replace("#", "")}
                   onClick={(e) => handleNavClick(e, href)}
                 >
                   {label}

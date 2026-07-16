@@ -23,16 +23,13 @@ function ProjectCard({ project, index }) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="sticky w-full flex justify-center px-4 sm:px-8 md:px-16"
       style={{
-        top: `${120 + index * 35}px`,
+        top: `${100 + index * 50}px`,
         zIndex: 10 + index,
       }}
       itemScope
       itemType="https://schema.org/CreativeWork"
     >
-      <div
-        className="w-full pb-20 sm:pb-24 md:pb-32"
-        style={{ maxWidth: "860px" }}
-      >
+      <div className="w-full max-w-4xl pb-20 sm:pb-24 md:pb-32">
         <div
           className="overflow-hidden rounded-2xl border transition-all duration-300"
           style={{
@@ -41,7 +38,7 @@ function ProjectCard({ project, index }) {
           }}
         >
           {/* Main Grid */}
-          <div className="flex flex-col md:grid md:grid-cols-12 md:h-95">
+          <div className="flex flex-col md:grid md:grid-cols-12">
             {/* Image Side */}
             <div className="relative h-55 md:h-full md:col-span-6 overflow-hidden bg-muted">
               <img
@@ -117,7 +114,7 @@ function ProjectCard({ project, index }) {
                 </div>
 
                 <p
-                  className="font-mono font-light text-xs leading-relaxed text-muted-foreground max-w-sm line-clamp-3 md:line-clamp-4"
+                  className="font-mono font-light text-xs leading-relaxed text-muted-foreground max-w-sm"
                   itemProp="description"
                 >
                   {project.shortDesc}

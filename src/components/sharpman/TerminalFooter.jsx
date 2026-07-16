@@ -1,13 +1,15 @@
-import { ArrowUpRight } from "lucide-react";
 import { SITE, FOOTER_LINKS, SOCIAL_LINKS } from "../../data/siteConfig";
 import useScrollTo from "../../hooks/useScrollTo";
+import { useNetlifyForm } from "../../hooks/useNetlifyForm";
 import Button from "../UI/Button";
+import FormField from "../UI/FormField";
 import ScrollReveal from "../UI/ScrollReveal";
 import Logo from "../UI/Logo";
 import SectionComment from "../UI/SectionComment";
 
 export default function TerminalFooter() {
   const scrollTo = useScrollTo();
+  const { submitted, loading, error, handleSubmit, reset } = useNetlifyForm("newsletter");
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();
@@ -37,18 +39,18 @@ export default function TerminalFooter() {
                 className="font-display uppercase leading-[0.86] mb-5"
                 style={{ fontSize: "clamp(2.4rem, 5vw, 62px)" }}
               >
-                <span className="block text-foreground">READY TO BUILD</span>
+                <span className="block text-foreground">STAY IN</span>
                 <span
                   className="block text-primary"
                   style={{ textShadow: "0 0 44px rgba(202,239,69,0.4)" }}
                 >
-                  SOMETHING GREAT?
+                  THE LOOP.
                 </span>
               </h2>
 
               <p className="font-mono text-sm leading-relaxed max-w-xs text-muted-foreground">
-                Drop a line and let&apos;s turn your vision into a{" "}
-                <span className="text-primary">digital reality.</span>
+                New projects, insights, and updates — delivered when they{" "}
+                <span className="text-primary">ship.</span>
               </p>
             </ScrollReveal>
 
@@ -57,25 +59,71 @@ export default function TerminalFooter() {
                 className="rounded-3xl p-8 lg:p-10 bg-background border border-border min-w-72.5"
                 style={{ boxShadow: "0 40px 80px rgba(0,0,0,0.6)" }}
               >
-                <SectionComment className="mb-3">// INITIATE CONTACT</SectionComment>
-                <div className="font-display text-3xl mb-1 text-foreground">
-                  LET&apos;S TALK
-                </div>
-                <p className="font-mono text-xs mb-6 text-muted-foreground">
-                  {SITE.email}
-                </p>
+                <div aria-live="polite">
+                  {submitted ? (
+                    <div className="text-center py-4">
+                      <SectionComment className="mb-3">// YOU&apos;RE IN</SectionComment>
+                      <div className="font-display text-3xl mb-2 text-primary">
+                        SUBSCRIBED.
+                      </div>
+                      <p className="font-mono text-xs text-muted-foreground mb-4">
+                        You&apos;re in. Watch this space.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={reset}
+                        className="font-mono text-[10px] uppercase tracking-[2px] text-primary hover:underline"
+                      >
+                        Subscribe another email
+                      </button>
+                    </div>
+                  ) : (
+                    <form
+                      method="POST"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                      name="newsletter"
+                      className="flex flex-col gap-5"
+                      onSubmit={handleSubmit}
+                    >
+                      <input type="hidden" name="form-name" value="newsletter" />
+                      <p className="hidden">
+                        <label>
+                          Don&apos;t fill this out: <input name="bot-field" />
+                        </label>
+                      </p>
 
-                <Button
-                  href="#start-project"
-                  variant="primary"
-                  size="md"
-                  onClick={(e) => handleLinkClick(e, "#start-project")}
-                  className="font-mono font-semibold text-xs uppercase tracking-[2px] !px-7 !py-4 !rounded-xl w-full justify-center"
-                  style={{ boxShadow: "0 0 28px var(--lime-soft)" }}
-                >
-                  START YOUR PROJECT
-                  <ArrowUpRight size={13} className="text-primary-foreground" aria-hidden="true" />
-                </Button>
+                      <SectionComment className="mb-0">// STAY IN THE LOOP</SectionComment>
+                      <div className="font-display text-3xl mb-1 text-foreground">
+                        STAY UPDATED
+                      </div>
+
+                      <FormField
+                        label="EMAIL"
+                        type="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        required
+                        autoComplete="email"
+                      />
+
+                      <Button
+                        type="submit"
+                        variant="primary"
+                        size="md"
+                        disabled={loading}
+                        className="font-mono font-semibold text-xs uppercase tracking-[2px] !px-7 !py-4 !rounded-xl w-full justify-center"
+                        style={{ boxShadow: "0 0 28px var(--lime-soft)" }}
+                      >
+                        {loading ? "SUBSCRIBING..." : "SUBSCRIBE"}
+                      </Button>
+
+                      {error && (
+                        <p className="font-mono text-[10px] text-center text-destructive">{error}</p>
+                      )}
+                    </form>
+                  )}
+                </div>
               </div>
             </ScrollReveal>
           </div>
