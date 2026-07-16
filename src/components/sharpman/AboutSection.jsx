@@ -1,4 +1,5 @@
-import { motion } from "motion/react";
+import ScrollReveal from "../UI/ScrollReveal";
+import Eyebrow from "../UI/Eyebrow";
 
 const IMGS = [
   {
@@ -30,7 +31,6 @@ export default function AboutSection() {
       className="relative overflow-hidden py-24 md:py-32 px-6 md:px-10 lg:px-16 bg-background border-t border-border/40"
       aria-labelledby="about-heading"
     >
-      {/* Grid Background - decorative */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.015]"
         aria-hidden="true"
@@ -42,39 +42,30 @@ export default function AboutSection() {
       />
 
       <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch max-w-6xl mx-auto">
-        {/* LEFT CONTENT COLUMN */}
         <div className="flex flex-col justify-center h-full">
           <div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex items-center gap-2 mb-5"
-            >
-              <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" aria-hidden="true" />
-              <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
-                ABOUT SHARPMAN
-              </span>
-            </motion.div>
+            <ScrollReveal animation="fadeLeft">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" aria-hidden="true" />
+                <Eyebrow>ABOUT SHARPMAN</Eyebrow>
+              </div>
+            </ScrollReveal>
 
-            <motion.h2
-              id="about-heading"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display uppercase leading-[0.9] mb-8 text-foreground tracking-tighter"
-              style={{ fontSize: "clamp(2.8rem, 6vw, 80px)" }}
-            >
-              MORE THAN{" "}
-              <span
-                className="bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent"
-                style={{ textShadow: "0 0 30px rgba(202,239,69,.25)" }}
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+              <h2
+                id="about-heading"
+                className="font-display uppercase leading-[0.9] mb-8 text-foreground tracking-tighter"
+                style={{ fontSize: "clamp(2.8rem, 6vw, 80px)" }}
               >
-                CODE.
-              </span>
-            </motion.h2>
+                MORE THAN{" "}
+                <span
+                  className="bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent"
+                  style={{ textShadow: "0 0 30px rgba(202,239,69,.25)" }}
+                >
+                  CODE.
+                </span>
+              </h2>
+            </ScrollReveal>
 
             <div className="space-y-5 max-w-xl">
               {[
@@ -173,25 +164,18 @@ export default function AboutSection() {
                   your business grow in Lagos, across Nigeria, and beyond.
                 </>,
               ].map((content, i) => (
-                <motion.p
-                  key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground"
-                >
-                  {content}
-                </motion.p>
+                <ScrollReveal key={i} animation="fadeUp" delay={i * 0.05}>
+                  <p className="font-mono text-xs md:text-sm leading-relaxed text-muted-foreground">
+                    {content}
+                  </p>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </div>
 
-        {/* RIGHT IMAGE COLUMN */}
         <div className="flex items-center justify-center h-full">
           <div className="relative w-full max-w-115 h-full flex items-center justify-center">
-            {/* Soft Ambient Card Glow Container - decorative */}
             <div
               className="absolute inset-0 blur-3xl opacity-20 pointer-events-none"
               aria-hidden="true"
@@ -201,36 +185,28 @@ export default function AboutSection() {
               }}
             />
 
-            {/* Structured 2x2 Bento Cards Grid */}
             <div className="grid grid-cols-2 gap-3 w-full self-center">
               {IMGS.map((img, i) => (
-                <motion.div
-                  key={img.label}
-                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="group relative overflow-hidden rounded-2xl aspect-9/16 bg-card/40 border border-border/40 transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 shadow-md"
-                >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                    width="200"
-                    height="356"
-                  />
+                <ScrollReveal key={img.label} animation="scaleIn" delay={i * 0.1}>
+                  <div className="group relative overflow-hidden rounded-2xl aspect-9/16 bg-card/40 border border-border/40 transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 shadow-md">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                      width="200"
+                      height="356"
+                    />
 
-                  {/* High Contrast Gradient Overlay scrim - decorative */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
 
-                  {/* Title Label Layer */}
-                  <div className="absolute bottom-4 left-4 right-4 z-10">
-                    <span className="font-display text-[11px] md:text-xs text-white/90 tracking-[2.5px] uppercase block truncate transition-colors duration-300 group-hover:text-primary">
-                      {img.label}
-                    </span>
+                    <div className="absolute bottom-4 left-4 right-4 z-10">
+                      <span className="font-display text-[11px] md:text-xs text-white/90 tracking-[2.5px] uppercase block truncate transition-colors duration-300 group-hover:text-primary">
+                        {img.label}
+                      </span>
+                    </div>
                   </div>
-                </motion.div>
+                </ScrollReveal>
               ))}
             </div>
           </div>

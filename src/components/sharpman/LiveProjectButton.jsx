@@ -1,15 +1,17 @@
-import { ArrowUpRight } from "lucide-react";
+import Button from "../UI/Button";
 
 export default function LiveProjectButton({ href = "#" }) {
   return (
-    <a
+    <Button
       href={href}
+      variant="outline"
+      size="sm"
+      arrow
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[10px] md:text-xs uppercase tracking-[3px] text-primary border border-primary rounded-full hover:bg-primary/10 transition-colors duration-200"
+      className="font-mono text-[10px] md:text-xs uppercase tracking-[3px] !px-5 !py-2.5 !rounded-full !border-primary hover:!bg-primary/10"
     >
-      <span>VIEW PROJECT</span>
-      <ArrowUpRight size={12} />
-    </a>
+      VIEW PROJECT
+    </Button>
   );
 }

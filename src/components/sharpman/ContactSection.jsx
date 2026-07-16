@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { motion } from "motion/react";
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
 import { SITE } from "../../data/siteConfig";
+import Button from "../UI/Button";
+import Card from "../UI/Card";
+import ScrollReveal from "../UI/ScrollReveal";
+import SectionHeader from "../UI/SectionHeader";
 
 const highlights = [
   { value: "REMOTE", label: "FRIENDLY" },
@@ -36,7 +39,6 @@ export default function ContactSection() {
       className="relative overflow-hidden px-6 md:px-10 lg:px-20 py-24 md:py-32 bg-background"
       aria-labelledby="contact-heading"
     >
-      {/* Decorative glow blobs */}
       <div
         className="absolute bottom-0 left-1/3 w-125 h-100 rounded-full blur-[130px] pointer-events-none bg-primary/4"
         aria-hidden="true"
@@ -47,122 +49,61 @@ export default function ContactSection() {
       />
 
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-start max-w-6xl mx-auto relative z-10">
-        {/* LEFT */}
         <div className="flex-1">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 mb-6"
-          >
-            <span
-              className="w-1.5 h-1.5 bg-primary rounded-full"
-              aria-hidden="true"
-            />
-            <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
-              GET IN TOUCH
-            </span>
-          </motion.div>
+          <SectionHeader
+            eyebrow="GET IN TOUCH"
+            title={`HAVE A PROJECT<br/>OR A <span class="text-primary" style="textShadow: 0 0 35px var(--lime-glow)">PROBLEM</span><br/>TO SOLVE?`}
+            sub="Whether it's a website, a web app, or a digital challenge you're trying to figure out — let's talk. I'm available for freelance and remote work."
+          />
 
-          <motion.h2
-            id="contact-heading"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display uppercase leading-none mb-6 text-foreground"
-            style={{ fontSize: "clamp(2.8rem, 6vw, 80px)" }}
-          >
-            <span className="block">HAVE A PROJECT</span>
-            <span className="block">
-              OR A{" "}
-              <span
-                className="text-primary"
-                style={{ textShadow: "0 0 35px var(--lime-glow)" }}
+          <ScrollReveal animation="fadeUp" delay={0.25}>
+            <div className="flex gap-8 mb-10">
+              {highlights.map((s) => (
+                <div key={s.label}>
+                  <div
+                    className="font-display text-primary text-3xl leading-none mb-1"
+                    style={{ textShadow: "0 0 24px var(--lime-glow)" }}
+                  >
+                    {s.value}
+                  </div>
+                  <div className="font-mono text-[10px] uppercase tracking-[2px] text-muted-foreground">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal animation="fadeUp" delay={0.3}>
+            <div className="flex flex-col gap-3">
+              <a
+                href={`mailto:${SITE.email}`}
+                className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
               >
-                PROBLEM
-              </span>
-            </span>
-            <span className="block">TO SOLVE?</span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="font-mono text-sm leading-relaxed max-w-xs text-muted-foreground mb-8"
-          >
-            Whether it&apos;s a website, a web app, or a digital challenge
-            you&apos;re trying to figure out — let&apos;s talk. I&apos;m available
-            for{" "}
-            <span className="text-primary">freelance and remote work</span>.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="flex gap-8 mb-10"
-          >
-            {highlights.map((s) => (
-              <div key={s.label}>
-                <div
-                  className="font-display text-primary text-3xl leading-none mb-1"
-                  style={{ textShadow: "0 0 24px var(--lime-glow)" }}
-                >
-                  {s.value}
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[2px] text-muted-foreground">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Contact links */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col gap-3"
-          >
-            <a
-              href={`mailto:${SITE.email}`}
-              className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border group-hover:bg-primary/10 transition-all duration-200">
-                <Mail size={13} color="#CAEF45" aria-hidden="true" />
-              </span>
-              {SITE.email}
-            </a>
-            <a
-              href={SITE.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border group-hover:bg-primary/10 transition-all duration-200">
-                <MessageCircle size={13} color="#CAEF45" aria-hidden="true" />
-              </span>
-              {SITE.phoneDisplay} · WhatsApp
-            </a>
-          </motion.div>
+                <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border group-hover:bg-primary/10 transition-all duration-200">
+                  <Mail size={13} color="#CAEF45" aria-hidden="true" />
+                </span>
+                {SITE.email}
+              </a>
+              <a
+                href={SITE.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+              >
+                <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border group-hover:bg-primary/10 transition-all duration-200">
+                  <MessageCircle size={13} color="#CAEF45" aria-hidden="true" />
+                </span>
+                {SITE.phoneDisplay} · WhatsApp
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
 
-        {/* RIGHT — Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="flex-1 w-full"
-        >
-          <div
-            className="rounded-3xl p-8 md:p-10 bg-card border border-border"
+        <ScrollReveal animation="fadeUp" delay={0.15} className="flex-1 w-full">
+          <Card
+            variant="elevated"
+            className="!rounded-3xl !p-8 md:!p-10 !bg-card"
             style={{
               boxShadow:
                 "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset",
@@ -255,19 +196,21 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <button
+                  <Button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] text-primary-foreground py-4 rounded-xl mt-1 bg-primary hover:brightness-105 active:scale-[0.98] transition-all duration-200"
+                    variant="primary"
+                    size="lg"
+                    className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1"
                     style={{ boxShadow: "0 0 30px var(--lime-soft)" }}
                   >
                     SEND MESSAGE
                     <ArrowRight size={14} color="#0A0A0A" aria-hidden="true" />
-                  </button>
+                  </Button>
                 </form>
               )}
             </div>
-          </div>
-        </motion.div>
+          </Card>
+        </ScrollReveal>
       </div>
     </section>
   );

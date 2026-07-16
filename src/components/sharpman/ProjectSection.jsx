@@ -6,16 +6,14 @@
    Features: Internal links, per-project schema, breadcrumbs
    ================================================================ */
 
-import { useState } from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-import { PROJECTS_WITH_SEO, getRelatedProjects } from "../../data/projects";
+import { PROJECTS_WITH_SEO } from "../../data/projects";
 import { ProjectSchemas } from "../seo/ProjectSchema";
 import Breadcrumbs from "../seo/Breadcrumbs";
 import InternalLinks from "../seo/InternalLinks";
 
 function ProjectCard({ project, index }) {
-  const [expanded, setExpanded] = useState(false);
 
   return (
     <motion.article

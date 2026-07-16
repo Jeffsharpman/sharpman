@@ -1,6 +1,9 @@
-import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import useScrollTo from "../../hooks/useScrollTo";
+import Button from "../UI/Button";
+import Card from "../UI/Card";
+import ScrollReveal from "../UI/ScrollReveal";
+import Eyebrow from "../UI/Eyebrow";
 
 const BRAND_IMG =
   "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/banner.png";
@@ -42,43 +45,39 @@ const services = [
 
 function ServiceCard({ service, index }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="relative rounded-2xl p-6 h-full flex flex-col bg-card border border-border hover:border-primary/40 transition-all duration-300 overflow-hidden group"
-    >
-      {/* Number watermark - decorative */}
-      <div className="absolute top-4 right-4 font-display text-5xl leading-none select-none text-foreground/5 group-hover:text-foreground/10 transition-colors duration-300" aria-hidden="true">
-        {service.num}
-      </div>
-
-      {/* Accent dot - decorative */}
-      <div
-        className="w-2 h-2 rounded-full mb-5"
-        style={{ backgroundColor: service.color }}
-        aria-hidden="true"
-      />
-
-      <h3 className="font-display uppercase text-2xl mb-2.5 text-foreground group-hover:text-primary transition-colors duration-200">
-        {service.name}
-      </h3>
-
-      <p className="font-mono font-light text-[11px] leading-relaxed flex-1 text-muted-foreground">
-        {service.desc}
-      </p>
-
-      {/* Arrow - decorative */}
-      <div className="mt-5 flex items-center gap-2" aria-hidden="true">
-        <div className="w-6 h-6 rounded-full flex items-center justify-center border border-border group-hover:border-primary group-hover:bg-primary transition-all duration-200">
-          <ArrowUpRight size={8} className="text-muted-foreground group-hover:text-primary-foreground" />
+    <ScrollReveal animation="fadeUp" delay={index * 0.08}>
+      <Card
+        variant="default"
+        className="relative !rounded-2xl p-6 h-full flex flex-col bg-card !border-border hover:!border-primary/40 transition-all duration-300 overflow-hidden group"
+      >
+        <div className="absolute top-4 right-4 font-display text-5xl leading-none select-none text-foreground/5 group-hover:text-foreground/10 transition-colors duration-300" aria-hidden="true">
+          {service.num}
         </div>
-        <span className="font-mono text-[10px] uppercase tracking-[2px] text-muted-foreground group-hover:text-primary transition-colors duration-200">
-          Learn more
-        </span>
-      </div>
-    </motion.article>
+
+        <div
+          className="w-2 h-2 rounded-full mb-5"
+          style={{ backgroundColor: service.color }}
+          aria-hidden="true"
+        />
+
+        <h3 className="font-display uppercase text-2xl mb-2.5 text-foreground group-hover:text-primary transition-colors duration-200">
+          {service.name}
+        </h3>
+
+        <p className="font-mono font-light text-[11px] leading-relaxed flex-1 text-muted-foreground">
+          {service.desc}
+        </p>
+
+        <div className="mt-5 flex items-center gap-2" aria-hidden="true">
+          <div className="w-6 h-6 rounded-full flex items-center justify-center border border-border group-hover:border-primary group-hover:bg-primary transition-all duration-200">
+            <ArrowUpRight size={8} className="text-muted-foreground group-hover:text-primary-foreground" />
+          </div>
+          <span className="font-mono text-[10px] uppercase tracking-[2px] text-muted-foreground group-hover:text-primary transition-colors duration-200">
+            Learn more
+          </span>
+        </div>
+      </Card>
+    </ScrollReveal>
   );
 }
 
@@ -91,140 +90,123 @@ export default function ServicesSection() {
       className="relative overflow-hidden px-6 sm:px-8 md:px-12 lg:px-20 py-20 md:py-28 bg-background"
       aria-labelledby="services-heading"
     >
-      {/* Header */}
       <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-14">
         <div>
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 mb-4"
-          >
-            <span className="w-1.5 h-1.5 bg-primary rounded-full" aria-hidden="true" />
-            <span className="font-mono text-[10px] uppercase tracking-[3px] text-primary">
-              WHAT I DO
-            </span>
-          </motion.div>
-          <motion.h2
-            id="services-heading"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display font-black uppercase text-foreground"
-            style={{ fontSize: "clamp(2.8rem, 8vw, 100px)", lineHeight: 0.88 }}
-          >
-            SERVICES
-          </motion.h2>
+          <ScrollReveal animation="fadeLeft">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full" aria-hidden="true" />
+              <Eyebrow>WHAT I DO</Eyebrow>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal animation="fadeUp" delay={0.1}>
+            <h2
+              id="services-heading"
+              className="font-display font-black uppercase text-foreground"
+              style={{ fontSize: "clamp(2.8rem, 8vw, 100px)", lineHeight: 0.88 }}
+            >
+              SERVICES
+            </h2>
+          </ScrollReveal>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="hidden lg:block"
-        >
-          <div
-            className="relative w-44 h-24 rounded-2xl overflow-hidden shrink-0 border border-border"
-            style={{ boxShadow: "0 0 28px var(--lime-subtle)" }}
-          >
-            <img
-              src={BRAND_IMG}
-              alt="Sharpman — Design, Code, Elevate"
-              className="w-full h-full object-cover"
-              loading="lazy"
-              width="176"
-              height="96"
-            />
-            {/* Overlay - decorative */}
-            <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
-            <div className="absolute bottom-2 left-2">
-              <p className="font-mono text-[9px] text-foreground uppercase tracking-[2px]">
-                Design. Code. Elevate.
-              </p>
+        <ScrollReveal animation="scaleIn" delay={0.2}>
+          <div className="hidden lg:block">
+            <div
+              className="relative w-44 h-24 rounded-2xl overflow-hidden shrink-0 border border-border"
+              style={{ boxShadow: "0 0 28px var(--lime-subtle)" }}
+            >
+              <img
+                src={BRAND_IMG}
+                alt="Sharpman — Design, Code, Elevate"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width="176"
+                height="96"
+              />
+              <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+              <div className="absolute bottom-2 left-2">
+                <p className="font-mono text-[9px] text-foreground uppercase tracking-[2px]">
+                  Design. Code. Elevate.
+                </p>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </ScrollReveal>
       </div>
 
-      {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
         {services.map((s, i) => (
           <ServiceCard key={s.num} service={s} index={i} />
         ))}
       </div>
 
-      {/* Bottom CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-card border border-border"
-        style={{ boxShadow: "0 0 50px var(--lime-subtle)" }}
-      >
-        <div className="flex items-center gap-4">
-          <div
-            className="relative flex items-center justify-center w-10 h-10 shrink-0 rounded-xl overflow-hidden"
-            style={{
-              background:
-                "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
-              border: "1px solid rgba(202,239,69,0.25)",
-              boxShadow: `
-                  0 0 16px var(--lime-soft),
-                  0 0 32px var(--lime-subtle),
-                  inset 0 0 10px var(--lime-subtle)
-                `,
-            }}
-          >
-            {/* Subtle highlight - decorative */}
+      <ScrollReveal animation="fadeUp" delay={0.3}>
+        <Card
+          variant="elevated"
+          className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 !p-6 !rounded-2xl"
+          style={{ boxShadow: "0 0 50px var(--lime-subtle)" }}
+        >
+          <div className="flex items-center gap-4">
             <div
-              className="absolute inset-0 rounded-xl"
-              aria-hidden="true"
+              className="relative flex items-center justify-center w-10 h-10 shrink-0 rounded-xl overflow-hidden"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
-              }}
-            />
-
-            <img
-              src={LogoImg}
-              alt=""
-              aria-hidden="true"
-              className="relative z-10 w-8 h-8 object-contain"
-              width="32"
-              height="32"
-              style={{
-                filter: `
-                    drop-shadow(0 0 6px rgba(202,239,69,0.9))
-                    drop-shadow(0 0 12px rgba(202,239,69,0.35))
-                    brightness(1.08)
+                  "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
+                border: "1px solid rgba(202,239,69,0.25)",
+                boxShadow: `
+                    0 0 16px var(--lime-soft),
+                    0 0 32px var(--lime-subtle),
+                    inset 0 0 10px var(--lime-subtle)
                   `,
               }}
-            />
+            >
+              <div
+                className="absolute inset-0 rounded-xl"
+                aria-hidden="true"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
+                }}
+              />
+              <img
+                src={LogoImg}
+                alt=""
+                aria-hidden="true"
+                className="relative z-10 w-8 h-8 object-contain"
+                width="32"
+                height="32"
+                style={{
+                  filter: `
+                      drop-shadow(0 0 6px rgba(202,239,69,0.9))
+                      drop-shadow(0 0 12px rgba(202,239,69,0.35))
+                      brightness(1.08)
+                    `,
+                }}
+              />
+            </div>
+            <div className="font-display text-xl leading-none text-foreground">
+              GOT A PROBLEM TO SOLVE?
+            </div>
+            <div className="font-mono text-[11px] mt-0.5 text-muted-foreground">
+              Available for freelance &amp; remote work · buildwithsharpman@gmail.com
+            </div>
           </div>
-          <div className="font-display text-xl leading-none text-foreground">
-            GOT A PROBLEM TO SOLVE?
-          </div>
-          <div className="font-mono text-[11px] mt-0.5 text-muted-foreground">
-            Available for freelance &amp; remote work · buildwithsharpman@gmail.com
-          </div>
-        </div>
 
-        <a
-          href="#start-project"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollTo("#start-project");
-          }}
-          className="flex items-center gap-3 font-mono font-semibold text-xs uppercase tracking-[2px] px-7 py-3.5 rounded-xl text-primary-foreground bg-primary shrink-0 hover:brightness-105 transition-all duration-200"
-          style={{ boxShadow: "0 0 22px var(--lime-soft)" }}
-        >
-          START YOUR PROJECT <span aria-hidden="true">→</span>
-        </a>
-      </motion.div>
+          <Button
+            href="#start-project"
+            variant="primary"
+            size="md"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo("#start-project");
+            }}
+            className="font-mono font-semibold text-xs uppercase tracking-[2px] !px-7 !py-3.5 !rounded-xl shrink-0"
+            style={{ boxShadow: "0 0 22px var(--lime-soft)" }}
+          >
+            START YOUR PROJECT <span aria-hidden="true">→</span>
+          </Button>
+        </Card>
+      </ScrollReveal>
     </section>
   );
 }
