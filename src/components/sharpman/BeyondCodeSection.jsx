@@ -95,12 +95,12 @@ export default function BeyondCodeSection() {
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-16 items-stretch">
           {pillars.map((pillar, i) => (
-            <ScrollReveal key={pillar.title} animation="fadeUp" delay={i * 0.1}>
+            <ScrollReveal key={pillar.title} animation="fadeUp" delay={i * 0.1} className={pillar.sizeClass}>
               <Card
                 variant="default"
-                className={`group relative !rounded-4xl p-8 md:p-10 bg-card/40 backdrop-blur-md !border-border/60 ${pillar.borderHover} transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1 ${pillar.sizeClass}`}
+                className={`group relative !rounded-4xl p-8 md:p-10 bg-card/40 backdrop-blur-md !border-border/60 ${pillar.borderHover} transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1 h-full`}
               >
                 <div
                   className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -159,8 +159,8 @@ export default function BeyondCodeSection() {
           </Card>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <ScrollReveal animation="fadeUp" delay={0}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+          <ScrollReveal animation="fadeUp" delay={0} className="h-full">
             <Card
               variant="default"
               className="group relative !rounded-4xl p-8 bg-card/20 !border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/40 h-full"
@@ -186,7 +186,7 @@ export default function BeyondCodeSection() {
             </Card>
           </ScrollReveal>
 
-          <ScrollReveal animation="fadeUp" delay={0.1}>
+          <ScrollReveal animation="fadeUp" delay={0.1} className="h-full">
             <Card
               variant="elevated"
               className="group relative !rounded-4xl p-8 !border-border/50 flex flex-col justify-between min-h-55 transition-all duration-300 hover:bg-card/80 h-full"
@@ -209,9 +209,9 @@ export default function BeyondCodeSection() {
             </Card>
           </ScrollReveal>
 
-          <ScrollReveal animation="fadeUp" delay={0.2}>
+          <ScrollReveal animation="fadeUp" delay={0.2} className="h-full">
             <div
-              className="relative !rounded-4xl p-8 bg-primary overflow-hidden flex flex-col justify-between min-h-55 group transition-all duration-500 hover:scale-[1.01]"
+              className="relative !rounded-4xl p-8 bg-primary overflow-hidden flex flex-col justify-between min-h-55 group transition-all duration-500 hover:scale-[1.01] h-full"
               style={{ boxShadow: "0 20px 40px -10px var(--lime-soft)" }}
             >
               <div className="absolute inset-0 bg-linear-to-br from-black/10 to-transparent pointer-events-none" aria-hidden="true" />

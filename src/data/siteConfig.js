@@ -25,9 +25,11 @@ export const SITE = {
   tagline: "Design. Code. Elevate.",
   url: "https://sharpman.netlify.app",
   ogImage: "https://sharpman.netlify.app/sharpman-og-image.png",
-  logo: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-logo.png",
-  favicon: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharpman-favicon.png",
-  heroImage: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png",
+  logo: "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharp-logo.svg",
+  favicon:
+    "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharp-favicon.svg",
+  heroImage:
+    "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png",
   themeColor: "#0A0A0A",
   locale: "en_US",
   localeAlt: "en_NG",
