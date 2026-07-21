@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
  * Props:
  *   size       — number (default 120) — controls width, height scales proportionally
  *   animation  — "draw" | "pulse" | "spin" | "float" | "flicker" | "none"  (default: "draw")
- *   color      — string (default: "#C8F135") — fill color for all paths
+ *   color      — string (default: "#B7FF00") — fill color for all paths
  *   glow       — boolean (default: true) — lime drop-shadow glow
  *   loop       — boolean (default: false) — repeat the draw animation on loop
  *   className  — string — extra classes on the svg element
@@ -14,7 +14,7 @@ import { useEffect, useRef, useState } from "react";
 export default function LogoTest({
   size = 120,
   animation = "draw",
-  color = "#C8F135",
+  color = "#B7FF00",
   glow = true,
   loop = false,
   className = "",

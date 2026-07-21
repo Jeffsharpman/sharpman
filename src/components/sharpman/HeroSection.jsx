@@ -199,7 +199,7 @@ export default function HeroSection() {
                 className="
                 w-full
                 object-contain
-                drop-shadow-[0_0_60px_rgba(202,239,69,.18)]
+                drop-shadow-[0_0_60px_var(--accent-glow)]
                 "
               />
             </div>

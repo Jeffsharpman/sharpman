@@ -65,10 +65,10 @@ function Logo({ className = "" }) {
       ${isBooted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-3"}
     `}
         >
-          <span className="bg-gradient-to-br from-slate-950 to-slate-800 bg-clip-text text-transparent dark:from-[#C8F135] dark:to-lime-400 filter drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
+          <span className="bg-gradient-to-br from-slate-950 to-slate-800 bg-clip-text text-transparent dark:from-accent dark:to-accent/70 filter drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
             Sharp
           </span>
-          <span className="bg-gradient-to-br from-slate-800 to-slate-600 bg-clip-text text-transparent dark:from-[#C8F135] dark:to-lime-400 filter drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
+          <span className="bg-gradient-to-br from-slate-800 to-slate-600 bg-clip-text text-transparent dark:from-accent dark:to-accent/70 filter drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
             man
           </span>
         </h1>
@@ -80,7 +80,7 @@ function Logo({ className = "" }) {
       transition-all duration-[1600ms] ease-out delay-700
       ${
         isBooted
-          ? "text-slate-700 dark:text-[#C8F135]/80 opacity-100"
+          ? "text-slate-700 dark:text-accent/80 opacity-100"
           : "text-cyan-600/60 dark:text-cyan-400/50 opacity-0"
       }
     `}

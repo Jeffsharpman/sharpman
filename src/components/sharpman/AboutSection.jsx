@@ -61,7 +61,7 @@ export default function AboutSection() {
                 MORE THAN{" "}
                 <span
                   className="bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent"
-                  style={{ textShadow: "0 0 30px rgba(202,239,69,.25)" }}
+                  style={{ textShadow: "0 0 30px var(--accent-glow)" }}
                 >
                   CODE.
                 </span>
@@ -192,10 +192,8 @@ export default function AboutSection() {
                       height="356"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
-
                     <div className="absolute bottom-4 left-4 right-4 z-10">
-                      <span className="font-display text-[11px] md:text-xs text-white/90 tracking-[2.5px] uppercase block truncate transition-colors duration-300 group-hover:text-primary">
+                      <span className="font-display text-[11px] md:text-xs text-white tracking-[2.5px] uppercase block truncate" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.7)" }}>
                         {img.label}
                       </span>
                     </div>

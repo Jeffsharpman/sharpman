@@ -42,7 +42,7 @@ export default function TerminalFooter() {
                 <span className="block text-foreground">STAY IN</span>
                 <span
                   className="block text-primary"
-                  style={{ textShadow: "0 0 44px rgba(202,239,69,0.4)" }}
+                  style={{ textShadow: "0 0 44px var(--accent-glow)" }}
                 >
                   THE LOOP.
                 </span>

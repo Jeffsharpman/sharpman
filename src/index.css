@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ── KEEP @theme ONLY for non-color tokens ── */
+/* ── Tailwind @theme — Non-color tokens + color bridges ── */
 @theme {
   --font-heading: "Bebas Neue", sans-serif;
   --font-display: "Bebas Neue", sans-serif;
@@ -10,6 +10,7 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-primary: var(--primary);
@@ -24,84 +25,98 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-destructive: var(--destructive);
-  --color-lime: var(--lime);
+  --color-lime: var(--accent);
 }
 
 /* ══════════════════════════════════════════
-   DARK MODE — Default (Ultra-Premium Futuristic)
-   Olive-charcoal base, slate-black surfaces,
-   polished dark borders with warm depth.
+   DARK MODE — Default
+   Neon-green cyber-tech identity.
+   Deep dark base, muted green surfaces.
 ══════════════════════════════════════════ */
 :root {
-  --background: #080907;
-  --foreground: #f0ede6;
-  --card: #0d0f0b;
-  --card-foreground: #f0ede6;
-  --primary: #caef45;
-  --primary-foreground: #080907;
-  --secondary: #10120e;
-  --secondary-foreground: #f0ede6;
-  --muted: #141612;
-  --muted-foreground: #6b6d63;
-  --accent: #caef45;
-  --accent-foreground: #080907;
-  --border: #1a1d17;
-  --input: #141612;
-  --ring: #caef45;
+  --background: #080C0A;
+  --surface: #111714;
+  --card: #111714;
+  --card-foreground: #F5F7F5;
+  --border: #243024;
 
-  /* Sharpman Neon Glow System */
-  --lime-glow: rgba(202, 239, 69, 0.45);
-  --lime-soft: rgba(202, 239, 69, 0.15);
-  --lime-subtle: rgba(202, 239, 69, 0.08);
+  --text-primary: #F5F7F5;
+  --text-secondary: #A7B0A8;
+  --foreground: #F5F7F5;
 
-  /* UI Component Token Aliases */
-  --gold: #caef45;
-  --gold-foreground: #080907;
-  --cream: #f0ede6;
-  --fg: #f0ede6;
+  --accent: #B7FF00;
+  --accent-hover: #9FE600;
+  --accent-glow: rgba(183, 255, 0, 0.25);
+  --accent-highlight: #B7FF00;
 
-  --bg-nav: rgba(8, 9, 7, 0.92);
-  --border-nav: rgba(202, 239, 69, 0.18);
+  --primary: #B7FF00;
+  --primary-foreground: #080C0A;
+  --secondary: #111714;
+  --secondary-foreground: #F5F7F5;
+  --muted: #111714;
+  --muted-foreground: #A7B0A8;
+  --accent-foreground: #080C0A;
+  --ring: #B7FF00;
+  --input: #111714;
+
+  --lime-glow: rgba(183, 255, 0, 0.25);
+  --lime-soft: rgba(183, 255, 0, 0.12);
+  --lime-subtle: rgba(183, 255, 0, 0.06);
+
+  --gold: #B7FF00;
+  --gold-foreground: #080C0A;
+  --cream: #F5F7F5;
+  --fg: #F5F7F5;
+
+  --bg-nav: rgba(8, 12, 10, 0.92);
+  --border-nav: rgba(183, 255, 0, 0.15);
   --shadow-nav: 0 10px 50px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(202, 239, 69, 0.1) inset;
+    0 0 0 1px rgba(183, 255, 0, 0.08) inset;
 
   --destructive: #ef4444;
 }
 
 /* ══════════════════════════════════════════
-   LIGHT MODE — Warm Eye-Care & Premium
-   Bone-linen backgrounds, warm taupe borders,
-   dark olive-slate text for max contrast.
+   LIGHT MODE — Clean, muted, premium.
+   Soft green-grey backgrounds, dark text.
 ══════════════════════════════════════════ */
 :root.light {
-  --background: #f4f1e8;
-  --foreground: #1c1e18;
-  --card: #faf8f2;
-  --card-foreground: #1c1e18;
-  --primary: #a3d900;
-  --primary-foreground: #1c1e18;
-  --secondary: #ebe7dc;
-  --secondary-foreground: #1c1e18;
-  --muted: #ebe7dc;
-  --muted-foreground: #7a7668;
-  --accent: #a3d900;
-  --accent-foreground: #1c1e18;
-  --border: rgba(139, 130, 110, 0.14);
-  --input: #ebe7dc;
-  --ring: #a3d900;
+  --background: #F4F7F3;
+  --surface: #FFFFFF;
+  --card: #FFFFFF;
+  --card-foreground: #101510;
+  --border: #B8C9B2;
 
-  --lime-glow: rgba(163, 217, 0, 0.35);
-  --lime-soft: rgba(163, 217, 0, 0.12);
-  --lime-subtle: rgba(163, 217, 0, 0.06);
+  --text-primary: #101510;
+  --text-secondary: #475247;
+  --foreground: #101510;
 
-  /* UI Component Token Aliases */
-  --gold: #a3d900;
-  --gold-foreground: #1c1e18;
-  --cream: #1c1e18;
-  --fg: #1c1e18;
+  --accent: #65A30D;
+  --accent-hover: #4D7C0F;
+  --accent-glow: rgba(101, 163, 13, 0.20);
+  --accent-highlight: #B7FF00;
 
-  --bg-nav: rgba(244, 241, 232, 0.95);
-  --border-nav: rgba(139, 130, 110, 0.12);
+  --primary: #65A30D;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFFFFF;
+  --secondary-foreground: #101510;
+  --muted: #F0F4EF;
+  --muted-foreground: #475247;
+  --accent-foreground: #FFFFFF;
+  --ring: #65A30D;
+  --input: #F0F4EF;
+
+  --lime-glow: rgba(101, 163, 13, 0.20);
+  --lime-soft: rgba(101, 163, 13, 0.10);
+  --lime-subtle: rgba(101, 163, 13, 0.05);
+
+  --gold: #65A30D;
+  --gold-foreground: #FFFFFF;
+  --cream: #101510;
+  --fg: #101510;
+
+  --bg-nav: rgba(244, 247, 243, 0.95);
+  --border-nav: rgba(101, 163, 13, 0.12);
   --shadow-nav: 0 10px 40px rgba(0, 0, 0, 0.06);
 }
 
@@ -120,8 +135,10 @@
   #root {
     background-color: var(--background);
     color: var(--foreground);
-    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
   }
 
   body {
@@ -129,7 +146,7 @@
     line-height: 1.6;
   }
 
-  /* Scrollbar - Neon Style */
+  /* Scrollbar — Neon Style */
   ::-webkit-scrollbar {
     width: 4px;
   }
@@ -139,13 +156,12 @@
   ::-webkit-scrollbar-thumb {
     background: var(--primary);
     border-radius: 2px;
-    box-shadow: 0 0 6px var(--lime-glow);
+    box-shadow: 0 0 6px var(--accent-glow);
   }
 }
 
 /* ── ACCESSIBILITY ── */
 
-/* Skip to content link */
 .skip-to-content {
   position: absolute;
   top: -100%;
@@ -161,7 +177,7 @@
   letter-spacing: 2px;
   text-decoration: none;
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 4px 20px var(--lime-glow);
+  box-shadow: 0 4px 20px var(--accent-glow);
   transition: top 0.2s ease;
 }
 
@@ -171,7 +187,6 @@
   outline-offset: 2px;
 }
 
-/* Focus-visible styles for keyboard navigation */
 *:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
@@ -184,7 +199,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Remove outline for mouse users */
 *:focus:not(:focus-visible) {
   outline: none;
 }
@@ -220,7 +234,7 @@ button:focus-visible {
 /* ── TYPOGRAPHY & UTILITIES ── */
 @layer utilities {
   .hero-heading {
-    background: linear-gradient(180deg, #caef45 0%, #f0ede6 100%);
+    background: linear-gradient(180deg, var(--accent) 0%, var(--foreground) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -228,18 +242,16 @@ button:focus-visible {
   }
 
   :root.light .hero-heading {
-    background: linear-gradient(180deg, #a3d900 0%, #1c1e18 100%);
+    background: linear-gradient(180deg, var(--accent) 0%, var(--foreground) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  /* Premium Neon Glow Text */
   .neon-text {
-    text-shadow: 0 0 8px var(--lime-glow), 0 0 20px var(--lime-glow);
+    text-shadow: 0 0 8px var(--accent-glow), 0 0 20px var(--accent-glow);
   }
 
-  /* Subtle tech grain */
   .grain::after {
     content: "";
     position: absolute;
@@ -270,17 +282,16 @@ button:focus-visible {
   .sharpman-btn:hover {
     background-color: var(--primary);
     color: var(--primary-foreground);
-    box-shadow: 0 0 25px var(--lime-glow), 0 0 40px var(--lime-soft);
+    box-shadow: 0 0 25px var(--accent-glow), 0 0 40px var(--lime-soft);
     transform: translateY(-1px);
   }
 
-  /* Premium Card Style */
   .sharpman-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 1rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
-      inset 0 0 12px var(--lime-subtle);
+      inset 0 0 12px var(--accent-glow);
   }
 }
 
@@ -391,7 +402,7 @@ img {
   }
 
   .shadow-primary-glow-md {
-    box-shadow: 0 0 20px var(--lime-glow), 0 4px 16px var(--lime-soft);
+    box-shadow: 0 0 20px var(--accent-glow), 0 4px 16px var(--lime-soft);
   }
 
   .animate-pulse-gold {
@@ -407,15 +418,15 @@ img {
   }
 
   .shadow-lime-glow {
-    box-shadow: 0 0 40px var(--lime-glow), 0 0 80px var(--lime-soft);
+    box-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--lime-soft);
   }
 
   .shadow-lime-inset {
-    box-shadow: 0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px var(--lime-subtle) inset;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--accent-glow) inset;
   }
 }
 
 @keyframes pulse-gold {
   0%, 100% { box-shadow: 0 0 8px var(--lime-soft); }
-  50% { box-shadow: 0 0 24px var(--lime-glow), 0 0 48px var(--lime-soft); }
+  50% { box-shadow: 0 0 24px var(--accent-glow), 0 0 48px var(--lime-soft); }
 }

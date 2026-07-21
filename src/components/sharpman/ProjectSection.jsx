@@ -20,7 +20,7 @@ function ProjectCard({ project, index }) {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       className="sticky w-full flex justify-center px-4 sm:px-8 md:px-16"
       style={{
         top: `${100 + index * 50}px`,
@@ -50,23 +50,6 @@ function ProjectCard({ project, index }) {
                 height="380"
                 itemProp="image"
               />
-              {/* Gradient overlays - decorative */}
-              <div
-                className="absolute inset-0 hidden md:block"
-                aria-hidden="true"
-                style={{
-                  background:
-                    "linear-gradient(to right, transparent 50%, #0C0F08 100%)",
-                }}
-              />
-              <div
-                className="absolute inset-0 block md:hidden"
-                aria-hidden="true"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, transparent 50%, #0C0F08 100%)",
-                }}
-              />
             </div>
 
             {/* Content Side */}
@@ -84,7 +67,7 @@ function ProjectCard({ project, index }) {
                   >
                     {project.category}
                   </span>
-                  <span className="font-mono text-[9px] uppercase tracking-[1.5px] px-2 py-0.5 rounded-full border border-neutral-800 text-neutral-400 bg-neutral-900/40">
+                  <span className="font-mono text-[9px] uppercase tracking-[1.5px] px-2 py-0.5 rounded-full border border-border text-muted-foreground bg-card">
                     {project.technologies[0]}
                   </span>
                 </div>

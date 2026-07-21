@@ -3,6 +3,7 @@ import { SITE } from "../../data/siteConfig";
 import useScrollTo from "../../hooks/useScrollTo";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
+import Logo from "../UI/Logo";
 import ScrollReveal from "../UI/ScrollReveal";
 import Eyebrow from "../UI/Eyebrow";
 
@@ -122,9 +123,8 @@ export default function ServicesSection() {
                 width="176"
                 height="96"
               />
-              <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
               <div className="absolute bottom-2 left-2">
-                <p className="font-mono text-[9px] text-foreground uppercase tracking-[2px]">
+                <p className="font-mono text-[9px] text-white uppercase tracking-[2px]" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
                   Design. Code. Elevate.
                 </p>
               </div>
@@ -146,43 +146,7 @@ export default function ServicesSection() {
           style={{ boxShadow: "0 0 50px var(--lime-subtle)" }}
         >
           <div className="flex items-center gap-4">
-            <div
-              className="relative flex items-center justify-center w-10 h-10 shrink-0 rounded-xl overflow-hidden"
-              style={{
-                background:
-                  "radial-gradient(circle at 30% 30%, rgba(202,239,69,0.16), #050505 75%)",
-                border: "1px solid rgba(202,239,69,0.25)",
-                boxShadow: `
-                    0 0 16px var(--lime-soft),
-                    0 0 32px var(--lime-subtle),
-                    inset 0 0 10px var(--lime-subtle)
-                  `,
-              }}
-            >
-              <div
-                className="absolute inset-0 rounded-xl"
-                aria-hidden="true"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(202,239,69,0.08), transparent 60%)",
-                }}
-              />
-              <img
-                src={SITE.logo}
-                alt=""
-                aria-hidden="true"
-                className="relative z-10 w-8 h-8 object-contain"
-                width="32"
-                height="32"
-                style={{
-                  filter: `
-                      drop-shadow(0 0 6px rgba(202,239,69,0.9))
-                      drop-shadow(0 0 12px rgba(202,239,69,0.35))
-                      brightness(1.08)
-                    `,
-                }}
-              />
-            </div>
+            <Logo className="scale-75 origin-left shrink-0" />
             <div className="font-display text-xl leading-none text-foreground">
               GOT A PROBLEM TO SOLVE?
             </div>

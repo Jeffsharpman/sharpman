@@ -30,7 +30,7 @@ export const SITE = {
     "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/sharp-favicon.svg",
   heroImage:
     "https://cdn.jsdelivr.net/gh/Jeffsharpman/sharpman-assets@main/images/hero.png",
-  themeColor: "#0A0A0A",
+  themeColor: "#080C0A",
   locale: "en_US",
   localeAlt: "en_NG",
   language: "en",

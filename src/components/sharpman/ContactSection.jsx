@@ -60,7 +60,7 @@ export default function ContactSection() {
                 className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border group-hover:bg-primary/10 transition-all duration-200">
-                  <Mail size={13} color="#CAEF45" aria-hidden="true" />
+                  <Mail size={13} color="var(--accent)" aria-hidden="true" />
                 </span>
                 {SITE.email}
               </a>
@@ -71,7 +71,7 @@ export default function ContactSection() {
                 className="group flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-secondary border border-border group-hover:bg-primary/10 transition-all duration-200">
-                  <MessageCircle size={13} color="#CAEF45" aria-hidden="true" />
+                  <MessageCircle size={13} color="var(--accent)" aria-hidden="true" />
                 </span>
                 {SITE.phoneDisplay} · WhatsApp
               </a>
@@ -139,7 +139,7 @@ export default function ContactSection() {
                     className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1 shadow-lime-soft"
                   >
                     {loading ? "SENDING..." : "SEND MESSAGE"}
-                    <ArrowRight size={14} color="#0A0A0A" aria-hidden="true" />
+                    <ArrowRight size={14} color="var(--primary-foreground)" aria-hidden="true" />
                   </Button>
                   {error && (
                     <p className="font-mono text-xs text-center text-destructive mt-2">{error}</p>

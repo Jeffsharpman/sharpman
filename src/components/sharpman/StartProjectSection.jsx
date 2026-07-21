@@ -48,7 +48,7 @@ export default function StartProjectSection() {
         <div className="text-center mb-14">
           <SectionHeader
             eyebrow="START A PROJECT"
-            title={`LET'S BUILD<br/>SOMETHING <span class="text-primary" style="textShadow: 0 0 35px rgba(202,239,69,0.45)">GREAT</span>`}
+            title={`LET'S BUILD<br/>SOMETHING <span class="text-primary" style="textShadow: 0 0 35px var(--accent-glow)">GREAT</span>`}
             sub="Tell me about your project and I'll get back to you within 24 hours with next steps."
           />
         </div>
@@ -159,7 +159,7 @@ export default function StartProjectSection() {
                     className="w-full !justify-center gap-3 font-mono font-semibold text-sm uppercase tracking-[3px] !py-4 !rounded-xl mt-1 shadow-lime-soft"
                   >
                     {loading ? "SENDING..." : "START MY PROJECT"}
-                    <ArrowUpRight size={14} color="#0A0A0A" aria-hidden="true" />
+                    <ArrowUpRight size={14} color="var(--primary-foreground)" aria-hidden="true" />
                   </Button>
 
                   {error && (
